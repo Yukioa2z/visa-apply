@@ -4,7 +4,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 
-const skillName = "ds160-visa-dossier";
+const skillName = "us-visa-apply";
 const packageRoot = path.resolve(__dirname, "..");
 const sourceDir = path.join(packageRoot, "skill");
 
@@ -12,8 +12,8 @@ function usage() {
   console.log(`Install ${skillName}
 
 Usage:
-  npx github:Yukioa2z/ds160-visa-dossier-skill
-  npx github:Yukioa2z/ds160-visa-dossier-skill -- --dest ~/.claude/skills
+  npx github:Yukioa2z/us-visa-apply
+  npx github:Yukioa2z/us-visa-apply -- --dest ~/.claude/skills
 
 Options:
   --dest <path>   Skill root directory. Defaults to $CODEX_HOME/skills or ~/.codex/skills.

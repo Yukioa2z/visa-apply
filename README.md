@@ -1,23 +1,23 @@
-# DS-160 Visa Dossier Skill
+# US Visa Apply Skill
 
 Install a local DS-160 dossier skill for Codex-compatible agents.
 
 ```sh
-npx github:Yukioa2z/ds160-visa-dossier-skill
+npx github:Yukioa2z/us-visa-apply
 ```
 
 Then invoke:
 
 ```text
-Use $ds160-visa-dossier to prepare a local DS-160 information dossier for my visa application.
+Use $us-visa-apply to prepare a local DS-160 information dossier for my visa application.
 ```
 
-By default the installer copies the skill to `~/.codex/skills/ds160-visa-dossier`.
+By default the installer copies the skill to `~/.codex/skills/us-visa-apply`.
 
 For Claude Code, Hermes, OpenClaw, or another agent with a different skill directory, pass a destination:
 
 ```sh
-npx github:Yukioa2z/ds160-visa-dossier-skill -- --dest ~/.claude/skills
+npx github:Yukioa2z/us-visa-apply -- --dest ~/.claude/skills
 ```
 
 The skill includes:

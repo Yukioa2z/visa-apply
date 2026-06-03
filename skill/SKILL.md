@@ -1,9 +1,9 @@
 ---
-name: ds160-visa-dossier
+name: us-visa-apply
 description: Use when helping a user prepare, review, track, or fill a U.S. DS-160 nonimmigrant visa application. Covers local HTML dossier creation, visa-type-specific question intake, official-source research, DS-160 final preview organization, payment and appointment progress tracking, and assisted browser/computer form entry after user review.
 ---
 
-# DS-160 Visa Dossier
+# US Visa Apply
 
 ## Purpose
 

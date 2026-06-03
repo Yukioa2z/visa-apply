@@ -1,7 +1,7 @@
 interface:
-  display_name: "DS-160 Visa Dossier"
-  short_description: "Collect and track DS-160 filing details."
-  default_prompt: "Use $ds160-visa-dossier to prepare a local DS-160 information dossier for my visa application."
+  display_name: "US Visa Apply"
+  short_description: "Prepare and track DS-160 visa filings."
+  default_prompt: "Use $us-visa-apply to prepare a local DS-160 information dossier for my visa application."
 
 policy:
   allow_implicit_invocation: true
