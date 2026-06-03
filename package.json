@@ -1,0 +1,17 @@
+{
+  "name": "ds160-visa-dossier-skill",
+  "version": "1.0.0",
+  "description": "Install the DS-160 Visa Dossier skill for Codex-compatible agents.",
+  "license": "MIT",
+  "bin": {
+    "ds160-visa-dossier-skill": "./bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skill",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

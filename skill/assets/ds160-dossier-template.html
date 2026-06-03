@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --paper: #ffffff;
+      --ink: #2f3437;
+      --muted: #6f767a;
+      --line: #e7e4dd;
+      --soft: #f1f0eb;
+      --accent: #276ef1;
+      --green: #0f7b6c;
+      --yellow: #f5d06f;
+      --red: #d84c4c;
+      --shadow: 0 18px 60px rgba(39, 38, 34, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 88px;
+    }
+
+    .hero { margin-bottom: 28px; }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .notice {
+      background: #fffaf0;
+      border: 1px solid #f0dfb4;
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #5b4617;
+      margin: 22px 0;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .stack { display: grid; gap: 14px; }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .section-title .icon {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .progress-meta,
+    .field-grid,
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .progress-meta {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .meta-item,
+    .field,
+    .preview-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfbfa;
+      padding: 11px 12px;
+      min-height: 68px;
+    }
+
+    .meta-item b,
+    .field b,
+    .preview-item b {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .placeholder { color: #9a948c; }
+
+    .progress-meter {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      margin: 20px 0 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .progress-meter span {
+      display: block;
+      width: var(--progress, 0%);
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--accent));
+      border-radius: inherit;
+    }
+
+    .checkpoint-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .checkpoint {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfbfa;
+      padding: 12px 12px 12px 36px;
+      min-height: 96px;
+    }
+
+    .checkpoint::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 15px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 2px solid #b6b0a6;
+      background: #fff;
+    }
+
+    .checkpoint.done::before {
+      border-color: var(--green);
+      background: var(--green);
+    }
+
+    .checkpoint.active {
+      border-color: #c9d8ff;
+      background: #f5f8ff;
+    }
+
+    .checkpoint.active::before {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(39, 110, 241, 0.12);
+    }
+
+    .checkpoint strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .checkpoint small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      display: block;
+    }
+
+    .preview-section {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+
+    .preview-section:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .preview-heading {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .preview-index {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .preview-heading h3 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .answer-log {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .answer {
+      border-left: 4px solid var(--line);
+      background: #fbfbfa;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .answer b {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .todo-list,
+    .source-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .todo {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 10px;
+      align-items: start;
+      padding: 9px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .todo:first-child { border-top: 0; }
+
+    .box {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid #b6b0a6;
+      border-radius: 4px;
+      margin-top: 3px;
+      background: #fff;
+    }
+
+    .status {
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+    }
+
+    .status.done {
+      color: #0c6155;
+      border-color: #c9e7df;
+      background: #edf8f5;
+    }
+
+    .status.active {
+      color: #173e85;
+      border-color: #c9d8ff;
+      background: #eef4ff;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--muted);
+      padding: 4px 10px;
+      font-size: 12px;
+    }
+
+    .source-item {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .source-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    @media (max-width: 860px) {
+      .layout,
+      .progress-meta,
+      .checkpoint-row,
+      .field-grid,
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page { padding: 34px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">DS-160 dossier / {{VISA_TYPE}}</div>
+      <h1>{{TITLE}}</h1>
+      <p class="subtitle">A local working page for final DS-160 answers, source notes, official links, and visa process progress. Use the final preview first; collected answers are supporting source material.</p>
+    </header>
+
+    <div class="notice">
+      This page may contain sensitive immigration, passport, contact, and payment information. Keep it local unless the applicant explicitly chooses another storage mode. This page is not legal advice and does not replace the official DS-160 or visa scheduling portal.
+    </div>
+
+    <article class="card">
+      <h2 class="section-title"><span class="icon">P</span>Visa Process Progress</h2>
+      <p class="small">Update this card after each milestone. The progress bar should reflect the latest completed checkpoint.</p>
+      <div class="progress-meta">
+        <div class="meta-item" data-field="privacy-mode"><b>Privacy mode</b>{{PRIVACY_MODE}}</div>
+        <div class="meta-item" data-field="visa-type"><b>Visa type</b>{{VISA_TYPE}}</div>
+        <div class="meta-item" data-field="application-location"><b>Application location</b>{{APPLICATION_LOCATION}}</div>
+        <div class="meta-item" data-field="generated-at"><b>Generated</b>{{GENERATED_AT}}</div>
+        <div class="meta-item" data-field="ceac-application-id"><b>CEAC application ID</b><span class="placeholder">Pending</span></div>
+        <div class="meta-item" data-field="payment-receipt"><b>Payment receipt</b><span class="placeholder">Pending</span></div>
+        <div class="meta-item" data-field="interview-appointment"><b>Interview appointment</b><span class="placeholder">Pending</span></div>
+        <div class="meta-item" data-field="visa-status"><b>Visa status</b><span class="placeholder">Not started</span></div>
+      </div>
+      <div class="progress-meter" style="--progress: 0%;"><span></span></div>
+      <div class="checkpoint-row">
+        <div class="checkpoint active" data-checkpoint="ds160">
+          <strong>DS-160</strong>
+          <small>Not started or in progress. Backfill CEAC ID after creation/submission.</small>
+        </div>
+        <div class="checkpoint" data-checkpoint="fee">
+          <strong>Visa fee</strong>
+          <small>Pending. Add receipt number after payment.</small>
+        </div>
+        <div class="checkpoint" data-checkpoint="interview">
+          <strong>Interview</strong>
+          <small>Pending. Add appointment time and location.</small>
+        </div>
+        <div class="checkpoint" data-checkpoint="status">
+          <strong>Visa status</strong>
+          <small>Pending. Track after interview or document submission.</small>
+        </div>
+      </div>
+    </article>
+
+    <div class="layout" style="margin-top: 22px;">
+      <section class="stack">
+        <article class="card">
+          <h2 class="section-title"><span class="icon">1</span>Current Filing Status</h2>
+          <p data-field="status-summary"><span class="placeholder">Write the latest status in plain language. Example: DS-160 source intake in progress; applicant review not yet complete.</span></p>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">2</span>Final DS-160 Filled Preview</h2>
+          <p class="small">Clean final values grouped by DS-160-style order. Use this section for form entry after user review.</p>
+
+          <section class="preview-section" data-section="case-setup">
+            <div class="preview-heading"><span class="preview-index">00</span><h3>Application / Case Setup</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Applicant label</b>{{APPLICANT_LABEL}}</div>
+              <div class="preview-item"><b>Visa class</b>{{VISA_TYPE}}</div>
+              <div class="preview-item"><b>Application location</b>{{APPLICATION_LOCATION}}</div>
+              <div class="preview-item"><b>CEAC application ID</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Security question / answer</b><span class="placeholder">Pending or intentionally not stored</span></div>
+              <div class="preview-item"><b>Official source review</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="personal">
+            <div class="preview-heading"><span class="preview-index">01</span><h3>Personal Information</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Full name as passport</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Native alphabet name</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Other names used</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Telecodes</b><span class="placeholder">Pending / Does Not Apply</span></div>
+              <div class="preview-item"><b>Sex / marital status</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Date and place of birth</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Nationality and residence</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>National ID / SSN / ITIN</b><span class="placeholder">Pending / Does Not Apply</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="travel">
+            <div class="preview-heading"><span class="preview-index">02</span><h3>Travel Information</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Purpose of trip</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Intended arrival / departure</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Places to visit</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>U.S. address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Trip payer</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Travel companions</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="previous-us">
+            <div class="preview-heading"><span class="preview-index">03</span><h3>Previous U.S. Travel / Visa History</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Previous U.S. visits</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Previous U.S. visas</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Refusals / withdrawals</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Visa lost, stolen, cancelled, revoked</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Immigrant petition</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>U.S. driver license</b><span class="placeholder">Pending / Does Not Apply</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="contact">
+            <div class="preview-heading"><span class="preview-index">04</span><h3>Address, Phone, Email, Social Media</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Home address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Mailing address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Phone numbers</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Email addresses</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Social media identifiers</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Additional contact notes</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="passport">
+            <div class="preview-heading"><span class="preview-index">05</span><h3>Passport Information</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Passport number</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Passport book number</b><span class="placeholder">Pending / Does Not Apply</span></div>
+              <div class="preview-item"><b>Issuance date / place</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Expiration date</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Lost or stolen passport</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Photo status</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="us-contact">
+            <div class="preview-heading"><span class="preview-index">06</span><h3>U.S. Contact</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Contact person / organization</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Relationship</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Phone / email</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="family">
+            <div class="preview-heading"><span class="preview-index">07</span><h3>Family</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Father</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Mother</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Spouse / former spouse</b><span class="placeholder">Pending / Does Not Apply</span></div>
+              <div class="preview-item"><b>Relatives in the United States</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="work-education">
+            <div class="preview-heading"><span class="preview-index">08</span><h3>Work, Education, Training</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Present occupation</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Current employer or school</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Monthly income / start date</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Current duties</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Previous employment</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Education after elementary level</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Languages / organizations</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Specialized training / service</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="security">
+            <div class="preview-heading"><span class="preview-index">09</span><h3>Security / Background</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Health and drug-related questions</b><span class="placeholder">Pending user confirmation</span></div>
+              <div class="preview-item"><b>Criminal and law-enforcement questions</b><span class="placeholder">Pending user confirmation</span></div>
+              <div class="preview-item"><b>Security, terrorism, conflict questions</b><span class="placeholder">Pending user confirmation</span></div>
+              <div class="preview-item"><b>Immigration violations and fraud questions</b><span class="placeholder">Pending user confirmation</span></div>
+              <div class="preview-item"><b>Work, study, immigration intent boundary</b><span class="placeholder">Pending user confirmation</span></div>
+              <div class="preview-item"><b>Applicant review gate</b><span class="placeholder">Not reviewed</span></div>
+            </div>
+          </section>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">S</span>Source: Collected Answers</h2>
+          <p class="small">Raw answers, search notes, document-derived facts, and applicant confirmations. Keep this section as provenance; do not use it as the final display.</p>
+          <div class="answer-log">
+            <div class="answer"><b>Q1. Privacy mode and visa type</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q2. Application location and case setup</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q3-Q10. Personal information</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q11-Q20. Travel information</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q21-Q30. Previous U.S. travel and visas</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q31-Q40. Contact and passport</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q41-Q50. U.S. contact and family</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q51-Q65. Work, education, and training</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q66-Q80. Security and background</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q81+. Submission, payment, appointment, status</b><span class="placeholder">Pending</span></div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="stack">
+        <article class="card">
+          <h2 class="section-title"><span class="icon">3</span>DS-160 Coverage Map</h2>
+          <div class="todo-list">
+            <div class="todo"><span class="box"></span><span>Privacy and local storage choice confirmed</span><span class="status active">open</span></div>
+            <div class="todo"><span class="box"></span><span>Visa class and application location confirmed</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Personal, passport, contact fields complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Travel, U.S. contact, family fields complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Work, education, and training fields complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Security/background questions confirmed</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Applicant reviewed final preview</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>DS-160 submitted and confirmation saved</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Fee paid and receipt saved</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Interview scheduled and status tracked</span><span class="status">pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">4</span>Final Field Details</h2>
+          <p class="small">Use this for extra details that support the final preview.</p>
+          <div class="field-grid">
+            <div class="field"><b>Documents reviewed</b><span class="placeholder">Pending</span></div>
+            <div class="field"><b>Official pages checked</b><span class="placeholder">Pending</span></div>
+            <div class="field"><b>Known blanks</b><span class="placeholder">Pending</span></div>
+            <div class="field"><b>Risk notes</b><span class="placeholder">Pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">O</span>Official Sources</h2>
+          <div class="source-list">
+            <div class="source-item">
+              <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application.html">DS-160: Online Nonimmigrant Visa Application</a>
+              <p class="small">State Department DS-160 overview and next-step guidance.</p>
+            </div>
+            <div class="source-item">
+              <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html.html">DS-160 Frequently Asked Questions</a>
+              <p class="small">State Department DS-160 help topics and retrieval guidance.</p>
+            </div>
+            <div class="source-item">
+              <a href="https://ceac.state.gov/genniv/">CEAC DS-160 Start Page</a>
+              <p class="small">Official DS-160 start and retrieve page.</p>
+            </div>
+            <div class="source-item">
+              <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html">Visitor Visa</a>
+              <p class="small">State Department B-1, B-2, and B-1/B-2 overview.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">N</span>Working Notes</h2>
+          <div class="pill-row">
+            <span class="pill">HTML is source of truth</span>
+            <span class="pill">Final preview first</span>
+            <span class="pill">Source answers second</span>
+            <span class="pill">Applicant submits</span>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
