@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --paper: #ffffff;
+      --ink: #2f3437;
+      --muted: #6f767a;
+      --line: #e7e4dd;
+      --soft: #f1f0eb;
+      --accent: #276ef1;
+      --green: #0f7b6c;
+      --yellow: #b07800;
+      --red: #c83f49;
+      --shadow: 0 18px 60px rgba(39, 38, 34, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--accent); text-decoration: none; overflow-wrap: anywhere; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 52px 24px 88px;
+    }
+
+    .hero { margin-bottom: 28px; }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .notice {
+      background: #fffaf0;
+      border: 1px solid #f0dfb4;
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #5b4617;
+      margin: 22px 0;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 22px;
+      align-items: start;
+      margin-top: 22px;
+    }
+
+    .stack { display: grid; gap: 14px; }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .section-title .icon {
+      width: 28px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 6px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .progress-meta,
+    .preview-grid,
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .progress-meta { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .meta-item,
+    .preview-item,
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfbfa;
+      padding: 11px 12px;
+      min-height: 68px;
+      overflow-wrap: anywhere;
+    }
+
+    .meta-item b,
+    .preview-item b,
+    .field b {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 5px;
+      font-weight: 650;
+    }
+
+    .placeholder { color: #98938b; }
+
+    .progress-meter {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      margin: 20px 0 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .progress-meter span {
+      display: block;
+      width: var(--progress, 0%);
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--accent));
+      border-radius: inherit;
+    }
+
+    .checkpoint-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .checkpoint {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfbfa;
+      padding: 12px 12px 12px 36px;
+      min-height: 92px;
+    }
+
+    .checkpoint::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 15px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      border: 2px solid #b6b0a6;
+      background: #fff;
+    }
+
+    .checkpoint.done::before { border-color: var(--green); background: var(--green); }
+    .checkpoint.active { border-color: #c9d8ff; background: #f5f8ff; }
+    .checkpoint.active::before {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(39, 110, 241, 0.12);
+    }
+
+    .checkpoint strong { display: block; margin-bottom: 4px; font-size: 14px; }
+    .checkpoint small { color: var(--muted); font-size: 12px; line-height: 1.45; display: block; }
+
+    .preview-section {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+
+    .preview-section:first-of-type { border-top: 0; padding-top: 0; }
+
+    .preview-heading {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .preview-index { color: var(--accent); font-weight: 750; font-size: 13px; }
+    .preview-heading h3 { margin: 0; font-size: 17px; }
+
+    .answer-log,
+    .todo-list,
+    .source-list,
+    .issue-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .answer,
+    .issue {
+      border-left: 4px solid var(--line);
+      background: #fbfbfa;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .issue { border-left-color: #edc86e; background: #fffaf0; }
+    .answer b, .issue b { display: block; margin-bottom: 4px; }
+
+    .todo {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+      padding: 9px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .todo:first-child { border-top: 0; }
+
+    .box {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid #b6b0a6;
+      border-radius: 4px;
+      margin-top: 3px;
+      background: #fff;
+    }
+
+    .status {
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+    }
+
+    .status.done { color: #0c6155; border-color: #c9e7df; background: #edf8f5; }
+    .status.active { color: #173e85; border-color: #c9d8ff; background: #eef4ff; }
+    .status.blocked { color: #8e3a27; border-color: #efc6bb; background: #fff2ee; }
+
+    .source-item { border-top: 1px solid var(--line); padding-top: 10px; }
+    .source-item:first-child { border-top: 0; padding-top: 0; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--muted);
+      padding: 4px 10px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .layout,
+      .progress-meta,
+      .checkpoint-row,
+      .preview-grid,
+      .field-grid { grid-template-columns: 1fr; }
+      .page { padding: 34px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">{{DESTINATION}} / {{VISA_TYPE}} / {{FORM_NAME}}</div>
+      <h1>{{TITLE}}</h1>
+      <p class="subtitle">A local working page for official-source research, final application values, supporting documents, raw answers, and progress. Use the final preview for form entry; keep collected answers as provenance.</p>
+    </header>
+
+    <div class="notice">
+      This page may contain passport, immigration, financial, family, health, and security information. Keep it local unless the applicant explicitly chooses another storage mode. Official requirements can change; recheck the linked government sources before filing.
+    </div>
+
+    <article class="card">
+      <h2 class="section-title"><span class="icon">P</span>Visa Process Progress</h2>
+      <p class="small">Update checkpoints and generated identifiers after every portal milestone.</p>
+      <div class="progress-meta">
+        <div class="meta-item" data-field="destination"><b>Destination</b>{{DESTINATION}}</div>
+        <div class="meta-item" data-field="visa-type"><b>Visa type / route</b>{{VISA_TYPE}}</div>
+        <div class="meta-item" data-field="form-name"><b>Form / portal</b>{{FORM_NAME}}</div>
+        <div class="meta-item" data-field="application-location"><b>Application location</b>{{APPLICATION_LOCATION}}</div>
+        <div class="meta-item" data-field="privacy-mode"><b>Privacy mode</b>{{PRIVACY_MODE}}</div>
+        <div class="meta-item" data-field="source-verified"><b>Official source status</b>{{SOURCE_VERIFICATION_STATUS}}</div>
+        <div class="meta-item" data-field="application-id"><b>Application / case ID</b><span class="placeholder">Pending</span></div>
+        <div class="meta-item" data-field="generated-at"><b>Generated</b>{{GENERATED_AT}}</div>
+      </div>
+      <div class="progress-meter" style="--progress: 0%;"><span></span></div>
+      <div class="checkpoint-row">
+        <div class="checkpoint active" data-checkpoint="research"><strong>Research</strong><small>Resolve route and current official sources.</small></div>
+        <div class="checkpoint" data-checkpoint="intake"><strong>Intake</strong><small>Collect and normalize required answers.</small></div>
+        <div class="checkpoint" data-checkpoint="documents"><strong>Documents</strong><small>Prepare required and conditional evidence.</small></div>
+        <div class="checkpoint" data-checkpoint="application"><strong>Application</strong><small>Review, enter, and submit the official form.</small></div>
+        <div class="checkpoint" data-checkpoint="fee"><strong>Fee</strong><small>Record payment status and receipt.</small></div>
+        <div class="checkpoint" data-checkpoint="appointment"><strong>Appointment</strong><small>Track biometrics, interview, or document submission.</small></div>
+        <div class="checkpoint" data-checkpoint="decision"><strong>Decision</strong><small>Track requests and application status.</small></div>
+        <div class="checkpoint" data-checkpoint="return"><strong>Visa / passport</strong><small>Record issuance and passport return.</small></div>
+      </div>
+    </article>
+
+    <div class="layout">
+      <section class="stack">
+        <article class="card">
+          <h2 class="section-title"><span class="icon">1</span>Current Filing Status</h2>
+          <p data-field="status-summary"><span class="placeholder">Write the latest status, next action, owner, and deadline in plain language.</span></p>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">2</span>Final Visa Application Preview</h2>
+          <p class="small">Clean final values in application order. Country adapters may add, remove, or reorder sections.</p>
+
+          <section class="preview-section" data-section="routing">
+            <div class="preview-heading"><span class="preview-index">00</span><h3>Route And Source Snapshot</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Applicant label</b>{{APPLICANT_LABEL}}</div>
+              <div class="preview-item"><b>Destination</b>{{DESTINATION}}</div>
+              <div class="preview-item"><b>Visa / authorization route</b>{{VISA_TYPE}}</div>
+              <div class="preview-item"><b>Form / portal</b>{{FORM_NAME}}</div>
+              <div class="preview-item"><b>Nationality / applicant status</b>{{NATIONALITY}}</div>
+              <div class="preview-item"><b>Travel document</b>{{PASSPORT_TYPE}} / issuer: {{TRAVEL_DOCUMENT_ISSUER}}</div>
+              <div class="preview-item"><b>Legal residence / status</b>{{LEGAL_RESIDENCE}} / {{RESIDENCE_STATUS}}</div>
+              <div class="preview-item"><b>Application location / responsible post</b>{{APPLICATION_LOCATION}} / <span class="placeholder">post pending</span></div>
+              <div class="preview-item"><b>Travel purpose</b>{{TRAVEL_PURPOSE}}</div>
+              <div class="preview-item"><b>Official source</b><a href="{{OFFICIAL_SOURCE_HREF}}">{{OFFICIAL_SOURCE_URL}}</a></div>
+              <div class="preview-item"><b>Source status</b>{{SOURCE_VERIFICATION_STATUS}}</div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="identity-passport">
+            <div class="preview-heading"><span class="preview-index">01</span><h3>Identity And Passport</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Name as passport</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Other / native-script name</b><span class="placeholder">Pending / Not requested</span></div>
+              <div class="preview-item"><b>Date and place of birth</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Nationality / national ID</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Passport number / type</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Issue / expiry / issuing authority</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Other or previous passports</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Photo / biometrics status</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="contact-residence">
+            <div class="preview-heading"><span class="preview-index">02</span><h3>Contact And Residence</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Current address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Permanent / mailing address</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Phone and email</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Residence status</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Social accounts</b><span class="placeholder">Only if officially requested</span></div>
+              <div class="preview-item"><b>Emergency contact</b><span class="placeholder">Pending / Not requested</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="trip">
+            <div class="preview-heading"><span class="preview-index">03</span><h3>Trip And Travel</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Purpose and activities</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Arrival / departure / duration</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Entries and border points</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Itinerary</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Accommodation</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Travel companions</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="host-funding">
+            <div class="preview-heading"><span class="preview-index">04</span><h3>Host, Sponsor, And Funding</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Host / inviting organization</b><span class="placeholder">Pending / Not applicable</span></div>
+              <div class="preview-item"><b>Host contact and relationship</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Trip payer / sponsor</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Budget / available funds</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Insurance</b><span class="placeholder">Pending / Not required</span></div>
+              <div class="preview-item"><b>Funding evidence</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="work-education">
+            <div class="preview-heading"><span class="preview-index">05</span><h3>Work And Education</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Current occupation</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Employer / school</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Start date / income / course</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Duties / field of study</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Previous work / education</b><span class="placeholder">Pending / Not requested</span></div>
+              <div class="preview-item"><b>Leave / return ties</b><span class="placeholder">Pending / Not requested</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="family">
+            <div class="preview-heading"><span class="preview-index">06</span><h3>Family And Relationships</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Parents</b><span class="placeholder">Pending / Not requested</span></div>
+              <div class="preview-item"><b>Spouse / partner</b><span class="placeholder">Pending / Not applicable</span></div>
+              <div class="preview-item"><b>Children / dependants</b><span class="placeholder">Pending / Not applicable</span></div>
+              <div class="preview-item"><b>Family in destination</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="history">
+            <div class="preview-heading"><span class="preview-index">07</span><h3>Travel And Immigration History</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Previous destination-country travel</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Recent international travel</b><span class="placeholder">Pending / Not requested</span></div>
+              <div class="preview-item"><b>Previous visas / permits</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Refusals / cancellations / removals</b><span class="placeholder">Pending applicant confirmation</span></div>
+              <div class="preview-item"><b>Overstays / status violations</b><span class="placeholder">Pending applicant confirmation</span></div>
+              <div class="preview-item"><b>Other immigration history</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="visa-specific">
+            <div class="preview-heading"><span class="preview-index">08</span><h3>Visa-Type Specific</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Official route-specific fields</b><span class="placeholder">Load from country adapter</span></div>
+              <div class="preview-item"><b>Petition / enrollment / invitation reference</b><span class="placeholder">Pending / Not applicable</span></div>
+              <div class="preview-item"><b>Route-specific eligibility</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Route-specific evidence</b><span class="placeholder">Pending</span></div>
+            </div>
+          </section>
+
+          <section class="preview-section" data-section="security-declaration">
+            <div class="preview-heading"><span class="preview-index">09</span><h3>Security And Declarations</h3></div>
+            <div class="preview-grid">
+              <div class="preview-item"><b>Health / criminal / security questions</b><span class="placeholder">Ask exactly as official form requires</span></div>
+              <div class="preview-item"><b>Immigration and fraud questions</b><span class="placeholder">Pending applicant confirmation</span></div>
+              <div class="preview-item"><b>Translations / declarations</b><span class="placeholder">Pending</span></div>
+              <div class="preview-item"><b>Applicant review gate</b><span class="placeholder">Not reviewed</span></div>
+            </div>
+          </section>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">S</span>Source: Collected Answers</h2>
+          <p class="small">Raw wording, document-derived facts, search notes, and applicant confirmations. Keep provenance and dates.</p>
+          <div class="answer-log">
+            <div class="answer"><b>Q1-Q5. Routing and privacy</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q6-Q15. Identity and passport</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q16-Q25. Contact, residence, and trip</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q26-Q35. Host, sponsor, and funding</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q36-Q50. Work, education, and family</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q51-Q65. Travel and immigration history</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Q66+. Country and visa-type overlay</b><span class="placeholder">Pending</span></div>
+            <div class="answer"><b>Portal milestones</b><span class="placeholder">Pending</span></div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="stack">
+        <article class="card">
+          <h2 class="section-title"><span class="icon">D</span>Document Checklist</h2>
+          <div class="todo-list">
+            <div class="todo"><span class="box"></span><span>Passport / travel document</span><span class="status active">open</span></div>
+            <div class="todo"><span class="box"></span><span>Application photo / biometrics</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Itinerary / accommodation</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Funding / sponsor evidence</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Employment / enrollment evidence</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Country and route-specific evidence</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Translations / legalization</span><span class="status">pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">C</span>Application Coverage</h2>
+          <div class="todo-list">
+            <div class="todo"><span class="box"></span><span>Visa route and responsible post resolved</span><span class="status active">open</span></div>
+            <div class="todo"><span class="box"></span><span>Official source snapshot current</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Core intake complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Country / visa overlay complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Documents ready</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Applicant reviewed final preview</span><span class="status">pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">!</span>Open Issues</h2>
+          <div class="issue-list">
+            <div class="issue"><b>Route confirmation</b><span class="placeholder">Pending official verification</span></div>
+            <div class="issue"><b>Missing fields</b><span class="placeholder">Pending</span></div>
+            <div class="issue"><b>Source conflicts / stale pages</b><span class="placeholder">None recorded</span></div>
+            <div class="issue"><b>Applicant decisions</b><span class="placeholder">Pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">O</span>Official Sources</h2>
+          <div class="source-list">
+            <div class="source-item" data-source="primary">
+              <a href="{{OFFICIAL_SOURCE_HREF}}">Primary official source</a>
+              <p class="small">Authority, page purpose, and checked date: pending.</p>
+            </div>
+            <div class="source-item" data-source="local-post">
+              <span class="placeholder">Responsible embassy / consulate page: pending</span>
+            </div>
+            <div class="source-item" data-source="portal">
+              <span class="placeholder">Official application / status portal: pending</span>
+            </div>
+            <div class="source-item" data-source="delegated-provider">
+              <span class="placeholder">Delegated visa centre logistics: pending / not applicable</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">N</span>Working Rules</h2>
+          <div class="pill-row">
+            <span class="pill">HTML is source of truth</span>
+            <span class="pill">Official sources first</span>
+            <span class="pill">Final preview before entry</span>
+            <span class="pill">Applicant submits</span>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

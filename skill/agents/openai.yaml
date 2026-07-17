@@ -1,7 +1,7 @@
 interface:
-  display_name: "US Visa Apply"
-  short_description: "Prepare and track DS-160 visa filings."
-  default_prompt: "Use $us-visa-apply to prepare a local DS-160 information dossier for my visa application."
+  display_name: "Visa Apply"
+  short_description: "Research, prepare, and track visa applications."
+  default_prompt: "Use $visa-apply to prepare a local visa application dossier for my destination and visa type."
 
 policy:
   allow_implicit_invocation: true

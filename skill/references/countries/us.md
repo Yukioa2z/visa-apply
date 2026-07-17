@@ -1,4 +1,8 @@
-# US Visa Apply Workflow
+# United States Adapter: DS-160
+
+Support level: `full_adapter`
+
+Use for U.S. nonimmigrant and K visa applications that use DS-160. Resolve the interview post and country-specific scheduling/payment instructions from the responsible U.S. embassy or consulate before filing.
 
 ## Ground Rules
 
