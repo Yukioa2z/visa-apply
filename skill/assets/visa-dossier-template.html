@@ -310,6 +310,27 @@
       This page may contain passport, immigration, financial, family, health, and security information. Keep it local unless the applicant explicitly chooses another storage mode. Official requirements can change; recheck the linked government sources before filing.
     </div>
 
+    <article class="card" data-section="live-route-check">
+      <h2 class="section-title"><span class="icon">R</span>Live Visa Need And Entry Route Check</h2>
+      <p class="small">Resolve this before detailed form intake. A directory entry or cached source never proves that a visa is required or waived.</p>
+      <div class="preview-grid">
+        <div class="preview-item"><b>Current route verdict</b>{{ROUTE_VERDICT}}</div>
+        <div class="preview-item"><b>Decision basis</b>{{NATIONALITY}} / {{PASSPORT_TYPE}} issued by {{TRAVEL_DOCUMENT_ISSUER}}</div>
+        <div class="preview-item"><b>Arrival / duration / entries</b>{{ARRIVAL_DATE}} / {{TRIP_DURATION}} / {{ENTRY_COUNT}}</div>
+        <div class="preview-item"><b>Arrival mode / entry point</b>{{ARRIVAL_MODE}} / <span class="placeholder">entry point pending</span></div>
+        <div class="preview-item"><b>Transit / self-transfer</b>{{TRANSIT_ROUTE}}</div>
+        <div class="preview-item"><b>Existing visas / residence permits</b>{{EXISTING_ENTRY_RIGHTS}}</div>
+        <div class="preview-item"><b>Official rule source</b><a href="{{OFFICIAL_SOURCE_HREF}}">{{OFFICIAL_SOURCE_URL}}</a></div>
+        <div class="preview-item"><b>Live checked at</b>{{LIVE_CHECKED_AT}}</div>
+        <div class="preview-item"><b>Policy effective dates</b><span class="placeholder">Pending live verification</span></div>
+        <div class="preview-item"><b>Maximum stay / permitted activities</b><span class="placeholder">Pending live verification</span></div>
+        <div class="preview-item"><b>Entry conditions</b><span class="placeholder">Passport validity, onward travel, funds, insurance, accommodation, registration: pending</span></div>
+        <div class="preview-item"><b>Carrier / Timatic cross-check</b><span class="placeholder">Pending; operational check only</span></div>
+        <div class="preview-item"><b>Conflicts / exceptions</b><span class="placeholder">Pending</span></div>
+        <div class="preview-item"><b>Recheck due</b>{{RECHECK_DUE}}</div>
+      </div>
+    </article>
+
     <article class="card">
       <h2 class="section-title"><span class="icon">P</span>Visa Process Progress</h2>
       <p class="small">Update checkpoints and generated identifiers after every portal milestone.</p>
@@ -321,11 +342,12 @@
         <div class="meta-item" data-field="privacy-mode"><b>Privacy mode</b>{{PRIVACY_MODE}}</div>
         <div class="meta-item" data-field="source-verified"><b>Official source status</b>{{SOURCE_VERIFICATION_STATUS}}</div>
         <div class="meta-item" data-field="application-id"><b>Application / case ID</b><span class="placeholder">Pending</span></div>
+        <div class="meta-item" data-field="support-case"><b>Portal account / support case</b><span class="placeholder">Pending / not applicable</span></div>
         <div class="meta-item" data-field="generated-at"><b>Generated</b>{{GENERATED_AT}}</div>
       </div>
       <div class="progress-meter" style="--progress: 0%;"><span></span></div>
       <div class="checkpoint-row">
-        <div class="checkpoint active" data-checkpoint="research"><strong>Research</strong><small>Resolve route and current official sources.</small></div>
+        <div class="checkpoint active" data-checkpoint="eligibility"><strong>Visa need check</strong><small>Resolve the current route, conditions, transit, and sources.</small></div>
         <div class="checkpoint" data-checkpoint="intake"><strong>Intake</strong><small>Collect and normalize required answers.</small></div>
         <div class="checkpoint" data-checkpoint="documents"><strong>Documents</strong><small>Prepare required and conditional evidence.</small></div>
         <div class="checkpoint" data-checkpoint="application"><strong>Application</strong><small>Review, enter, and submit the official form.</small></div>
@@ -503,11 +525,28 @@
           <h2 class="section-title"><span class="icon">C</span>Application Coverage</h2>
           <div class="todo-list">
             <div class="todo"><span class="box"></span><span>Visa route and responsible post resolved</span><span class="status active">open</span></div>
+            <div class="todo"><span class="box"></span><span>Live visa-free / ETA / eVisa / VOA / visa check complete</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Transit and self-transfer rules checked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Carrier / Timatic operational check complete</span><span class="status">pending</span></div>
             <div class="todo"><span class="box"></span><span>Official source snapshot current</span><span class="status">pending</span></div>
             <div class="todo"><span class="box"></span><span>Core intake complete</span><span class="status">pending</span></div>
             <div class="todo"><span class="box"></span><span>Country / visa overlay complete</span><span class="status">pending</span></div>
             <div class="todo"><span class="box"></span><span>Documents ready</span><span class="status">pending</span></div>
             <div class="todo"><span class="box"></span><span>Applicant reviewed final preview</span><span class="status">pending</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="section-title"><span class="icon">Q</span>Quality And Deadline Checks</h2>
+          <div class="todo-list">
+            <div class="todo"><span class="box"></span><span>Identity, dates, itinerary, and evidence are consistent</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Passport validity, blank pages, and evidence expiry checked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Translations, certification, legalization, and upload limits checked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Government/service fees, currency, refund rules, and receipt validity checked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Prior cases, fee reuse, duplicate profiles, account locks, and support cases checked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Deadlines, time zones, appointments, and processing dependencies tracked</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Minor, medical, police, sponsor, and guardian branches resolved</span><span class="status">pending</span></div>
+            <div class="todo"><span class="box"></span><span>Issued visa/eVisa and post-arrival obligations reviewed</span><span class="status">pending</span></div>
           </div>
         </article>
 
@@ -518,6 +557,7 @@
             <div class="issue"><b>Missing fields</b><span class="placeholder">Pending</span></div>
             <div class="issue"><b>Source conflicts / stale pages</b><span class="placeholder">None recorded</span></div>
             <div class="issue"><b>Applicant decisions</b><span class="placeholder">Pending</span></div>
+            <div class="issue"><b>Portal / account / support cases</b><span class="placeholder">None recorded</span></div>
           </div>
         </article>
 
@@ -537,6 +577,10 @@
             <div class="source-item" data-source="delegated-provider">
               <span class="placeholder">Delegated visa centre logistics: pending / not applicable</span>
             </div>
+            <div class="source-item" data-source="operational-cross-check">
+              <a href="https://www.iata.org/en/services/compliance/timatic/travel-documentation/">IATA Travel Centre / Timatic</a>
+              <p class="small">Carrier boarding cross-check only; it does not replace destination-government rules.</p>
+            </div>
           </div>
         </article>
 
@@ -545,6 +589,8 @@
           <div class="pill-row">
             <span class="pill">HTML is source of truth</span>
             <span class="pill">Official sources first</span>
+            <span class="pill">No static visa verdict</span>
+            <span class="pill">Transit checked separately</span>
             <span class="pill">Final preview before entry</span>
             <span class="pill">Applicant submits</span>
           </div>

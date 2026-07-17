@@ -22,6 +22,8 @@ For each route record:
 - online, paper, in-person, or hybrid process
 - form/application portal
 - fee, biometrics, appointment, interview, and status channels
+- visa-free, ETA, eVisa, visa-on-arrival, transit, and residence-permit substitution branches
+- policy effective dates, freshness trigger, and carrier/Timatic operational cross-check
 
 ## Question Overlay
 

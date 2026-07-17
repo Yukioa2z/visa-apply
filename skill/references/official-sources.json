@@ -577,6 +577,234 @@
         }
       ],
       "notes": "Resolve the responsible Brazilian consular post; requirements vary by nationality and place of application."
+    },
+    {
+      "id": "hk",
+      "iso2": "HK",
+      "name": "Hong Kong",
+      "region": "Asia",
+      "aliases": ["hong kong sar", "hksar"],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Visit and transit",
+          "url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
+          "authority": "Hong Kong Immigration Department",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_waiver", "visit", "transit", "documents", "apply", "extension"]
+        }
+      ]
+    },
+    {
+      "id": "mo",
+      "iso2": "MO",
+      "name": "Macau",
+      "region": "Asia",
+      "aliases": ["macao", "macau sar"],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Immigration clearance of non-residents",
+          "url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
+          "authority": "Macao Public Security Police Force",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_exemption", "prior_authorization", "visa_on_arrival", "passport_validity", "fees"]
+        }
+      ]
+    },
+    {
+      "id": "tw",
+      "iso2": "TW",
+      "name": "Taiwan",
+      "region": "Asia",
+      "aliases": ["roc", "republic of china"],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Taiwan visa information",
+          "url": "https://www.boca.gov.tw/np-137-2.html",
+          "authority": "Bureau of Consular Affairs, Ministry of Foreign Affairs",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_exempt", "landing_visa", "evisa", "visitor", "resident", "study", "work"]
+        },
+        {
+          "label": "Taiwan online visa application",
+          "url": "https://visawebapp.boca.gov.tw/BOCA_EVISA/MRV04FORM.doYou",
+          "authority": "Bureau of Consular Affairs, Ministry of Foreign Affairs",
+          "roles": ["official_application"],
+          "covers": ["evisa", "application"]
+        }
+      ]
+    },
+    {
+      "id": "ph",
+      "iso2": "PH",
+      "name": "Philippines",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Philippine visa policy and eVisa",
+          "url": "https://evisa.gov.ph/page/policy?l2=Free+to+enter+the+Philippines+without+Visa",
+          "authority": "Department of Foreign Affairs of the Philippines",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_free", "nationality_exceptions", "entry_ports", "transit", "visa_types", "evisa"]
+        }
+      ]
+    },
+    {
+      "id": "kh",
+      "iso2": "KH",
+      "name": "Cambodia",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Cambodia eVisa",
+          "url": "https://www.evisa.gov.kh/",
+          "authority": "Ministry of Foreign Affairs and International Cooperation of Cambodia",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["evisa", "eligibility", "entry_ports", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "la",
+      "iso2": "LA",
+      "name": "Laos",
+      "region": "Asia",
+      "aliases": ["lao pdr"],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Lao eVisa",
+          "url": "https://laoevisa.gov.la/",
+          "authority": "Lao Immigration Department",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["evisa", "eligibility", "documents", "processing", "fees", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "mm",
+      "iso2": "MM",
+      "name": "Myanmar",
+      "region": "Asia",
+      "aliases": ["burma"],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Myanmar eVisa",
+          "url": "https://evisa.moip.gov.mm/",
+          "authority": "Ministry of Immigration and Population of Myanmar",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["tourist", "business", "eligibility", "entry_ports", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "np",
+      "iso2": "NP",
+      "name": "Nepal",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Nepal visa on arrival",
+          "url": "https://www.immigration.gov.np/en/page/visa-on-arrival",
+          "authority": "Department of Immigration of Nepal",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_on_arrival", "exemptions", "fees", "duration", "entry_process"]
+        }
+      ]
+    },
+    {
+      "id": "lk",
+      "iso2": "LK",
+      "name": "Sri Lanka",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Sri Lanka ETA",
+          "url": "https://www.eta.gov.lk/slvisa/",
+          "authority": "Department of Immigration and Emigration of Sri Lanka",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["eta", "eligibility", "fees", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "pk",
+      "iso2": "PK",
+      "name": "Pakistan",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Pakistan online visa",
+          "url": "https://visa.nadra.gov.pk/",
+          "authority": "Government of Pakistan",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa_types", "eligibility", "documents", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "bd",
+      "iso2": "BD",
+      "name": "Bangladesh",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Bangladesh online visa application",
+          "url": "https://visa.gov.bd/",
+          "authority": "Department of Immigration and Passports of Bangladesh",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa", "extension", "no_visa_required", "visa_on_arrival", "fees", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "mn",
+      "iso2": "MN",
+      "name": "Mongolia",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Mongolia eVisa",
+          "url": "https://evisa.mn/",
+          "authority": "Government of Mongolia",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa_free", "evisa", "visa_countries", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "ke",
+      "iso2": "KE",
+      "name": "Kenya",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "sources": [
+        {
+          "label": "Kenya Electronic Travel Authorisation",
+          "url": "https://www.etakenya.go.ke/",
+          "authority": "Directorate of Immigration Services of Kenya",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["eta", "eligibility", "exemptions", "requirements", "apply", "status"]
+        }
+      ]
     }
   ]
 }

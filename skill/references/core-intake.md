@@ -6,8 +6,10 @@ Ask only the sections required by the selected country adapter and visa type.
 
 - Destination; every current nationality, or stateless/refugee status
 - Travel-document type, issuing country/authority, and any nationality encoded by that document
+- Travel-document issue/expiry dates, blank pages, damage, and emergency/refugee-document status
 - Legal residence, residence status/expiry, current physical location, and intended application location
-- Purpose, dates, duration, entries, travel companions
+- Purpose, dates, duration, entries, arrival mode/port, travel companions
+- Every transit, self-transfer, airport change, baggage recheck, and overnight stop
 - Existing visas or residence permits that may change eligibility
 
 ## Identity And Passport
@@ -30,6 +32,7 @@ Ask only the sections required by the selected country adapter and visa type.
 
 - Purpose and intended activities
 - Arrival/departure, itinerary, entry/exit points
+- Airside/landside transit, self-transfer, airport change, and onward-entry permission
 - Accommodation and host/contact
 - Travel payer, budget, insurance, and transport reservations when relevant
 
@@ -60,3 +63,4 @@ Ask only the sections required by the selected country adapter and visa type.
 - Transit/crew: route, onward permission, carrier/vessel, role, layover
 - Medical: provider, treatment plan, cost, payer, medical records
 - Investment/startup: entity, ownership, funds, source of funds, business plan
+- Minor/dependant: guardian, consent/custody, accompanying adult, school and sponsor evidence

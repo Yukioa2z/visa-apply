@@ -1,6 +1,6 @@
 ---
 name: visa-apply
-description: Use when helping a user research, prepare, review, track, or fill a visa, travel authorization, eVisa, study permit, work permit, or related entry application for any destination country. Uses current official sources, country and visa-type question branching, a local HTML dossier as the single source of truth, document and progress tracking, and assisted browser/computer form entry after applicant review.
+description: Use when checking whether a traveler needs a visa, ETA, eVisa, visa on arrival, or transit authorization, or when researching, preparing, reviewing, tracking, or filling an entry application for any destination. Supports a 250-destination directory, mandatory current official-source verification for the exact passport/residence/itinerary, country and visa-type branching, a local HTML dossier as the single source of truth, and assisted browser/computer form entry after applicant review.
 ---
 
 # Visa Apply
@@ -17,12 +17,15 @@ This skill is not legal advice. The applicant must review every answer and handl
 2. Collect routing facts only: destination, all nationalities or stateless/refugee status, travel-document type and issuing country, legal residence and residence status, actual application location, purpose, dates/duration, and relevant existing visas or residence permits.
    - Never infer nationality, residence, consular jurisdiction, or form language from the user's location or preferred language.
    - Treat citizenship, legal residence, current physical location, and application location as separate facts.
-3. Resolve the official source set.
-   - Read `references/official-sources.json`.
-   - Run `python3 scripts/source_registry.py show <country>` when useful.
-   - Government immigration/foreign-ministry sources control requirements. Delegated visa centres control logistics only.
-   - Recheck current sources before relying on stored knowledge.
-4. Identify the route: visa-free, travel authorization, eVisa, consular visa, residence route, or unresolved.
+3. Run the mandatory live visa-need check before detailed intake.
+   - Read `references/live-route-check.md`.
+   - Resolve the destination in `references/jurisdictions.json`; cached starting sources are in `references/official-sources.json`.
+   - Run `python3 scripts/source_registry.py live-check-plan <country> ...` when useful.
+   - Browse current destination-government and responsible-mission sources for the exact passport, residence, purpose, dates, duration, entries, arrival mode, and transit itinerary.
+   - Cross-check IATA Travel Centre/Timatic or the operating carrier for boarding requirements. Treat it as operational evidence, not legal authority.
+   - Never reuse a static visa-free, ETA, eVisa, visa-on-arrival, or visa-required verdict.
+   - If live browsing is unavailable, leave the verdict unresolved and stop; do not substitute model memory.
+4. Stop at the route gate. Record the verdict, conditions, effective dates, transit result, sources, checked timestamp, conflicts, and recheck deadline in the HTML. If unresolved, keep it unresolved and name the next verification action.
 5. Build the question path.
    - Load `references/core-intake.md`.
    - Load the matching full adapter from `references/countries/` when available.
@@ -34,7 +37,7 @@ This skill is not legal advice. The applicant must review every answer and handl
    - Required evidence goes under `Document Checklist`.
    - Uncertainty stays visible under `Open Issues`.
    - No chat note or scratch file may become more authoritative than the HTML.
-8. Stop at the applicant review gate before portal entry. Call out inferred values, stale sources, missing documents, and unresolved conflicts.
+8. Run `references/quality-gates.md`, then stop at the applicant review gate before portal entry. Call out inferred values, stale sources, missing documents, expiring evidence, and unresolved conflicts.
 9. Assist with form entry using Browser or Computer Use after review.
    - In non-Codex environments, use the equivalent browser/computer capability, such as Peekaboo or the runtime's supported automation skill.
    - Never bypass CAPTCHA or security controls, invent data, or perform an applicant-only signature/certification.
@@ -54,7 +57,12 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
   --travel-document-issuer "Brazil" \
   --legal-residence "Japan" \
   --residence-status "Work permit holder" \
-  --purpose "Tourism"
+  --purpose "Tourism" \
+  --arrival-date "2026-10-01" \
+  --duration "14 days" \
+  --entries "Single" \
+  --arrival-mode "Air" \
+  --transit "Singapore, airside"
 ```
 
 ## References
@@ -62,5 +70,8 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
 - Full pipeline and source freshness rules: `references/pipeline.md`
 - Universal intake sections: `references/core-intake.md`
 - Country adapter format: `references/adapter-schema.md`
+- Mandatory live visa-need check: `references/live-route-check.md`
+- Submission, document, timing, and privacy gates: `references/quality-gates.md`
+- Searchable destination directory: `references/jurisdictions.json`
 - Official source registry: `references/official-sources.json`
 - United States DS-160 adapter: `references/countries/us.md`

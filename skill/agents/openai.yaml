@@ -1,7 +1,7 @@
 interface:
   display_name: "Visa Apply"
-  short_description: "Research, prepare, and track visa applications."
-  default_prompt: "Use $visa-apply to prepare a local visa application dossier for my destination and visa type."
+  short_description: "Check visa need, prepare, and track applications."
+  default_prompt: "Use $visa-apply to check my current entry route and prepare a local visa application dossier if needed."
 
 policy:
   allow_implicit_invocation: true

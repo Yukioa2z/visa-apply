@@ -9,7 +9,7 @@ from html import escape
 from pathlib import Path
 from urllib.parse import urlparse
 
-from source_registry import find_jurisdiction, load_registry
+from source_registry import find_destination, load_directory, load_registry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +38,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--legal-residence", default="Pending")
     parser.add_argument("--residence-status", default="Pending")
     parser.add_argument("--purpose", default="Pending")
+    parser.add_argument("--arrival-date", default="Pending")
+    parser.add_argument("--duration", default="Pending")
+    parser.add_argument("--entries", default="Pending")
+    parser.add_argument("--arrival-mode", default="Pending")
+    parser.add_argument("--transit", default="None declared")
+    parser.add_argument("--existing-entry-rights", default="None declared")
+    parser.add_argument("--route-verdict", default="Unresolved - live check required")
+    parser.add_argument("--live-checked-at", default="Pending")
+    parser.add_argument("--recheck-due", default="Before filing and again before departure")
     parser.add_argument("--official-source-url")
     return parser.parse_args()
 
@@ -50,40 +59,46 @@ def main() -> None:
     output = Path(args.output).expanduser().resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    jurisdiction = None
-    registry = None
+    destination_match = None
+    seed = None
+    registry = load_registry()
+    directory = load_directory()
     if args.country:
-        registry = load_registry()
-        jurisdiction = find_jurisdiction(registry, args.country)
-        if not jurisdiction:
+        result = find_destination(registry, directory, args.country)
+        if not result:
             raise SystemExit(
-                f"Unknown registry country: {args.country}. "
-                "Use source_registry.py list or pass --destination and --official-source-url."
+                f"Unknown destination: {args.country}. "
+                "Use source_registry.py list or pass --destination."
             )
+        destination_match, seed = result
 
     destination = args.destination or (
-        jurisdiction["name"] if jurisdiction else "Pending"
+        destination_match["name"] if destination_match else "Pending"
     )
     official_source_url = args.official_source_url
     if official_source_url:
         parsed_source = urlparse(official_source_url)
         if parsed_source.scheme != "https" or not parsed_source.netloc:
             raise SystemExit("--official-source-url must be an https URL")
-    if not official_source_url and jurisdiction:
+    if not official_source_url and seed:
         official_source_url = next(
             source["url"]
-            for source in jurisdiction["sources"]
+            for source in seed["sources"]
             if "authoritative_rules" in source["roles"]
         )
     official_source_url = official_source_url or "Pending official verification"
     official_source_href = (
         official_source_url if official_source_url.startswith("https://") else "#"
     )
-    source_status = (
-        f"Registry seeded {registry['last_verified']}; recheck before filing"
-        if registry
-        else "Pending official verification"
-    )
+    if seed:
+        source_status = (
+            f"Cached official seed checked {registry['last_verified']}; "
+            "mandatory live route check pending"
+        )
+    elif destination_match:
+        source_status = "Live official-source discovery required; no static visa verdict"
+    else:
+        source_status = "Pending destination and live official verification"
 
     title = args.title or f"{destination} Visa Application Dossier"
     replacements = {
@@ -100,6 +115,15 @@ def main() -> None:
         "{{LEGAL_RESIDENCE}}": args.legal_residence,
         "{{RESIDENCE_STATUS}}": args.residence_status,
         "{{TRAVEL_PURPOSE}}": args.purpose,
+        "{{ARRIVAL_DATE}}": args.arrival_date,
+        "{{TRIP_DURATION}}": args.duration,
+        "{{ENTRY_COUNT}}": args.entries,
+        "{{ARRIVAL_MODE}}": args.arrival_mode,
+        "{{TRANSIT_ROUTE}}": args.transit,
+        "{{EXISTING_ENTRY_RIGHTS}}": args.existing_entry_rights,
+        "{{ROUTE_VERDICT}}": args.route_verdict,
+        "{{LIVE_CHECKED_AT}}": args.live_checked_at,
+        "{{RECHECK_DUE}}": args.recheck_due,
         "{{OFFICIAL_SOURCE_URL}}": official_source_url,
         "{{OFFICIAL_SOURCE_HREF}}": official_source_href,
         "{{SOURCE_VERIFICATION_STATUS}}": source_status,

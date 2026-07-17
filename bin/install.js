@@ -64,4 +64,4 @@ fs.rmSync(destDir, { recursive: true, force: true });
 fs.cpSync(sourceDir, destDir, { recursive: true });
 
 console.log(`Installed ${skillName} to ${destDir}`);
-console.log(`Try: Use $${skillName} to prepare a visa application dossier.`);
+console.log(`Try: Use $${skillName} to check your visa need and prepare an application dossier.`);

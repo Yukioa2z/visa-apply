@@ -1,0 +1,1538 @@
+{
+  "schema_version": 1,
+  "last_refreshed": "2026-07-17",
+  "scope": "ISO 3166-1 countries and areas plus the user-assigned XK code for Kosovo",
+  "directory_sources": [
+    {
+      "label": "IANA tzdata ISO 3166 table",
+      "url": "https://data.iana.org/time-zones/tzdb/iso3166.tab"
+    },
+    {
+      "label": "ISO 3166 country codes",
+      "url": "https://www.iso.org/iso-3166-country-codes.html"
+    },
+    {
+      "label": "United Nations Member States",
+      "url": "https://www.un.org/en/about-us/member-states"
+    }
+  ],
+  "jurisdictions": [
+    {
+      "id": "ad",
+      "iso2": "AD",
+      "name": "Andorra",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ae",
+      "iso2": "AE",
+      "name": "United Arab Emirates",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "af",
+      "iso2": "AF",
+      "name": "Afghanistan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ag",
+      "iso2": "AG",
+      "name": "Antigua & Barbuda",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ai",
+      "iso2": "AI",
+      "name": "Anguilla",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "al",
+      "iso2": "AL",
+      "name": "Albania",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "am",
+      "iso2": "AM",
+      "name": "Armenia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ao",
+      "iso2": "AO",
+      "name": "Angola",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "aq",
+      "iso2": "AQ",
+      "name": "Antarctica",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ar",
+      "iso2": "AR",
+      "name": "Argentina",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "as",
+      "iso2": "AS",
+      "name": "American Samoa",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "at",
+      "iso2": "AT",
+      "name": "Austria",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "au",
+      "iso2": "AU",
+      "name": "Australia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "aw",
+      "iso2": "AW",
+      "name": "Aruba",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ax",
+      "iso2": "AX",
+      "name": "Åland Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "az",
+      "iso2": "AZ",
+      "name": "Azerbaijan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ba",
+      "iso2": "BA",
+      "name": "Bosnia & Herzegovina",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bb",
+      "iso2": "BB",
+      "name": "Barbados",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bd",
+      "iso2": "BD",
+      "name": "Bangladesh",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "be",
+      "iso2": "BE",
+      "name": "Belgium",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bf",
+      "iso2": "BF",
+      "name": "Burkina Faso",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bg",
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bh",
+      "iso2": "BH",
+      "name": "Bahrain",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bi",
+      "iso2": "BI",
+      "name": "Burundi",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bj",
+      "iso2": "BJ",
+      "name": "Benin",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bl",
+      "iso2": "BL",
+      "name": "St. Barthélemy",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bm",
+      "iso2": "BM",
+      "name": "Bermuda",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bn",
+      "iso2": "BN",
+      "name": "Brunei",
+      "aliases": ["Brunei Darussalam"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bo",
+      "iso2": "BO",
+      "name": "Bolivia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bq",
+      "iso2": "BQ",
+      "name": "Caribbean Netherlands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "br",
+      "iso2": "BR",
+      "name": "Brazil",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bs",
+      "iso2": "BS",
+      "name": "Bahamas",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bt",
+      "iso2": "BT",
+      "name": "Bhutan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bv",
+      "iso2": "BV",
+      "name": "Bouvet Island",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bw",
+      "iso2": "BW",
+      "name": "Botswana",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "by",
+      "iso2": "BY",
+      "name": "Belarus",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "bz",
+      "iso2": "BZ",
+      "name": "Belize",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ca",
+      "iso2": "CA",
+      "name": "Canada",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cc",
+      "iso2": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cd",
+      "iso2": "CD",
+      "name": "Democratic Republic of the Congo",
+      "aliases": ["DR Congo", "DRC", "Congo-Kinshasa"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cf",
+      "iso2": "CF",
+      "name": "Central African Republic",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cg",
+      "iso2": "CG",
+      "name": "Republic of the Congo",
+      "aliases": ["Congo", "Congo-Brazzaville"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ch",
+      "iso2": "CH",
+      "name": "Switzerland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ci",
+      "iso2": "CI",
+      "name": "Cote d'Ivoire",
+      "aliases": ["Ivory Coast"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ck",
+      "iso2": "CK",
+      "name": "Cook Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cl",
+      "iso2": "CL",
+      "name": "Chile",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cm",
+      "iso2": "CM",
+      "name": "Cameroon",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cn",
+      "iso2": "CN",
+      "name": "China",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "co",
+      "iso2": "CO",
+      "name": "Colombia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cr",
+      "iso2": "CR",
+      "name": "Costa Rica",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cu",
+      "iso2": "CU",
+      "name": "Cuba",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cv",
+      "iso2": "CV",
+      "name": "Cabo Verde",
+      "aliases": ["Cape Verde"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cw",
+      "iso2": "CW",
+      "name": "Curaçao",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cx",
+      "iso2": "CX",
+      "name": "Christmas Island",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cy",
+      "iso2": "CY",
+      "name": "Cyprus",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "cz",
+      "iso2": "CZ",
+      "name": "Czechia",
+      "aliases": ["Czech Republic"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "de",
+      "iso2": "DE",
+      "name": "Germany",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "dj",
+      "iso2": "DJ",
+      "name": "Djibouti",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "dk",
+      "iso2": "DK",
+      "name": "Denmark",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "dm",
+      "iso2": "DM",
+      "name": "Dominica",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "do",
+      "iso2": "DO",
+      "name": "Dominican Republic",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "dz",
+      "iso2": "DZ",
+      "name": "Algeria",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ec",
+      "iso2": "EC",
+      "name": "Ecuador",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ee",
+      "iso2": "EE",
+      "name": "Estonia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "eg",
+      "iso2": "EG",
+      "name": "Egypt",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "eh",
+      "iso2": "EH",
+      "name": "Western Sahara",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "er",
+      "iso2": "ER",
+      "name": "Eritrea",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "es",
+      "iso2": "ES",
+      "name": "Spain",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "et",
+      "iso2": "ET",
+      "name": "Ethiopia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fi",
+      "iso2": "FI",
+      "name": "Finland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fj",
+      "iso2": "FJ",
+      "name": "Fiji",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fk",
+      "iso2": "FK",
+      "name": "Falkland Islands (Islas Malvinas)",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fm",
+      "iso2": "FM",
+      "name": "Micronesia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fo",
+      "iso2": "FO",
+      "name": "Faroe Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "fr",
+      "iso2": "FR",
+      "name": "France",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ga",
+      "iso2": "GA",
+      "name": "Gabon",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gb",
+      "iso2": "GB",
+      "name": "United Kingdom",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gd",
+      "iso2": "GD",
+      "name": "Grenada",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ge",
+      "iso2": "GE",
+      "name": "Georgia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gf",
+      "iso2": "GF",
+      "name": "French Guiana",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gg",
+      "iso2": "GG",
+      "name": "Guernsey",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gh",
+      "iso2": "GH",
+      "name": "Ghana",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gi",
+      "iso2": "GI",
+      "name": "Gibraltar",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gl",
+      "iso2": "GL",
+      "name": "Greenland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gm",
+      "iso2": "GM",
+      "name": "Gambia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gn",
+      "iso2": "GN",
+      "name": "Guinea",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gp",
+      "iso2": "GP",
+      "name": "Guadeloupe",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gq",
+      "iso2": "GQ",
+      "name": "Equatorial Guinea",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gr",
+      "iso2": "GR",
+      "name": "Greece",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gs",
+      "iso2": "GS",
+      "name": "South Georgia & South Sandwich Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gt",
+      "iso2": "GT",
+      "name": "Guatemala",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gu",
+      "iso2": "GU",
+      "name": "Guam",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gw",
+      "iso2": "GW",
+      "name": "Guinea-Bissau",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "gy",
+      "iso2": "GY",
+      "name": "Guyana",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "hk",
+      "iso2": "HK",
+      "name": "Hong Kong",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "hm",
+      "iso2": "HM",
+      "name": "Heard & McDonald Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "hn",
+      "iso2": "HN",
+      "name": "Honduras",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "hr",
+      "iso2": "HR",
+      "name": "Croatia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ht",
+      "iso2": "HT",
+      "name": "Haiti",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "hu",
+      "iso2": "HU",
+      "name": "Hungary",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "id",
+      "iso2": "ID",
+      "name": "Indonesia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ie",
+      "iso2": "IE",
+      "name": "Ireland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "il",
+      "iso2": "IL",
+      "name": "Israel",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "im",
+      "iso2": "IM",
+      "name": "Isle of Man",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "in",
+      "iso2": "IN",
+      "name": "India",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "io",
+      "iso2": "IO",
+      "name": "British Indian Ocean Territory",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "iq",
+      "iso2": "IQ",
+      "name": "Iraq",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ir",
+      "iso2": "IR",
+      "name": "Iran",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "is",
+      "iso2": "IS",
+      "name": "Iceland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "it",
+      "iso2": "IT",
+      "name": "Italy",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "je",
+      "iso2": "JE",
+      "name": "Jersey",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "jm",
+      "iso2": "JM",
+      "name": "Jamaica",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "jo",
+      "iso2": "JO",
+      "name": "Jordan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "jp",
+      "iso2": "JP",
+      "name": "Japan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ke",
+      "iso2": "KE",
+      "name": "Kenya",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kg",
+      "iso2": "KG",
+      "name": "Kyrgyzstan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kh",
+      "iso2": "KH",
+      "name": "Cambodia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ki",
+      "iso2": "KI",
+      "name": "Kiribati",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "km",
+      "iso2": "KM",
+      "name": "Comoros",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kn",
+      "iso2": "KN",
+      "name": "St. Kitts & Nevis",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kp",
+      "iso2": "KP",
+      "name": "North Korea",
+      "aliases": ["DPRK", "Korea North"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kr",
+      "iso2": "KR",
+      "name": "South Korea",
+      "aliases": ["Republic of Korea", "Korea South"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kw",
+      "iso2": "KW",
+      "name": "Kuwait",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ky",
+      "iso2": "KY",
+      "name": "Cayman Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "kz",
+      "iso2": "KZ",
+      "name": "Kazakhstan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "la",
+      "iso2": "LA",
+      "name": "Laos",
+      "aliases": ["Lao PDR"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lb",
+      "iso2": "LB",
+      "name": "Lebanon",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lc",
+      "iso2": "LC",
+      "name": "St. Lucia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "li",
+      "iso2": "LI",
+      "name": "Liechtenstein",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lk",
+      "iso2": "LK",
+      "name": "Sri Lanka",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lr",
+      "iso2": "LR",
+      "name": "Liberia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ls",
+      "iso2": "LS",
+      "name": "Lesotho",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lt",
+      "iso2": "LT",
+      "name": "Lithuania",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lu",
+      "iso2": "LU",
+      "name": "Luxembourg",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "lv",
+      "iso2": "LV",
+      "name": "Latvia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ly",
+      "iso2": "LY",
+      "name": "Libya",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ma",
+      "iso2": "MA",
+      "name": "Morocco",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mc",
+      "iso2": "MC",
+      "name": "Monaco",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "md",
+      "iso2": "MD",
+      "name": "Moldova",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "me",
+      "iso2": "ME",
+      "name": "Montenegro",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mf",
+      "iso2": "MF",
+      "name": "St. Martin",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mg",
+      "iso2": "MG",
+      "name": "Madagascar",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mh",
+      "iso2": "MH",
+      "name": "Marshall Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mk",
+      "iso2": "MK",
+      "name": "North Macedonia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ml",
+      "iso2": "ML",
+      "name": "Mali",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mm",
+      "iso2": "MM",
+      "name": "Myanmar (Burma)",
+      "aliases": ["Myanmar", "Burma"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mn",
+      "iso2": "MN",
+      "name": "Mongolia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mo",
+      "iso2": "MO",
+      "name": "Macau",
+      "aliases": ["Macao", "Macau SAR"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mp",
+      "iso2": "MP",
+      "name": "Northern Mariana Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mq",
+      "iso2": "MQ",
+      "name": "Martinique",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mr",
+      "iso2": "MR",
+      "name": "Mauritania",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ms",
+      "iso2": "MS",
+      "name": "Montserrat",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mt",
+      "iso2": "MT",
+      "name": "Malta",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mu",
+      "iso2": "MU",
+      "name": "Mauritius",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mv",
+      "iso2": "MV",
+      "name": "Maldives",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mw",
+      "iso2": "MW",
+      "name": "Malawi",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mx",
+      "iso2": "MX",
+      "name": "Mexico",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "my",
+      "iso2": "MY",
+      "name": "Malaysia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "mz",
+      "iso2": "MZ",
+      "name": "Mozambique",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "na",
+      "iso2": "NA",
+      "name": "Namibia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nc",
+      "iso2": "NC",
+      "name": "New Caledonia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ne",
+      "iso2": "NE",
+      "name": "Niger",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nf",
+      "iso2": "NF",
+      "name": "Norfolk Island",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ng",
+      "iso2": "NG",
+      "name": "Nigeria",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ni",
+      "iso2": "NI",
+      "name": "Nicaragua",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nl",
+      "iso2": "NL",
+      "name": "Netherlands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "no",
+      "iso2": "NO",
+      "name": "Norway",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "np",
+      "iso2": "NP",
+      "name": "Nepal",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nr",
+      "iso2": "NR",
+      "name": "Nauru",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nu",
+      "iso2": "NU",
+      "name": "Niue",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "nz",
+      "iso2": "NZ",
+      "name": "New Zealand",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "om",
+      "iso2": "OM",
+      "name": "Oman",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pa",
+      "iso2": "PA",
+      "name": "Panama",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pe",
+      "iso2": "PE",
+      "name": "Peru",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pf",
+      "iso2": "PF",
+      "name": "French Polynesia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pg",
+      "iso2": "PG",
+      "name": "Papua New Guinea",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ph",
+      "iso2": "PH",
+      "name": "Philippines",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pk",
+      "iso2": "PK",
+      "name": "Pakistan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pl",
+      "iso2": "PL",
+      "name": "Poland",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pm",
+      "iso2": "PM",
+      "name": "St. Pierre & Miquelon",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pn",
+      "iso2": "PN",
+      "name": "Pitcairn Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pr",
+      "iso2": "PR",
+      "name": "Puerto Rico",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ps",
+      "iso2": "PS",
+      "name": "Palestine",
+      "aliases": ["State of Palestine", "Palestinian Territories"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pt",
+      "iso2": "PT",
+      "name": "Portugal",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "pw",
+      "iso2": "PW",
+      "name": "Palau",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "py",
+      "iso2": "PY",
+      "name": "Paraguay",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "qa",
+      "iso2": "QA",
+      "name": "Qatar",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "re",
+      "iso2": "RE",
+      "name": "Réunion",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ro",
+      "iso2": "RO",
+      "name": "Romania",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "rs",
+      "iso2": "RS",
+      "name": "Serbia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ru",
+      "iso2": "RU",
+      "name": "Russia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "rw",
+      "iso2": "RW",
+      "name": "Rwanda",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sa",
+      "iso2": "SA",
+      "name": "Saudi Arabia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sb",
+      "iso2": "SB",
+      "name": "Solomon Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sc",
+      "iso2": "SC",
+      "name": "Seychelles",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sd",
+      "iso2": "SD",
+      "name": "Sudan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "se",
+      "iso2": "SE",
+      "name": "Sweden",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sg",
+      "iso2": "SG",
+      "name": "Singapore",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sh",
+      "iso2": "SH",
+      "name": "St. Helena",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "si",
+      "iso2": "SI",
+      "name": "Slovenia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sj",
+      "iso2": "SJ",
+      "name": "Svalbard & Jan Mayen",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sk",
+      "iso2": "SK",
+      "name": "Slovakia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sl",
+      "iso2": "SL",
+      "name": "Sierra Leone",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sm",
+      "iso2": "SM",
+      "name": "San Marino",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sn",
+      "iso2": "SN",
+      "name": "Senegal",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "so",
+      "iso2": "SO",
+      "name": "Somalia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sr",
+      "iso2": "SR",
+      "name": "Suriname",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ss",
+      "iso2": "SS",
+      "name": "South Sudan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "st",
+      "iso2": "ST",
+      "name": "São Tomé & Príncipe",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sv",
+      "iso2": "SV",
+      "name": "El Salvador",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sx",
+      "iso2": "SX",
+      "name": "Sint Maarten",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sy",
+      "iso2": "SY",
+      "name": "Syria",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "sz",
+      "iso2": "SZ",
+      "name": "Eswatini",
+      "aliases": ["Swaziland"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tc",
+      "iso2": "TC",
+      "name": "Turks & Caicos Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "td",
+      "iso2": "TD",
+      "name": "Chad",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tf",
+      "iso2": "TF",
+      "name": "French Southern Territories",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tg",
+      "iso2": "TG",
+      "name": "Togo",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "th",
+      "iso2": "TH",
+      "name": "Thailand",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tj",
+      "iso2": "TJ",
+      "name": "Tajikistan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tk",
+      "iso2": "TK",
+      "name": "Tokelau",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tl",
+      "iso2": "TL",
+      "name": "Timor-Leste",
+      "aliases": ["East Timor"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tm",
+      "iso2": "TM",
+      "name": "Turkmenistan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tn",
+      "iso2": "TN",
+      "name": "Tunisia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "to",
+      "iso2": "TO",
+      "name": "Tonga",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tr",
+      "iso2": "TR",
+      "name": "Turkiye",
+      "aliases": ["Turkey", "Türkiye"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tt",
+      "iso2": "TT",
+      "name": "Trinidad & Tobago",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tv",
+      "iso2": "TV",
+      "name": "Tuvalu",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tw",
+      "iso2": "TW",
+      "name": "Taiwan",
+      "aliases": ["Republic of China", "ROC"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "tz",
+      "iso2": "TZ",
+      "name": "Tanzania",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ua",
+      "iso2": "UA",
+      "name": "Ukraine",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ug",
+      "iso2": "UG",
+      "name": "Uganda",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "um",
+      "iso2": "UM",
+      "name": "U.S. Outlying Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "us",
+      "iso2": "US",
+      "name": "United States",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "uy",
+      "iso2": "UY",
+      "name": "Uruguay",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "uz",
+      "iso2": "UZ",
+      "name": "Uzbekistan",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "va",
+      "iso2": "VA",
+      "name": "Vatican City",
+      "aliases": ["Holy See", "Vatican"],
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "vc",
+      "iso2": "VC",
+      "name": "St. Vincent & Grenadines",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ve",
+      "iso2": "VE",
+      "name": "Venezuela",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "vg",
+      "iso2": "VG",
+      "name": "British Virgin Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "vi",
+      "iso2": "VI",
+      "name": "U.S. Virgin Islands",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "vn",
+      "iso2": "VN",
+      "name": "Vietnam",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "vu",
+      "iso2": "VU",
+      "name": "Vanuatu",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "wf",
+      "iso2": "WF",
+      "name": "Wallis & Futuna",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "ws",
+      "iso2": "WS",
+      "name": "Samoa",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "xk",
+      "iso2": "XK",
+      "name": "Kosovo",
+      "standard": "user-assigned"
+    },
+    {
+      "id": "ye",
+      "iso2": "YE",
+      "name": "Yemen",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "yt",
+      "iso2": "YT",
+      "name": "Mayotte",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "za",
+      "iso2": "ZA",
+      "name": "South Africa",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "zm",
+      "iso2": "ZM",
+      "name": "Zambia",
+      "standard": "ISO 3166-1"
+    },
+    {
+      "id": "zw",
+      "iso2": "ZW",
+      "name": "Zimbabwe",
+      "standard": "ISO 3166-1"
+    }
+  ]
+}
