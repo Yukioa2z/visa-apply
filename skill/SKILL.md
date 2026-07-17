@@ -49,11 +49,11 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
   --country ca \
   --visa-type "Visitor visa" \
   --form-name "IRCC Portal application" \
-  --application-location "China, Shanghai" \
-  --nationality "China" \
-  --travel-document-issuer "China" \
-  --legal-residence "China" \
-  --residence-status "Citizen" \
+  --application-location "Japan, Tokyo" \
+  --nationality "Brazil" \
+  --travel-document-issuer "Brazil" \
+  --legal-residence "Japan" \
+  --residence-status "Work permit holder" \
   --purpose "Tourism"
 ```
 
