@@ -430,10 +430,10 @@ main > section {
 
 .install-tool {
   width: 100%;
-  max-width: 720px;
+  max-width: 360px;
   border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 8px 8px 8px 16px;
+  border-radius: 14px;
+  padding: 6px 6px 6px 16px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
