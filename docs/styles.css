@@ -76,9 +76,8 @@ img {
 /* ---------- Header ---------- */
 
 .site-header {
-  position: absolute;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 40;
   background: transparent;
@@ -133,10 +132,16 @@ img {
 
 /* ---------- Section scaffold ---------- */
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
 .section-inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 88px var(--gutter);
+  padding: 0 var(--gutter);
 }
 
 .section-heading h2 {
@@ -150,14 +155,6 @@ img {
 .section-heading p {
   color: var(--muted);
   max-width: 46ch;
-}
-
-section + section .section-inner {
-  border-top: 1px solid var(--rule);
-}
-
-.hero + .coverage-section .section-inner {
-  border-top: none;
 }
 
 /* ---------- Hero ---------- */
@@ -222,7 +219,7 @@ section + section .section-inner {
 
 .hero-shot {
   margin: clamp(48px, 7vw, 84px) auto 0;
-  max-width: 1000px;
+  max-width: 600px;
 }
 
 .hero-shot img {
@@ -230,6 +227,8 @@ section + section .section-inner {
   height: auto;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
 }
 
 /* ---------- Route section ---------- */
@@ -388,8 +387,8 @@ section + section .section-inner {
 
 .install-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
   align-items: start;
 }
 
@@ -447,7 +446,7 @@ section + section .section-inner {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  border-top: 1px solid var(--rule);
+  margin-top: 120px;
 }
 
 .footer-inner {
@@ -482,8 +481,7 @@ section + section .section-inner {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 820px) {
-  .route-grid,
-  .install-grid {
+  .route-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -512,8 +510,12 @@ section + section .section-inner {
 }
 
 @media (max-width: 560px) {
-  .section-inner {
-    padding: 60px var(--gutter);
+  main {
+    gap: 80px;
+  }
+
+  .site-footer {
+    margin-top: 80px;
   }
 
   .install-tool {
