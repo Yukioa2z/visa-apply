@@ -194,12 +194,15 @@ main {
   display: inline-flex;
   align-items: center;
   padding: 11px 22px;
+  border: 0;
   background: var(--ink);
   color: var(--bg);
+  font-family: inherit;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
   border-radius: 6px;
+  cursor: pointer;
   transition: opacity 0.12s ease;
 }
 

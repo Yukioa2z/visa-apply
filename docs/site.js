@@ -1,4 +1,4 @@
-const copyButton = document.querySelector("[data-copy-command]");
+const copyButtons = Array.from(document.querySelectorAll("[data-copy-command]"));
 const copyStatus = document.querySelector(".copy-status");
 const command = document.querySelector("[data-command]");
 
@@ -23,13 +23,33 @@ async function copyText(text) {
   if (!copied) throw new Error("Copy command was rejected");
 }
 
-copyButton.addEventListener("click", async () => {
-  if (!command) return;
+copyButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    if (!command) return;
 
-  try {
-    await copyText(command.dataset.command);
-    copyStatus.textContent = "Command copied.";
-  } catch {
-    copyStatus.textContent = "Copy failed. Select the command manually.";
-  }
+    const isHeroButton = button.classList.contains("hero-copy-button");
+    const defaultLabel = button.textContent;
+
+    try {
+      await copyText(command.dataset.command);
+
+      if (isHeroButton) {
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = defaultLabel;
+        }, 1600);
+      } else {
+        copyStatus.textContent = "Command copied.";
+      }
+    } catch {
+      if (isHeroButton) {
+        button.textContent = "Copy failed";
+        window.setTimeout(() => {
+          button.textContent = defaultLabel;
+        }, 1600);
+      } else {
+        copyStatus.textContent = "Copy failed. Select the command manually.";
+      }
+    }
+  });
 });
