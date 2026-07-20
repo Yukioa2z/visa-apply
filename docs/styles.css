@@ -219,7 +219,8 @@ main {
 
 .hero-shot {
   margin: clamp(48px, 7vw, 84px) auto 0;
-  max-width: 600px;
+  width: 100%;
+  max-width: none;
 }
 
 .hero-shot img {
