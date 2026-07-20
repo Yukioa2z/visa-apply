@@ -38,21 +38,22 @@ jobs:
           NAME=$(node -p "require('./package.json').name")
           VERSION=$(node -p "require('./package.json').version")
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+          # Query the exact-version document directly (more current than `npm view`).
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://registry.npmjs.org/$NAME/$VERSION")
+          if [ "$CODE" = "200" ]; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
             echo "$NAME@$VERSION already published — skipping."
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
-            echo "$NAME@$VERSION not on npm — will publish."
+            echo "$NAME@$VERSION not on npm (HTTP $CODE) — will publish."
           fi
 
+      # Auth is via npm Trusted Publishing (OIDC) — no token. The repo must be
+      # bound as a trusted publisher for @yukioa2z/visa-apply on npmjs.com,
+      # with workflow ".github/workflows/publish.yml" on branch main.
       - name: Publish
         if: steps.check.outputs.exists == 'false'
         run: npm publish --access public
-        env:
-          # Falls back to a token if OIDC Trusted Publishing is not configured.
-          # Leave NPM_TOKEN unset once the repo is bound as a trusted publisher.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Summary
         run: |
