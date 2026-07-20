@@ -15,6 +15,14 @@ SPEC.loader.exec_module(policy_monitor)
 
 
 class PolicyMonitorTests(unittest.TestCase):
+    def test_default_state_stays_out_of_public_references(self) -> None:
+        self.assertEqual(
+            policy_monitor.DEFAULT_OUTPUT_PATH,
+            Path(__file__).resolve().parents[1]
+            / ".maintenance"
+            / "policy-monitor.json",
+        )
+
     def test_normalize_content_ignores_scripts_and_whitespace(self) -> None:
         first = b"""
             <html><body><h1>Visa rules</h1><p>Stay up to 30 days.</p>

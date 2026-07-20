@@ -25,9 +25,10 @@ from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REPOSITORY_ROOT = ROOT.parent
 REGISTRY_PATH = ROOT / "references" / "official-sources.json"
 DIRECTORY_PATH = ROOT / "references" / "jurisdictions.json"
-DEFAULT_OUTPUT_PATH = ROOT / "references" / "policy-monitor.json"
+DEFAULT_OUTPUT_PATH = REPOSITORY_ROOT / ".maintenance" / "policy-monitor.json"
 MAX_RESPONSE_BYTES = 5 * 1024 * 1024
 MIN_NORMALIZED_CHARACTERS = 80
 MAX_CONNECTIONS_PER_HOST = 2

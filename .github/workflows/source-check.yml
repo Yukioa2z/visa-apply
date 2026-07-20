@@ -1,31 +1,20 @@
-name: Visa policy source monitor
+name: Visa policy source checks
 
 on:
   push:
     paths:
       - "skill/references/**"
       - "skill/scripts/**"
+      - "scripts/**"
       - "tests/**"
       - ".github/workflows/source-check.yml"
   pull_request:
     paths:
       - "skill/references/**"
       - "skill/scripts/**"
+      - "scripts/**"
       - "tests/**"
-  schedule:
-    - cron: "0 0 * * 1"
-      timezone: "America/Los_Angeles"
-  workflow_dispatch:
-    inputs:
-      release:
-        description: "Refresh policy source fingerprints, bump the patch version, and publish"
-        required: false
-        default: false
-        type: boolean
-
-concurrency:
-  group: visa-policy-source-monitor
-  cancel-in-progress: false
+  workflow_dispatch: {}
 
 jobs:
   validate:
@@ -41,9 +30,9 @@ jobs:
         run: python3 -m unittest discover -s tests -p "test_*.py"
 
   check-urls:
-    # Manual liveness-only run. The scheduled monitor below also records guarded
-    # and failed sources without blocking the weekly release.
-    if: github.event_name == 'workflow_dispatch' && inputs.release != true
+    # Manual liveness-only run. Policy research and releases are maintained by
+    # the Codex automation rather than inferred from URL responses.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -52,60 +41,3 @@ jobs:
           python-version: "3.12"
       - name: Probe seed source URLs
         run: python3 skill/scripts/source_registry.py check-urls
-
-  refresh-and-release:
-    if: github.event_name == 'schedule' || inputs.release == true
-    needs: validate
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "24"
-
-      - name: Compare registered official policy sources
-        run: |
-          python3 skill/scripts/policy_monitor.py \
-            --summary "$GITHUB_STEP_SUMMARY"
-
-      - name: Bump patch version
-        id: version
-        run: |
-          OLD_VERSION=$(node -p "require('./package.json').version")
-          npm version patch --no-git-tag-version
-          NEW_VERSION=$(node -p "require('./package.json').version")
-          echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
-          echo "Version: $OLD_VERSION -> $NEW_VERSION" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Commit weekly monitor result
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json skill/references/policy-monitor.json
-          git diff --cached --check
-          git commit -m "Refresh visa policy sources for ${{ steps.version.outputs.version }}"
-          git push origin HEAD:main
-
-      # Commits made with GITHUB_TOKEN do not trigger push workflows. A manual
-      # dispatch is the documented exception, and keeps npm OIDC bound to the
-      # already-configured publish.yml workflow.
-      - name: Dispatch npm publish workflow
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run publish.yml --ref main
-
-      - name: Release summary
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          echo "Queued npm publication for @yukioa2z/visa-apply@$VERSION." >> "$GITHUB_STEP_SUMMARY"

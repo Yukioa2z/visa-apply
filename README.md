@@ -60,6 +60,6 @@ The applicant model is global. It keeps citizenship, travel-document issuer, leg
 
 ## Staying current
 
-The official sources are watched weekly for changes, and a fresh copy of the skill is published automatically. When you install or update, you get the latest sources — you never maintain anything yourself. A changed page is only a signal to recheck the official source; the skill still verifies every visa question live at the time you apply.
+An automated Codex maintenance task reviews registered official sources every week, investigates detected changes, updates the public reference files, and publishes a fresh package after validation. It also works through destinations that still need an official source seed. See the public [policy update log](POLICY_UPDATE_LOG.md) for dated, concise maintenance notes; applicant data and detailed local monitor state are never committed.
 
-This skill is not legal advice. The applicant must review all information and handle applicant-only declarations, signatures, certifications, CAPTCHA, and submission.
+Automated research can miss, lag behind, or misinterpret a rule change. Visa Apply does not guarantee legal accuracy and is not legal advice. Always confirm the current rule with the destination government, responsible embassy or consulate, and operating carrier before filing or travel. The applicant must review all information and handle applicant-only declarations, signatures, certifications, CAPTCHA, and submission.

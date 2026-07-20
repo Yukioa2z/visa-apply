@@ -23,7 +23,6 @@ This skill is not legal advice. The applicant must review every answer and handl
 3. Run the mandatory live visa-need check before detailed intake.
    - Read `references/live-route-check.md`.
    - Resolve the destination in `references/jurisdictions.json`; cached starting sources are in `references/official-sources.json`.
-   - Consult `references/policy-monitor.json` when present. A changed fingerprint means the official page needs review; it is never a visa verdict and never replaces the live check.
    - Run `python3 scripts/source_registry.py live-check-plan <country> ...` when useful.
    - Browse current destination-government and responsible-mission sources for the exact passport, residence, purpose, dates, duration, entries, arrival mode, and transit itinerary.
    - Cross-check IATA Travel Centre/Timatic or the operating carrier for boarding requirements. Treat it as operational evidence, not legal authority.
@@ -81,5 +80,4 @@ Immediately open the dossier in the user's default viewer so they can watch it f
 - Submission, document, timing, and privacy gates: `references/quality-gates.md`
 - Searchable destination directory: `references/jurisdictions.json`
 - Official source registry: `references/official-sources.json`
-- Weekly official-source change signals: `references/policy-monitor.json` (source health only, never a visa verdict)
 - Full country adapters: `references/countries/` — United States DS-160 (`us.md`), Schengen Type C (`schengen.md`), Canada IRCC (`ca.md`), United Kingdom (`uk.md`), Australia (`au.md`), Japan (`jp.md`). Every other destination uses a source-seeded or live-discovered adapter.
