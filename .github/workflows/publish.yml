@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/publish.yml"
       - "package.json"
       - "bin/**"
       - "skill/**"
@@ -18,7 +19,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write # create the matching tag and GitHub Release
       id-token: write # required for npm Trusted Publishing (OIDC)
     steps:
       - uses: actions/checkout@v4
@@ -55,6 +56,23 @@ jobs:
         if: steps.check.outputs.exists == 'false'
         run: npm publish --access public
 
+      - name: Create GitHub Release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: v${{ steps.check.outputs.version }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "$TAG already exists — skipping release creation."
+          else
+            gh release create "$TAG" \
+              --target "$GITHUB_SHA" \
+              --title "Visa Apply $TAG" \
+              --generate-notes
+          fi
+          RELEASE_URL=$(gh release view "$TAG" --json url --jq .url)
+          echo "url=$RELEASE_URL" >> "$GITHUB_OUTPUT"
+
       - name: Summary
         run: |
           if [ "${{ steps.check.outputs.exists }}" = "true" ]; then
@@ -62,3 +80,4 @@ jobs:
           else
             echo "Published version ${{ steps.check.outputs.version }}." >> "$GITHUB_STEP_SUMMARY"
           fi
+          echo "GitHub Release: ${{ steps.release.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"
