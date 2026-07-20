@@ -8,7 +8,13 @@ Research, prepare, review, and track visa applications with current official sou
 npx --yes github:Yukioa2z/visa-apply
 ```
 
-Then invoke:
+Then invoke. To just check whether you need a visa:
+
+```text
+Use $visa-apply: I hold an X passport, live in Y, and want to visit Z for two weeks — do I need a visa?
+```
+
+Many trips end there with a visa-free or ETA answer. To prepare a full application:
 
 ```text
 Use $visa-apply to help me prepare a visa application for my destination and visa type.

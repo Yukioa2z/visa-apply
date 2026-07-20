@@ -9,12 +9,15 @@ description: Use when checking whether a traveler needs a visa, ETA, eVisa, visa
 
 Create and maintain a local HTML dossier as the single source of truth for a visa application. Resolve the correct country and visa route from current official sources, collect applicant facts with a country/visa-specific question path, prepare a final form preview and document checklist, then assist with portal entry after applicant review.
 
+The most common entry point is a lightweight question — "I hold an X passport, live in Y, want to visit Z for two weeks: do I need a visa?" Answer that first by running the live route check (step 3). Many trips end there with a visa-free or ETA verdict and never need a full application; only continue to detailed intake when a visa is actually required.
+
 This skill is not legal advice. The applicant must review every answer and handle any applicant-only declaration, signature, certification, CAPTCHA, and submission.
 
 ## Required Workflow
 
 1. Keep all applicant data local. Personal data collected for the application lives only in the local HTML dossier on the user's machine. Never transmit it to any external service, log it outside the dossier, or use it for any purpose other than this application. This is a hard constraint, not a user setting.
 2. Collect routing facts only: destination, all nationalities or stateless/refugee status, travel-document type and issuing country, legal residence and residence status, actual application location, purpose, dates/duration, and relevant existing visas or residence permits.
+   - First, ask whether the trip is a single destination or involves multiple countries or transit. Most applicants are single-destination; assume that unless the user says otherwise. If multiple countries or transit are involved, treat each leg as its own route and run the live check (step 3) separately per leg; a `mixed` verdict means the legs resolve to different routes.
    - Never infer nationality, residence, consular jurisdiction, or form language from the user's location or preferred language.
    - Treat citizenship, legal residence, current physical location, and application location as separate facts.
 3. Run the mandatory live visa-need check before detailed intake.
