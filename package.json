@@ -21,7 +21,7 @@
     "url": "https://github.com/Yukioa2z/visa-apply/issues"
   },
   "bin": {
-    "visa-apply": "./bin/install.js"
+    "visa-apply": "bin/install.js"
   },
   "files": [
     "bin",
