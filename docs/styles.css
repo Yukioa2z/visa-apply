@@ -169,15 +169,6 @@ section + section .section-inner {
   text-align: center;
 }
 
-.hero .eyebrow {
-  margin: 0 0 20px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
 .hero h1 {
   margin: 0;
   font-size: clamp(2.6rem, 7vw, 4.4rem);
