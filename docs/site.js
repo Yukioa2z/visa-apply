@@ -1,5 +1,4 @@
 const copyButtons = Array.from(document.querySelectorAll("[data-copy-command]"));
-const copyStatus = document.querySelector(".copy-status");
 const command = document.querySelector("[data-command]");
 const copyToast = document.querySelector(".copy-toast");
 let copyToastTimer;
@@ -42,22 +41,11 @@ copyButtons.forEach((button) => {
   button.addEventListener("click", async () => {
     if (!command) return;
 
-    const isHeroButton = button.classList.contains("hero-copy-button");
-
     try {
       await copyText(command.dataset.command);
-
-      if (isHeroButton) {
-        showCopyToast("Copied, now paste to your agent.");
-      } else {
-        copyStatus.textContent = "Command copied.";
-      }
+      showCopyToast("Copied, now paste to your agent.");
     } catch {
-      if (isHeroButton) {
-        showCopyToast("Copy failed. Copy the command below.");
-      } else {
-        copyStatus.textContent = "Copy failed. Select the command manually.";
-      }
+      showCopyToast("Copy failed. Copy the command below.");
     }
   });
 });

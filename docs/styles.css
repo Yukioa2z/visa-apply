@@ -429,8 +429,10 @@ main > section {
 }
 
 .install-tool {
+  width: 100%;
+  max-width: 720px;
   border: 1px solid var(--rule);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 8px 8px 8px 16px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -454,25 +456,13 @@ main > section {
   font: inherit;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
 
 .copy-button:hover {
   opacity: 0.85;
-}
-
-.copy-status {
-  grid-column: 1 / -1;
-  margin: 0;
-  font-size: 13px;
-  color: var(--muted);
-  text-align: right;
-}
-
-.copy-status:empty {
-  display: none;
 }
 
 /* ---------- Footer ---------- */
@@ -551,10 +541,6 @@ main > section {
     width: 100%;
   }
 
-  .copy-status {
-    grid-column: 1;
-    text-align: center;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
