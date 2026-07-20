@@ -30,7 +30,6 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="Visa Apply home">
-          <span class="brand-mark" aria-hidden="true"></span>
           <span>Visa Apply</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
@@ -72,10 +71,38 @@
         </figure>
       </section>
 
+      <section class="coverage-section" id="coverage" aria-labelledby="coverage-title">
+        <div class="section-inner">
+          <div class="section-heading coverage-heading">
+            <h2 id="coverage-title">Built for routes, not one passport.</h2>
+          </div>
+          <div class="coverage-grid">
+            <article>
+              <p class="metric">250</p>
+              <h3>Destinations and areas</h3>
+              <p>A searchable directory provides a starting point for global route research.</p>
+            </article>
+            <article>
+              <p class="metric">41</p>
+              <h3>Official source regions</h3>
+              <p>Seed links help agents begin with government immigration and foreign affairs sources.</p>
+            </article>
+            <article>
+              <p class="metric">Always</p>
+              <h3>Rechecked live</h3>
+              <p>No cached list becomes a visa verdict. Rules are checked again before filing and travel.</p>
+            </article>
+          </div>
+          <p class="coverage-note">
+            Visa Apply is an organizational and research tool, not legal advice.
+            The issuing authority remains the final source of truth.
+          </p>
+        </div>
+      </section>
+
       <section class="route-section" aria-labelledby="route-title">
         <div class="section-inner route-grid">
           <div class="section-heading">
-            <p class="section-kicker">01 / Route research</p>
             <h2 id="route-title">Check the route before opening a form.</h2>
           </div>
           <div class="route-copy">
@@ -99,7 +126,6 @@
       <section class="workflow-section" id="workflow" aria-labelledby="workflow-title">
         <div class="section-inner">
           <div class="section-heading workflow-heading">
-            <p class="section-kicker">Application workflow / Five steps</p>
             <h2 id="workflow-title">From uncertainty to a filed application.</h2>
             <p>
               The agent researches first, interviews second, and only fills an
@@ -152,114 +178,19 @@
         </div>
       </section>
 
-      <section class="coverage-section" id="coverage" aria-labelledby="coverage-title">
-        <div class="section-inner">
-          <div class="section-heading coverage-heading">
-            <p class="section-kicker">Global by design / Coverage</p>
-            <h2 id="coverage-title">Built for routes, not one passport.</h2>
-          </div>
-          <div class="coverage-grid">
-            <article>
-              <p class="metric">250</p>
-              <h3>Destinations and areas</h3>
-              <p>A searchable directory provides a starting point for global route research.</p>
-            </article>
-            <article>
-              <p class="metric">41</p>
-              <h3>Official source regions</h3>
-              <p>Seed links help agents begin with government immigration and foreign affairs sources.</p>
-            </article>
-            <article>
-              <p class="metric">Always</p>
-              <h3>Rechecked live</h3>
-              <p>No cached list becomes a visa verdict. Rules are checked again before filing and travel.</p>
-            </article>
-          </div>
-          <p class="coverage-note">
-            Visa Apply is an organizational and research tool, not legal advice.
-            The issuing authority remains the final source of truth.
-          </p>
-        </div>
-      </section>
-
       <section class="install-section" id="install" aria-labelledby="install-title">
         <div class="section-inner install-grid">
           <div class="section-heading install-heading">
-            <p class="section-kicker">03 / Start</p>
             <h2 id="install-title">Install the skill.</h2>
             <p>
-              Choose the agent environment. Other agents can use the same
-              workflow with their own browser-use or computer-use capability.
+              Run one command to install the skill. It works with any compatible
+              agent environment.
             </p>
           </div>
 
           <div class="install-tool">
-            <div class="install-tabs" role="tablist" aria-label="Installation target">
-              <button
-                id="tab-codex"
-                class="install-tab is-active"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                aria-controls="panel-codex"
-                data-target="codex"
-              >Codex</button>
-              <button
-                id="tab-claude"
-                class="install-tab"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-claude"
-                data-target="claude"
-                tabindex="-1"
-              >Claude Code</button>
-              <button
-                id="tab-other"
-                class="install-tab"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-other"
-                data-target="other"
-                tabindex="-1"
-              >Other agents</button>
-            </div>
-
-            <div class="command-panels">
-              <div
-                id="panel-codex"
-                class="command-panel is-active"
-                role="tabpanel"
-                aria-labelledby="tab-codex"
-                data-command="npx --yes github:Yukioa2z/visa-apply"
-              >
-                <code>npx --yes github:Yukioa2z/visa-apply</code>
-              </div>
-              <div
-                id="panel-claude"
-                class="command-panel"
-                role="tabpanel"
-                aria-labelledby="tab-claude"
-                data-command="npx --yes github:Yukioa2z/visa-apply -- --dest ~/.claude/skills"
-                hidden
-              >
-                <code>npx --yes github:Yukioa2z/visa-apply -- --dest ~/.claude/skills</code>
-              </div>
-              <div
-                id="panel-other"
-                class="command-panel"
-                role="tabpanel"
-                aria-labelledby="tab-other"
-                data-command="npx --yes github:Yukioa2z/visa-apply -- --dest /path/to/skills"
-                hidden
-              >
-                <code>npx --yes github:Yukioa2z/visa-apply -- --dest /path/to/skills</code>
-              </div>
-            </div>
-            <button class="copy-button" type="button" data-copy-command>
-              Copy command
-            </button>
+            <code data-command="npx --yes github:Yukioa2z/visa-apply">npx --yes github:Yukioa2z/visa-apply</code>
+            <button class="copy-button" type="button" data-copy-command>Copy</button>
             <p class="copy-status" aria-live="polite"></p>
           </div>
         </div>
@@ -268,7 +199,7 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <p><span class="brand-mark" aria-hidden="true"></span> Visa Apply</p>
+        <p>Visa Apply</p>
         <p>Open source under the MIT License.</p>
         <a
           href="https://github.com/Yukioa2z/visa-apply"

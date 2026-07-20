@@ -76,17 +76,16 @@ img {
 /* ---------- Header ---------- */
 
 .site-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 40;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(1.1) blur(8px);
-  border-bottom: 1px solid var(--rule);
+  background: transparent;
 }
 
 .header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
+  width: 100%;
   padding: 14px var(--gutter);
   display: flex;
   align-items: center;
@@ -102,13 +101,6 @@ img {
   font-size: 15px;
   text-decoration: none;
   letter-spacing: -0.01em;
-}
-
-.brand-mark {
-  width: 12px;
-  height: 12px;
-  border: 1.5px solid var(--ink);
-  border-radius: 3px;
 }
 
 .site-nav {
@@ -147,15 +139,6 @@ img {
   padding: 88px var(--gutter);
 }
 
-.section-kicker {
-  margin: 0 0 14px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--faint);
-}
-
 .section-heading h2 {
   margin: 0;
   font-size: clamp(1.6rem, 3.4vw, 2.3rem);
@@ -171,6 +154,10 @@ img {
 
 section + section .section-inner {
   border-top: 1px solid var(--rule);
+}
+
+.hero + .coverage-section .section-inner {
+  border-top: none;
 }
 
 /* ---------- Hero ---------- */
@@ -195,14 +182,14 @@ section + section .section-inner {
   margin: 0;
   font-size: clamp(2.6rem, 7vw, 4.4rem);
   line-height: 1.02;
-  font-weight: 680;
+  font-weight: 500;
   letter-spacing: -0.035em;
 }
 
 .hero-lead {
   margin: 22px auto 0;
-  max-width: 40ch;
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  max-width: 600px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -250,10 +237,8 @@ section + section .section-inner {
 .hero-shot img {
   width: 100%;
   height: auto;
-  border: 1px solid var(--rule);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  border-bottom: none;
 }
 
 /* ---------- Route section ---------- */
@@ -424,55 +409,15 @@ section + section .section-inner {
 .install-tool {
   border: 1px solid var(--rule);
   border-radius: 10px;
-  padding: 8px;
+  padding: 8px 8px 8px 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
   background: var(--panel);
 }
 
-.install-tabs {
-  display: flex;
-  gap: 4px;
-}
-
-.install-tab {
-  flex: 1;
-  padding: 9px 12px;
-  border: none;
-  background: transparent;
-  color: var(--muted);
-  font: inherit;
-  font-size: 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.12s ease, color 0.12s ease;
-}
-
-.install-tab:hover {
-  color: var(--ink);
-}
-
-.install-tab.is-active {
-  background: var(--bg);
-  color: var(--ink);
-  font-weight: 500;
-  border: 1px solid var(--rule);
-}
-
-.command-panels {
-  margin: 8px 0 0;
-}
-
-.command-panel {
-  padding: 16px;
-  background: var(--bg);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-}
-
-.command-panel[hidden] {
-  display: none;
-}
-
-.command-panel code {
+.install-tool code {
   font-family: var(--mono);
   font-size: 13px;
   color: var(--ink);
@@ -480,9 +425,7 @@ section + section .section-inner {
 }
 
 .copy-button {
-  margin: 8px 0 0;
-  width: 100%;
-  padding: 10px;
+  padding: 9px 16px;
   border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--bg);
@@ -499,11 +442,15 @@ section + section .section-inner {
 }
 
 .copy-status {
-  margin: 8px 0 2px;
-  min-height: 1.2em;
+  grid-column: 1 / -1;
+  margin: 0;
   font-size: 13px;
   color: var(--muted);
-  text-align: center;
+  text-align: right;
+}
+
+.copy-status:empty {
+  display: none;
 }
 
 /* ---------- Footer ---------- */
@@ -576,6 +523,20 @@ section + section .section-inner {
 @media (max-width: 560px) {
   .section-inner {
     padding: 60px var(--gutter);
+  }
+
+  .install-tool {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+
+  .copy-status {
+    grid-column: 1;
+    text-align: center;
   }
 }
 
