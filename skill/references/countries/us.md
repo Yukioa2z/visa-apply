@@ -26,13 +26,15 @@ For country scheduling and fee payment, find the currently official embassy/cons
 
 Ask in DS-160 order unless the user is actively filling a different page.
 
+This adapter covers the DS-160 consular visa step only: preparing the online application and interview for a category the applicant already qualifies to apply for. It does not cover any USCIS petition or lottery step. For petition-based categories the workflow starts only after the petition is already approved.
+
 Before detailed intake, create a visa-type branch:
 
 - Core DS-160 questions are always required.
 - B-1, B-2, or B-1/B-2: travel purpose, itinerary, U.S. address/contact, trip payer, tourism/business boundary, employment/ties, and whether any work/study will occur.
 - F or M: school/program, SEVIS ID, I-20 details, funding, prior study/status history, and intended course of study.
 - J: exchange program, DS-2019 details, SEVIS ID, sponsor, funding, field/category, and two-year home residency relevance if prompted by the form.
-- H, L, O, P, Q, R, or similar petition-based work categories: petition/receipt details, petitioner/employer, job title, worksite, duties, and dates.
+- H, L, O, P, Q, R, or similar petition-based work categories: petition/receipt details, petitioner/employer, job title, worksite, duties, and dates. Start only from an approved petition (Form I-797 approval notice); the USCIS registration/lottery (e.g. H-1B) and the employer's I-129 petition are the employer's and their attorney's responsibility, sit behind USCIS accounts, and are out of scope — if the user is at that stage, say so plainly and stop at this boundary rather than collecting petition data.
 - E treaty trader/investor: enterprise, investment/trade facts, role, ownership, and supporting business details.
 - C, D, or C-1/D: transit, vessel/airline, crew role, onward travel, and short-stay logistics.
 - A, G, NATO, or official categories: official position, mission/organization, diplomatic/official travel purpose, and assignment details.
