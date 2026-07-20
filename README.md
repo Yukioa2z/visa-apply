@@ -4,7 +4,11 @@ Research, prepare, review, and track visa applications with current official sou
 
 [Website](https://yukioa2z.github.io/visa-apply/) · [Source](https://github.com/Yukioa2z/visa-apply)
 
-Install into your agent's skills directory with `--dest`:
+```sh
+npx @yukioa2z/visa-apply
+```
+
+Run in a terminal and pick your agent when prompted. To skip the prompt, pass your agent's skills directory:
 
 ```sh
 npx @yukioa2z/visa-apply -- --dest ~/.claude/skills   # Claude Code
