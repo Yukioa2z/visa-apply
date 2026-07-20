@@ -21,7 +21,7 @@
     />
     <title>Visa Apply | Research, prepare, and track a visa application</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="styles.css?v=20260720-review6" />
+    <link rel="stylesheet" href="styles.css?v=20260720-review7" />
     <script src="site.js?v=20260720-review5" defer></script>
   </head>
   <body>
@@ -185,17 +185,31 @@
       <section class="install-section" id="install" aria-labelledby="install-title">
         <div class="section-inner install-grid">
           <div class="section-heading install-heading">
+            <p class="section-kicker">03 / Start</p>
             <h2 id="install-title">Install the skill.</h2>
             <p>
-              Run one command to install the skill. It works with any compatible
-              agent environment.
+              One command copies the skill into your agent. It defaults to
+              Codex; pass <code class="inline">--dest</code> for any other
+              skill directory.
             </p>
           </div>
 
           <div class="install-tool">
-            <code data-command="npx --yes @yukioa2z/visa-apply">npx --yes @yukioa2z/visa-apply</code>
-            <button class="copy-button" type="button" data-copy-command>Copy</button>
-            <p class="copy-status" aria-live="polite"></p>
+            <div class="terminal" data-command="npx --yes @yukioa2z/visa-apply">
+              <div class="terminal-bar" aria-hidden="true">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="terminal-title">bash</span>
+              </div>
+              <pre class="terminal-body"><span class="prompt">$</span> <code>npx --yes @yukioa2z/visa-apply</code></pre>
+            </div>
+            <div class="install-foot">
+              <button class="copy-button" type="button" data-copy-command>Copy command</button>
+              <p class="copy-status" aria-live="polite"></p>
+            </div>
+            <p class="install-hint">
+              Claude Code, Hermes, or another agent:
+              <code class="inline">npx --yes @yukioa2z/visa-apply -- --dest ~/.claude/skills</code>
+            </p>
           </div>
         </div>
       </section>

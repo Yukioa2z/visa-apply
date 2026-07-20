@@ -136,6 +136,10 @@ main > section {
   padding-block: 80px;
 }
 
+#install {
+  padding-bottom: 160px;
+}
+
 .section-inner {
   max-width: 1080px;
   margin: 0 auto;
@@ -389,8 +393,8 @@ main > section {
 
 .install-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -398,26 +402,76 @@ main > section {
   margin-bottom: 0;
 }
 
-.install-tool {
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  padding: 8px 8px 8px 16px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 16px;
+.inline {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  padding: 1px 5px;
   background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--ink);
 }
 
-.install-tool code {
+.install-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terminal {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #16181a;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.terminal-bar .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.terminal-title {
+  margin-left: 6px;
   font-family: var(--mono);
-  font-size: 13px;
-  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.terminal-body {
+  margin: 0;
+  padding: 18px 18px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #f6f5f2;
+  white-space: pre-wrap;
   word-break: break-all;
 }
 
+.terminal-body .prompt {
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
+}
+
+.install-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .copy-button {
-  padding: 9px 16px;
+  padding: 10px 20px;
   border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--bg);
@@ -434,15 +488,24 @@ main > section {
 }
 
 .copy-status {
-  grid-column: 1 / -1;
   margin: 0;
   font-size: 13px;
   color: var(--muted);
-  text-align: right;
 }
 
 .copy-status:empty {
   display: none;
+}
+
+.install-hint {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--faint);
+}
+
+.install-hint .inline {
+  color: var(--muted);
 }
 
 /* ---------- Footer ---------- */
