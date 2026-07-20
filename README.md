@@ -38,7 +38,7 @@ npx --yes github:Yukioa2z/visa-apply -- --dest ~/.claude/skills
 
 ## Coverage
 
-The searchable directory contains 250 ISO countries/areas, including the commonly used XK code for Kosovo. Cached official starting sources cover 40 destinations plus the Schengen route area; every other destination triggers live official-source discovery. The United States DS-160 workflow remains the first full country adapter.
+The searchable directory contains 250 ISO countries/areas, including the commonly used XK code for Kosovo. Cached official starting sources cover 40 destinations plus the Schengen route area; every other destination triggers live official-source discovery. Full country adapters (rules and document checklist verified against official sources) exist for the United States (DS-160), Schengen (Type C), Canada (IRCC), the United Kingdom, Australia, and Japan; every other destination uses a source-seeded or live-discovered adapter.
 
 No cached source stores a visa-free or visa-required answer. Every case must be checked against current destination-government rules for the exact travel document, residence, purpose, date, duration, arrival mode, and transit itinerary. IATA Travel Centre/Timatic or the operating carrier is used as a boarding-document cross-check, not as legal authority.
 

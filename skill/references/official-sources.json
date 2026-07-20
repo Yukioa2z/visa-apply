@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-07-17",
+  "last_verified": "2026-07-20",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -72,42 +72,168 @@
       "iso2": "CA",
       "name": "Canada",
       "region": "North America",
-      "aliases": [],
-      "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "aliases": [
+        "ca",
+        "canada"
+      ],
+      "support_level": "full_adapter",
+      "last_verified": "2026-07-20",
       "sources": [
         {
-          "label": "Immigration and citizenship",
-          "url": "https://www.canada.ca/en/services/immigration-citizenship.html",
-          "authority": "Immigration, Refugees and Citizenship Canada",
+          "label": "IRCC — eTA facts (eTA vs visitor visa)",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta/facts.html",
           "roles": [
             "authoritative_rules"
           ],
           "covers": [
-            "visit",
-            "study",
-            "work",
-            "permanent_residence",
-            "status"
+            "eta_vs_trv",
+            "air_vs_land_sea",
+            "eta_validity"
           ]
         },
         {
-          "label": "Visit Canada",
-          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html",
-          "authority": "Immigration, Refugees and Citizenship Canada",
+          "label": "IRCC — Apply for a visitor visa (TRV)",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/apply-visitor-visa.html",
           "roles": [
             "authoritative_rules",
             "official_application"
           ],
           "covers": [
-            "visitor_visa",
-            "eta",
-            "transit",
-            "business_visit",
-            "apply"
+            "process",
+            "online_options",
+            "fees",
+            "documents",
+            "IMM_forms",
+            "visa_validity"
+          ]
+        },
+        {
+          "label": "IRCC — Visit Canada eligibility",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eligibility.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "eligibility",
+            "ties",
+            "proof_of_funds",
+            "admissibility"
+          ]
+        },
+        {
+          "label": "IRCC — Guide 5256 (applying for a visitor visa)",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/application-forms-guides/guide-5256-applying-visitor-visa-temporary-resident-visa.html",
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "IMM_5257",
+            "photo_requirement",
+            "minor_authorization",
+            "IMM_5484"
+          ]
+        },
+        {
+          "label": "IRCC — Medical exam requirements (temporary residents)",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/medical-police/medical-exams/requirements-temporary-residents.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "medical_triggers",
+            "designated_country_list_2025-11-03",
+            "super_visa_exam"
+          ]
+        },
+        {
+          "label": "IRCC — Biometrics facts",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/campaigns/biometrics/facts.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "biometrics_fee",
+            "exemptions"
+          ]
+        },
+        {
+          "label": "IRCC — Biometrics overview",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "who_gives_biometrics",
+            "collection_points",
+            "appointment"
+          ]
+        },
+        {
+          "label": "IRCC — Super Visa overview",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "super_visa_who",
+            "10yr_multiple_entry",
+            "5yr_stays"
+          ]
+        },
+        {
+          "label": "IRCC — Super Visa eligibility",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa/eligibility.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "host_requirements",
+            "insurance_1yr",
+            "host_letter",
+            "medical_exam"
+          ]
+        },
+        {
+          "label": "IRCC — Super Visa operational manual",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/temporary-residents/visitors/super-visa.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "100k_insurance",
+            "LICO_income"
+          ]
+        },
+        {
+          "label": "IRCC — Sign in / IRCC secure account",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/account.html",
+          "roles": [
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "GCKey",
+            "sign_in_partner",
+            "account_creation",
+            "2FA",
+            "personal_reference_code"
           ]
         }
-      ]
+      ],
+      "adapter": "countries/ca.md",
+      "notes": "Temporary Resident Visa (visitor) via IRCC at rules+checklist depth; IRCC secure account login-walled. eTA-vs-TRV split load-bearing: visa-exempt fliers need an eTA (not TRV); visa-exempt land/sea entrants need neither; US citizens/green-card holders are eTA-exempt. TRV fees CAD 100 individual / 500 family(5+), biometrics 85 / 170 family cap. Super Visa requires 100000 medical insurance (health/hospitalization/repatriation, valid 1yr) + host LICO income; mandatory medical exam. Pending exact-page reconfirmation (pages 404'd on 2026-07-20): eTA 7 fee amount, biometrics 10-year reuse exact wording, visa photo spec exact mm, current LICO table."
     },
     {
       "id": "uk",
@@ -117,43 +243,144 @@
       "aliases": [
         "great britain",
         "britain",
-        "gb"
+        "gb",
+        "uk",
+        "united kingdom"
       ],
-      "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "support_level": "full_adapter",
+      "last_verified": "2026-07-20",
       "sources": [
         {
-          "label": "Visas and immigration",
-          "url": "https://www.gov.uk/browse/visas-immigration",
-          "authority": "UK Visas and Immigration",
+          "label": "GOV.UK — Standard Visitor visa (overview, eligibility, fees)",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/standard-visitor",
           "roles": [
             "authoritative_rules"
           ],
           "covers": [
-            "visit",
-            "work",
-            "study",
-            "family",
-            "settlement",
-            "eta"
+            "eligibility",
+            "permitted_activities",
+            "fees",
+            "eta_vs_visa"
           ]
         },
         {
-          "label": "Apply for a UK visa",
-          "url": "https://www.gov.uk/apply-to-come-to-the-uk",
-          "authority": "UK Visas and Immigration",
+          "label": "GOV.UK — Apply for a Standard Visitor visa",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/standard-visitor/apply-standard-visitor-visa",
           "roles": [
             "authoritative_rules",
             "official_application"
           ],
           "covers": [
-            "route_selection",
-            "documents",
-            "apply",
-            "biometrics"
+            "fee_table",
+            "form_fields",
+            "biometrics",
+            "timing",
+            "translations"
+          ]
+        },
+        {
+          "label": "GOV.UK — Standard Visitor visa: if you're under 18",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/standard-visitor/if-youre-under-18",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "minor_consent",
+            "accompanying_adults"
+          ]
+        },
+        {
+          "label": "GOV.UK — Get an electronic travel authorisation (ETA)",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/eta",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "eta_scope",
+            "not_a_visa",
+            "transit"
+          ]
+        },
+        {
+          "label": "GOV.UK — Apply for an ETA",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/eta/apply",
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "eta_fee",
+            "validity",
+            "process"
+          ]
+        },
+        {
+          "label": "GOV.UK — Check if you need a UK visa",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/check-uk-visa",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "route_selector"
+          ]
+        },
+        {
+          "label": "GOV.UK — TB tests for visa applicants",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/tb-test-visa",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "tb_trigger",
+            "exemptions",
+            "certificate_validity"
+          ]
+        },
+        {
+          "label": "GOV.UK — Countries where you need a TB test",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/tb-test-visa/countries-where-you-need-a-tb-test",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "tb_country_list"
+          ]
+        },
+        {
+          "label": "GOV.UK — eVisas",
+          "authority": "UK Home Office / GOV.UK",
+          "url": "https://www.gov.uk/evisa",
+          "roles": [
+            "official_status"
+          ],
+          "covers": [
+            "evisa",
+            "ukvi_account",
+            "share_codes"
+          ]
+        },
+        {
+          "label": "UK visa fees calculator",
+          "authority": "UK Home Office",
+          "url": "https://visa-fees.homeoffice.gov.uk/",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "current_fee_lookup"
           ]
         }
-      ]
+      ],
+      "adapter": "countries/uk.md",
+      "notes": "Two branches. Standard Visitor visa (GBP 135/6mo; medical 234/11mo; academic 234/12mo; long-term 506/903/1128; transit 74.50) for visa nationals; ETA (GBP 20, valid 2yr or passport expiry) is NOT a visa and uses the UK ETA app/online flow. Route selection by nationality+purpose via the official check tool. TB certificate only for 6+ month stays from listed countries. UK moved to eVisas (UKVI account) replacing physical BRPs. Portal login-walled beyond public start page; rules+document-checklist depth. Verified live on gov.uk 2026-07-20."
     },
     {
       "id": "schengen",
@@ -162,27 +389,77 @@
       "region": "Europe",
       "aliases": [
         "eu schengen",
-        "schengen visa"
+        "schengen visa",
+        "schengen",
+        "type c visa",
+        "uniform short-stay visa"
       ],
-      "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "support_level": "full_adapter",
+      "last_verified": "2026-07-20",
       "sources": [
         {
-          "label": "EU visa policy",
-          "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
-          "authority": "European Commission",
+          "label": "EU Commission — Applying for a Schengen visa (updated 2025-12-02)",
+          "authority": "EU Commission (DG Migration and Home Affairs)",
+          "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
           "roles": [
             "authoritative_rules"
           ],
           "covers": [
-            "short_stay",
-            "airport_transit",
-            "visa_required",
-            "common_rules"
+            "90_180_rule",
+            "visa_forms",
+            "responsible_consulate",
+            "timing",
+            "documents",
+            "fingerprints",
+            "fees",
+            "processing",
+            "free_movement",
+            "refusal_appeal",
+            "participating_countries"
+          ]
+        },
+        {
+          "label": "EU Commission — Visa Information System (VIS)",
+          "authority": "EU Commission (DG Migration and Home Affairs)",
+          "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-information-system_en",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "VIS_biometric_matching",
+            "5yr_retention"
+          ]
+        },
+        {
+          "label": "EU Commission — ETIAS (updated 2025-10-06)",
+          "authority": "EU Commission (DG Migration and Home Affairs)",
+          "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
+          "roles": [
+            "official_status"
+          ],
+          "covers": [
+            "etias_not_a_visa",
+            "not_operational_2026-07-20",
+            "fee_20eur",
+            "reg_2018_1240"
+          ]
+        },
+        {
+          "label": "EU Commission press Q&A — ETIAS (MEMO/18/4362)",
+          "authority": "EU Commission",
+          "url": "https://ec.europa.eu/commission/presscorner/detail/en/MEMO_18_4362",
+          "roles": [
+            "official_status"
+          ],
+          "covers": [
+            "etias_vs_visa",
+            "3yr_validity",
+            "fee_exemptions"
           ]
         }
       ],
-      "notes": "Resolve the main destination and the responsible member-state consulate. National visas over 90 days follow national rules."
+      "notes": "Uniform short-stay (Type C) visa, 90/180 rule, 30 participating countries. Core rules (fee EUR 90/45/35/67.50, responsible-post logic, 15-day/6-month timing, 15-45 day processing, ICAO photo, passport 3-months-beyond, fingerprints at submission) verified live against EU Commission pages 2026-07-20. TWO Visa Code figures could NOT be verified live (EUR-Lex HTTP 202 bot-challenge): the EUR 30000 travel-insurance minimum (Art. 15) and the 59-month fingerprint-reuse window (Art. 13) - both marked Pending official verification in the adapter. ETIAS is a separate NON-visa track for visa-exempt travellers and is NOT operational as of 2026-07-20; current ETIAS fee EUR 20. Per-country portals login-walled; rules+document-checklist depth.",
+      "adapter": "countries/schengen.md"
     },
     {
       "id": "fr",
@@ -403,28 +680,169 @@
       "iso2": "AU",
       "name": "Australia",
       "region": "Oceania",
-      "aliases": [],
-      "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "aliases": [
+        "au",
+        "australia"
+      ],
+      "support_level": "full_adapter",
+      "last_verified": "2026-07-20",
       "sources": [
         {
-          "label": "Australian visa list",
-          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing",
-          "authority": "Australian Department of Home Affairs",
+          "label": "Home Affairs — Electronic Travel Authority (subclass 601)",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/electronic-travel-authority-601",
           "roles": [
-            "authoritative_rules",
+            "authoritative_rules"
+          ],
+          "covers": [
+            "601_eligibility",
+            "eta_passport_list",
+            "fee",
+            "conditions"
+          ]
+        },
+        {
+          "label": "Home Affairs — eVisitor (subclass 651)",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/evisitor-651",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "651_eligibility",
+            "european_passport_list",
+            "free",
+            "form_TV-AP-651"
+          ]
+        },
+        {
+          "label": "Home Affairs — Visitor visa (subclass 600) hub",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_streams",
+            "base_VACs",
+            "concessions"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Tourist stream (apply outside Australia)",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/tourist-stream-overseas",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_tourist_offshore",
+            "document_checklist",
+            "forms",
+            "health_biometrics"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Tourist stream (apply in Australia)",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/tourist-stream-onshore",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_tourist_onshore",
+            "fee"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Business Visitor stream",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/business-visitor-stream",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_business",
+            "activities",
+            "fee"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Sponsored Family stream",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/sponsored-family-stream",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_sponsored",
+            "sponsor",
+            "security_bond"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Approved Destination Status stream",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/approved-destination-stream",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_ads"
+          ]
+        },
+        {
+          "label": "Home Affairs — 600 Frequent Traveller stream",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600/frequent-traveller-stream",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "600_frequent_traveller",
+            "10yr_validity",
+            "fee"
+          ]
+        },
+        {
+          "label": "ImmiAccount login/portal",
+          "authority": "Department of Home Affairs (ImmiAccount)",
+          "url": "https://online.immi.gov.au/lusc/login",
+          "roles": [
             "official_application"
           ],
           "covers": [
-            "visit",
-            "study",
-            "work",
-            "family",
-            "visa_finder",
-            "apply"
+            "online_portal",
+            "TV-AP-651",
+            "VSS-AP-600"
+          ]
+        },
+        {
+          "label": "Visa Entitlement Verification Online (VEVO)",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/overview",
+          "roles": [
+            "official_status"
+          ],
+          "covers": [
+            "visa_status",
+            "conditions"
+          ]
+        },
+        {
+          "label": "Visa Pricing Estimator",
+          "authority": "Department of Home Affairs",
+          "url": "https://immi.homeaffairs.gov.au/visas/visa-pricing-estimator",
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "exact_current_VAC"
           ]
         }
-      ]
+      ],
+      "adapter": "countries/au.md",
+      "notes": "Three parallel visitor routes. 601 ETA (app-only, AUD20 service charge) for a specific passport list; 651 eVisitor (ImmiAccount, free) for the European eligible list (UK British Citizen only, no BN(O)); 600 Visitor visa (ImmiAccount, form VSS-AP-600) for everyone else / criminal conviction / prior health failure / health-care environments / longer or sponsored stays. Streams: Tourist offshore (from AUD250), Tourist onshore (from AUD630), Business (250), Sponsored Family (250 + possible sponsor security bond), ADS (250), Frequent Traveller (1845, up to 10yr). Pacific Island/Timor-Leste concession + PNG changes from 1 July 2026; VAC changes on the 1 July annual cycle. ImmiAccount login-walled. 601 fee/list from page last updated 12/08/2025."
     },
     {
       "id": "nz",
@@ -459,40 +877,139 @@
       "iso2": "JP",
       "name": "Japan",
       "region": "Asia",
-      "aliases": [],
-      "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "aliases": [
+        "jp",
+        "japan",
+        "日本"
+      ],
+      "support_level": "full_adapter",
+      "last_verified": "2026-07-20",
       "sources": [
         {
-          "label": "Visa information",
-          "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html",
+          "label": "MOFA — Visa (top / procedures & documents)",
           "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html",
           "roles": [
             "authoritative_rules"
           ],
           "covers": [
-            "short_stay",
-            "long_stay",
-            "documents",
-            "embassies"
+            "procedure",
+            "routes",
+            "document_templates"
           ]
         },
         {
-          "label": "Japan eVISA",
-          "url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
+          "label": "MOFA — Exemption of Visa (Short-Term Stay)",
           "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html",
           "roles": [
-            "authoritative_rules",
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_exemption_list",
+            "per_country_stay"
+          ]
+        },
+        {
+          "label": "MOFA — The JAPAN eVISA system",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "evisa_eligibility",
+            "eligible_residences",
+            "display_rules"
+          ]
+        },
+        {
+          "label": "JAPAN eVISA portal",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.evisa.mofa.go.jp/index",
+          "roles": [
             "official_application"
           ],
           "covers": [
-            "eligibility",
-            "tourism",
-            "apply",
-            "status"
+            "evisa_application",
+            "5_step_flow",
+            "payment",
+            "photo_spec"
+          ]
+        },
+        {
+          "label": "MOFA — Short-term stay for other nationalities (checklists & forms)",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/short/other_visa.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "checklists",
+            "form_templates"
+          ]
+        },
+        {
+          "label": "MOFA — Single-Entry Short-Term Stay Visa checklist (PDF)",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/files/000121327.pdf",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "purpose_specific_documents",
+            "guarantor_inviter"
+          ]
+        },
+        {
+          "label": "MOFA — Visa application form (English, PDF)",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/files/000124525.pdf",
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "application_form",
+            "photo_spec"
+          ]
+        },
+        {
+          "label": "MOFA — Nationals of China short-term stay",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/topics/china.html",
+          "roles": [
+            "delegated_application"
+          ],
+          "covers": [
+            "china_accredited_agency"
+          ]
+        },
+        {
+          "label": "MOFA — Visa Processing Time",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/day.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "processing_time"
+          ]
+        },
+        {
+          "label": "Immigration Services Agency of Japan",
+          "authority": "Immigration Services Agency (Ministry of Justice)",
+          "url": "https://www.moj.go.jp/isa/index.html",
+          "roles": [
+            "official_status"
+          ],
+          "covers": [
+            "landing_permission",
+            "status_of_residence"
           ]
         }
-      ]
+      ],
+      "adapter": "countries/jp.md",
+      "notes": "Short-Term Stay (Temporary Visitor). Three branches: (1) visa exemption for 74 countries/regions per MOFA novisa page (Sept 1 2025) - resolve live per nationality; per-country stay 15/30/90 days. (2) JAPAN eVISA - single-entry, tourism-only, ordinary passport, up to 90 days, eligible residences only; direct-online for AU/BR/KH/CA/SA/ZA/TW/UK/US, agency-mediated for CN/PH/VN + HK/IN/ID/MO/MN/KR/SG/AE; electronic issuance, display Visa Issuance Notice QR live at boarding (no PDF/screenshot). (3) Consular short-term visa via responsible mission or accredited agency/JVAC; China (all purposes) and PH/VN packaged tours are accredited-agency-only. Photo 45x35mm. Fees reciprocity-based, set per mission, some waived. Processing min 5 working days. Verified live mofa.go.jp 2026-07-20."
     },
     {
       "id": "kr",

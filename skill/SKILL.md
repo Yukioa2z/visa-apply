@@ -77,4 +77,4 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
 - Submission, document, timing, and privacy gates: `references/quality-gates.md`
 - Searchable destination directory: `references/jurisdictions.json`
 - Official source registry: `references/official-sources.json`
-- United States DS-160 adapter: `references/countries/us.md`
+- Full country adapters: `references/countries/` — United States DS-160 (`us.md`), Schengen Type C (`schengen.md`), Canada IRCC (`ca.md`), United Kingdom (`uk.md`), Australia (`au.md`), Japan (`jp.md`). Every other destination uses a source-seeded or live-discovered adapter.
