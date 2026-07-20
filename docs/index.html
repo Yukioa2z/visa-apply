@@ -189,13 +189,14 @@
           <div class="section-heading install-heading">
             <h2 id="install-title">Install Visa Apply</h2>
             <p>
-              Run one command to install the skill. It works with any compatible
-              agent environment.
+              Point <code class="inline">--dest</code> at your agent's skills
+              directory. The example uses Claude Code; swap the path for Codex
+              (<code class="inline">~/.codex/skills</code>) or any other agent.
             </p>
           </div>
 
           <div class="install-tool">
-            <code data-command="npx @yukioa2z/visa-apply">npx @yukioa2z/visa-apply</code>
+            <code data-command="npx @yukioa2z/visa-apply -- --dest ~/.claude/skills">npx @yukioa2z/visa-apply -- --dest ~/.claude/skills</code>
             <button class="copy-button" type="button" data-copy-command>Copy</button>
           </div>
         </div>

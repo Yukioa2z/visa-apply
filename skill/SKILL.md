@@ -23,6 +23,7 @@ This skill is not legal advice. The applicant must review every answer and handl
 3. Run the mandatory live visa-need check before detailed intake.
    - Read `references/live-route-check.md`.
    - Resolve the destination in `references/jurisdictions.json`; cached starting sources are in `references/official-sources.json`.
+   - Consult `references/policy-monitor.json` when present. A changed fingerprint means the official page needs review; it is never a visa verdict and never replaces the live check.
    - Run `python3 scripts/source_registry.py live-check-plan <country> ...` when useful.
    - Browse current destination-government and responsible-mission sources for the exact passport, residence, purpose, dates, duration, entries, arrival mode, and transit itinerary.
    - Cross-check IATA Travel Centre/Timatic or the operating carrier for boarding requirements. Treat it as operational evidence, not legal authority.
@@ -42,6 +43,7 @@ This skill is not legal advice. The applicant must review every answer and handl
    - No chat note or scratch file may become more authoritative than the HTML.
 8. Run `references/quality-gates.md`, then stop at the applicant review gate before portal entry. Call out inferred values, stale sources, missing documents, expiring evidence, and unresolved conflicts.
 9. Assist with form entry using Browser or Computer Use after review.
+   - Before filling anything, make sure the dossier HTML is open in the user's default viewer (open it if it is not) so they can follow progress while you enter the form. Keep updating that file as each field is filled; the user refreshes to see the latest.
    - In non-Codex environments, use the equivalent browser/computer capability, such as Peekaboo or the runtime's supported automation skill.
    - Never bypass CAPTCHA or security controls, invent data, or perform an applicant-only signature/certification.
 10. Backfill application IDs, receipts, appointments/biometrics, document requests, decision status, and passport/visa return details into the HTML.
@@ -68,6 +70,8 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
   --transit "Singapore, airside"
 ```
 
+Immediately open the dossier in the user's default viewer so they can watch it fill in as the interview proceeds. Use the platform opener: `open <path>` on macOS, `xdg-open <path>` on Linux, `start "" <path>` on Windows. Open it once; each later HTML update lands in the same file, so the user just refreshes the tab. If no opener is available (headless/remote), tell the user the local path to open manually.
+
 ## References
 
 - Full pipeline and source freshness rules: `references/pipeline.md`
@@ -77,4 +81,5 @@ python3 scripts/create_dossier.py /path/to/visa-dossier.html \
 - Submission, document, timing, and privacy gates: `references/quality-gates.md`
 - Searchable destination directory: `references/jurisdictions.json`
 - Official source registry: `references/official-sources.json`
+- Weekly official-source change signals: `references/policy-monitor.json` (source health only, never a visa verdict)
 - Full country adapters: `references/countries/` — United States DS-160 (`us.md`), Schengen Type C (`schengen.md`), Canada IRCC (`ca.md`), United Kingdom (`uk.md`), Australia (`au.md`), Japan (`jp.md`). Every other destination uses a source-seeded or live-discovered adapter.

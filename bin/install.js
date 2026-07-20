@@ -11,12 +11,13 @@ const sourceDir = path.join(packageRoot, "skill");
 function usage() {
   console.log(`Install ${skillName}
 
-Usage:
-  npx @yukioa2z/visa-apply
-  npx @yukioa2z/visa-apply -- --dest ~/.claude/skills
+Choose where to install with --dest — your agent's skills directory:
+  Claude Code   npx @yukioa2z/visa-apply -- --dest ~/.claude/skills
+  Codex         npx @yukioa2z/visa-apply -- --dest ~/.codex/skills
+  Other agent   npx @yukioa2z/visa-apply -- --dest <your agent's skills dir>
 
 Options:
-  --dest <path>   Skill root directory. Defaults to $CODEX_HOME/skills or ~/.codex/skills.
+  --dest <path>   Skill root directory (required).
   --dry-run       Print the destination without copying files.
   --help          Show this help message.
 `);
@@ -47,11 +48,16 @@ if (!fs.existsSync(sourceDir)) {
   process.exit(1);
 }
 
-const defaultRoot = process.env.CODEX_HOME
-  ? path.join(process.env.CODEX_HOME, "skills")
-  : path.join(os.homedir(), ".codex", "skills");
+const destOption = readOption("--dest");
+if (!destOption) {
+  console.error(
+    "No --dest given. Install into your agent's skills directory:\n"
+  );
+  usage();
+  process.exit(1);
+}
 
-const destRoot = path.resolve(expandHome(readOption("--dest") || defaultRoot));
+const destRoot = path.resolve(expandHome(destOption));
 const destDir = path.join(destRoot, skillName);
 
 if (args.includes("--dry-run")) {

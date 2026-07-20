@@ -4,8 +4,11 @@ Research, prepare, review, and track visa applications with current official sou
 
 [Website](https://yukioa2z.github.io/visa-apply/) · [Source](https://github.com/Yukioa2z/visa-apply)
 
+Install into your agent's skills directory with `--dest`:
+
 ```sh
-npx @yukioa2z/visa-apply
+npx @yukioa2z/visa-apply -- --dest ~/.claude/skills   # Claude Code
+npx @yukioa2z/visa-apply -- --dest ~/.codex/skills    # Codex
 ```
 
 Then invoke. To just check whether you need a visa:
@@ -20,11 +23,7 @@ Many trips end there with a visa-free or ETA answer. To prepare a full applicati
 Use $visa-apply to help me prepare a visa application for my destination and visa type.
 ```
 
-The installer copies the skill to `~/.codex/skills/visa-apply`. For Claude Code, Hermes, OpenClaw, or another agent with a different skill directory:
-
-```sh
-npx @yukioa2z/visa-apply -- --dest ~/.claude/skills
-```
+`--dest` is your agent's skills root; the installer copies the skill into `<dest>/visa-apply`. Point it at whatever directory your agent scans — Claude Code, Codex, Hermes, OpenClaw, or another agent. Run with `--help` to see the target paths.
 
 ## Pipeline
 
@@ -43,6 +42,12 @@ The searchable directory contains 250 ISO countries/areas, including the commonl
 No cached source stores a visa-free or visa-required answer. Every case must be checked against current destination-government rules for the exact travel document, residence, purpose, date, duration, arrival mode, and transit itinerary. IATA Travel Centre/Timatic or the operating carrier is used as a boarding-document cross-check, not as legal authority.
 
 Government immigration, foreign-ministry, and embassy pages are the rule authority. Delegated visa application centres are used only for appointment and submission logistics.
+
+## Weekly source monitoring
+
+Every Monday at 00:00 Asia/Shanghai, GitHub Actions compares normalized content fingerprints for every registered official visa source. All 250 destinations appear in the generated monitor: destinations with registered sources receive a change status, while destinations without a source seed are explicitly marked as requiring live official-source discovery.
+
+A new fingerprint is first recorded as a review candidate and is only confirmed as changed when the same fingerprint appears in the next run. Either state is a review signal, not a visa-policy verdict. The workflow records the result in `skill/references/policy-monitor.json`, increments the package patch version, commits the report, and dispatches the npm trusted-publishing workflow. This keeps the installable skill current without turning an arbitrary webpage edit into legal guidance.
 
 The applicant model is global. It keeps citizenship, travel-document issuer, legal residence, current location, consular application location, and transit route separate, including dual nationals, third-country applicants, minors, and holders of refugee or other non-passport travel documents.
 
