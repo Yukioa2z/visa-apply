@@ -1,8 +1,25 @@
 {
-  "name": "visa-apply",
+  "name": "@yukioa2z/visa-apply",
   "version": "3.0.0",
   "description": "Install a global visa-need research and application filing skill.",
   "license": "MIT",
+  "keywords": [
+    "visa",
+    "immigration",
+    "agent",
+    "skill",
+    "claude-code",
+    "codex",
+    "ds-160"
+  ],
+  "homepage": "https://yukioa2z.github.io/visa-apply/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yukioa2z/visa-apply.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yukioa2z/visa-apply/issues"
+  },
   "bin": {
     "visa-apply": "./bin/install.js"
   },

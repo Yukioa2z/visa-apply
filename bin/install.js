@@ -12,8 +12,8 @@ function usage() {
   console.log(`Install ${skillName}
 
 Usage:
-  npx github:Yukioa2z/visa-apply
-  npx github:Yukioa2z/visa-apply -- --dest ~/.claude/skills
+  npx @yukioa2z/visa-apply
+  npx @yukioa2z/visa-apply -- --dest ~/.claude/skills
 
 Options:
   --dest <path>   Skill root directory. Defaults to $CODEX_HOME/skills or ~/.codex/skills.
