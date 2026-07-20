@@ -41,18 +41,25 @@ Use $visa-apply to help me prepare a visa application for my destination and vis
 
 ## Coverage
 
-The searchable directory contains 250 ISO countries/areas, including the commonly used XK code for Kosovo. Cached official starting sources cover 40 destinations plus the Schengen route area; every other destination triggers live official-source discovery. Full country adapters (rules and document checklist verified against official sources) exist for the United States (DS-160), Schengen (Type C), Canada (IRCC), the United Kingdom, Australia, and Japan; every other destination uses a source-seeded or live-discovered adapter.
+The searchable directory covers 250 ISO countries/areas. Any of them can be researched live; six have full adapters with rules and document checklists verified against official sources:
 
-No cached source stores a visa-free or visa-required answer. Every case must be checked against current destination-government rules for the exact travel document, residence, purpose, date, duration, arrival mode, and transit itinerary. IATA Travel Centre/Timatic or the operating carrier is used as a boarding-document cross-check, not as legal authority.
+| Destination | Visa routes covered | Depth |
+| --- | --- | --- |
+| United States | B-1/B-2, F/M, J, H/L/O/P and other DS-160 nonimmigrant classes | Field-level (DS-160) |
+| Schengen Area | Type C short-stay (all ~29 member states) | Rules + checklist |
+| Canada | Visitor visa (TRV), eTA, Super Visa | Rules + checklist |
+| United Kingdom | Standard Visitor visa, ETA | Rules + checklist |
+| Australia | ETA (601), eVisitor (651), Visitor visa (600) | Rules + checklist |
+| Japan | Short-stay (visa exemption, eVISA, consular) | Rules + checklist |
+
+Every other destination uses a source-seeded start (about 40 more) or live official-source discovery. No cached source stores a visa-free or visa-required answer — every case is checked against current destination-government rules for the exact travel document, residence, purpose, dates, duration, arrival mode, and transit. IATA Travel Centre/Timatic or the operating carrier is a boarding-document cross-check, not legal authority.
 
 Government immigration, foreign-ministry, and embassy pages are the rule authority. Delegated visa application centres are used only for appointment and submission logistics.
 
-## Weekly source monitoring
-
-Every Monday at 00:00 America/Los_Angeles, GitHub Actions compares normalized content fingerprints for every registered official visa source. All 250 destinations appear in the generated monitor: destinations with registered sources receive a change status, while destinations without a source seed are explicitly marked as requiring live official-source discovery.
-
-A new fingerprint is first recorded as a review candidate and is only confirmed as changed when the same fingerprint appears in the next run. Either state is a review signal, not a visa-policy verdict. The workflow records the result in `skill/references/policy-monitor.json`, increments the package patch version, commits the report, and dispatches the npm trusted-publishing workflow. This keeps the installable skill current without turning an arbitrary webpage edit into legal guidance.
-
 The applicant model is global. It keeps citizenship, travel-document issuer, legal residence, current location, consular application location, and transit route separate, including dual nationals, third-country applicants, minors, and holders of refugee or other non-passport travel documents.
+
+## Staying current
+
+The official sources are watched weekly for changes, and a fresh copy of the skill is published automatically. When you install or update, you get the latest sources — you never maintain anything yourself. A changed page is only a signal to recheck the official source; the skill still verifies every visa question live at the time you apply.
 
 This skill is not legal advice. The applicant must review all information and handle applicant-only declarations, signatures, certifications, CAPTCHA, and submission.
