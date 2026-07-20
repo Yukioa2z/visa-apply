@@ -132,10 +132,8 @@ img {
 
 /* ---------- Section scaffold ---------- */
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
+main > section {
+  padding-block: 80px;
 }
 
 .section-inner {
@@ -162,7 +160,7 @@ main {
 .hero {
   max-width: 1080px;
   margin: 0 auto;
-  padding: clamp(64px, 11vw, 128px) var(--gutter) 0;
+  padding-inline: var(--gutter);
   text-align: center;
 }
 
@@ -449,10 +447,6 @@ main {
 
 /* ---------- Footer ---------- */
 
-.site-footer {
-  margin-top: 120px;
-}
-
 .footer-inner {
   max-width: 1080px;
   margin: 0 auto;
@@ -514,14 +508,6 @@ main {
 }
 
 @media (max-width: 560px) {
-  main {
-    gap: 80px;
-  }
-
-  .site-footer {
-    margin-top: 80px;
-  }
-
   .install-tool {
     grid-template-columns: 1fr;
     padding: 14px;
