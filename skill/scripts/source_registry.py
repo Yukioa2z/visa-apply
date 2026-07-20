@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -88,10 +89,22 @@ def _valid_https_url(value: str) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc)
 
 
+def _valid_iso_date(value: str) -> bool:
+    if not isinstance(value, str):
+        return False
+    try:
+        date.fromisoformat(value)
+        return True
+    except ValueError:
+        return False
+
+
 def validate(registry: dict, directory: dict | None = None) -> list[str]:
     errors: list[str] = []
     if registry.get("schema_version") != 1:
         errors.append("official source schema_version must be 1")
+    if not _valid_iso_date(registry.get("last_verified", "")):
+        errors.append("official source last_verified must be an ISO date (YYYY-MM-DD)")
 
     jurisdictions = registry.get("jurisdictions")
     if not isinstance(jurisdictions, list) or not jurisdictions:
@@ -110,6 +123,9 @@ def validate(registry: dict, directory: dict | None = None) -> list[str]:
 
         if jurisdiction.get("support_level") not in ALLOWED_LEVELS:
             errors.append(f"{prefix}.support_level is invalid")
+
+        if not _valid_iso_date(jurisdiction.get("last_verified", "")):
+            errors.append(f"{prefix}.last_verified must be an ISO date (YYYY-MM-DD)")
 
         sources = jurisdiction.get("sources")
         if not isinstance(sources, list) or not sources:
@@ -240,10 +256,73 @@ def print_live_check_plan(destination: dict, seed: dict | None, args: argparse.N
     print("\nGate: do not collect the full application form until the verdict is resolved or explicitly marked unresolved for applicant review.")
 
 
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/125.0 Safari/537.36"
+)
+# Government hosts routinely bot-block automated clients with these codes or by
+# dropping the connection. That means "guarded", not "dead" — we warn, not fail.
+GUARDED_STATUSES = {401, 403, 405, 406, 429, 503}
+
+
+def check_urls(registry: dict, timeout: float) -> tuple[list[str], list[str]]:
+    """Probe every seeded source URL. Returns (dead, guarded).
+
+    `dead` = genuinely broken (404/410, DNS failure, refused connection) and
+    should fail CI. `guarded` = reachable but bot-blocked; reported as a warning
+    only, because government hosts commonly reject non-browser clients.
+    """
+    import urllib.error
+    import urllib.request
+
+    dead: list[str] = []
+    guarded: list[str] = []
+    checked = 0
+    for jurisdiction in registry["jurisdictions"]:
+        for source in jurisdiction.get("sources", []):
+            url = source.get("url", "")
+            checked += 1
+            request = urllib.request.Request(
+                url,
+                headers={"User-Agent": BROWSER_USER_AGENT},
+            )
+            try:
+                with urllib.request.urlopen(request, timeout=timeout) as response:
+                    status = response.status
+            except urllib.error.HTTPError as error:
+                if error.code in GUARDED_STATUSES:
+                    guarded.append(f"{jurisdiction['id']} {url} -> HTTP {error.code}")
+                else:
+                    dead.append(f"{jurisdiction['id']} {url} -> HTTP {error.code}")
+                continue
+            except urllib.error.URLError as error:
+                # A dropped connection from a live host is typically anti-bot;
+                # a DNS/name-resolution failure is a genuinely dead host.
+                reason = str(error.reason)
+                if "Name or service not known" in reason or "nodename" in reason:
+                    dead.append(f"{jurisdiction['id']} {url} -> {error.reason}")
+                else:
+                    guarded.append(f"{jurisdiction['id']} {url} -> {error.reason}")
+                continue
+            except Exception as error:  # noqa: BLE001
+                guarded.append(f"{jurisdiction['id']} {url} -> {error}")
+                continue
+            if status in {404, 410}:
+                dead.append(f"{jurisdiction['id']} {url} -> HTTP {status}")
+            elif status >= 400:
+                guarded.append(f"{jurisdiction['id']} {url} -> HTTP {status}")
+    print(
+        f"Probed {checked} source URLs; {len(dead)} dead, {len(guarded)} guarded/unverified."
+    )
+    return dead, guarded
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("validate")
+    check_urls_parser = subparsers.add_parser("check-urls")
+    check_urls_parser.add_argument("--timeout", type=float, default=20.0)
     subparsers.add_parser("coverage")
     list_parser = subparsers.add_parser("list")
     list_parser.add_argument("--seeded-only", action="store_true")
@@ -271,6 +350,14 @@ def main() -> None:
             f"Valid registries: {len(directory['jurisdictions'])} destinations; "
             f"{len(registry['jurisdictions'])} official source seeds"
         )
+    elif args.command == "check-urls":
+        dead, guarded = check_urls(registry, args.timeout)
+        for warning in guarded:
+            print(f"GUARDED: {warning}")
+        for failure in dead:
+            print(f"DEAD: {failure}")
+        if dead:
+            raise SystemExit(1)
     elif args.command == "coverage":
         print(f"Searchable destinations: {len(directory['jurisdictions'])}")
         print(f"Destinations with cached official seeds: {len(seeded_iso2)}")

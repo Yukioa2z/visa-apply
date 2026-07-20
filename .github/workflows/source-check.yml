@@ -1,0 +1,41 @@
+name: Source registry check
+
+on:
+  push:
+    paths:
+      - "skill/references/**"
+      - "skill/scripts/source_registry.py"
+      - ".github/workflows/source-check.yml"
+  pull_request:
+    paths:
+      - "skill/references/**"
+      - "skill/scripts/source_registry.py"
+  schedule:
+    # Weekly on Monday 06:00 UTC — catches seed URLs that rot between releases.
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate registries (schema, roles, last_verified, ISO2 consistency)
+        run: python3 skill/scripts/source_registry.py validate
+
+  check-urls:
+    # Liveness probe. Runs on schedule/manual only — pushes/PRs shouldn't fail on
+    # a government host having a bad day. Fails only on genuinely dead URLs
+    # (404/410, DNS failure); bot-blocked hosts are reported as warnings.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe seed source URLs
+        run: python3 skill/scripts/source_registry.py check-urls

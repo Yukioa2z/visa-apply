@@ -47,7 +47,6 @@ Use these checks after the route is resolved and before submission.
 
 ## Privacy And Access
 
-- Confirm local/full-copy/redacted storage mode before collecting sensitive data.
-- Do not store passwords, one-time codes, security answers, or payment-card data unless the user explicitly requests a local record and understands the risk.
-- Redact exports by default and record who may access shared copies.
+- All applicant data stays local: it lives only in the local HTML dossier and is never transmitted to any external service, logged elsewhere, or used for any purpose beyond this application. This is a hard constraint, not a user setting.
+- Never store passwords, one-time codes, security answers, or payment-card data in the dossier.
 - Keep the HTML as the only authoritative case record.

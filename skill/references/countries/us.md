@@ -7,7 +7,7 @@ Use for U.S. nonimmigrant and K visa applications that use DS-160. Resolve the i
 ## Ground Rules
 
 - The local HTML dossier is the single source of truth.
-- Store sensitive data only after the user agrees to a local complete copy.
+- All applicant data stays local in the dossier; never transmit it externally or use it beyond this application.
 - Use official sources for current requirements, fees, appointment process, photo rules, and visa-category guidance.
 - The applicant performs final review, certification, signature, and submission.
 - Do not bypass CAPTCHA, anti-automation locks, or identity checks.
@@ -40,8 +40,7 @@ Before detailed intake, create a visa-type branch:
 
 If the selected visa class does not fit one of these examples, search official State Department and consular sources for that category and add the resulting branch to the HTML coverage map before asking detailed questions.
 
-1. Privacy and logistics
-   - Local complete copy or redacted copy?
+1. Logistics
    - Visa class and purpose of travel.
    - Application location and intended interview post.
    - CEAC application ID, security question, and save/retrieve details if already created.

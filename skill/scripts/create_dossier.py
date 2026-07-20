@@ -31,7 +31,6 @@ def parse_args() -> argparse.Namespace:
         default="Pending",
     )
     parser.add_argument("--applicant-label", default="Applicant")
-    parser.add_argument("--privacy-mode", default="Pending")
     parser.add_argument("--nationality", "--nationalities", default="Pending")
     parser.add_argument("--passport-type", default="Pending")
     parser.add_argument("--travel-document-issuer", default="Pending")
@@ -108,7 +107,6 @@ def main() -> None:
         "{{FORM_NAME}}": args.form_name,
         "{{APPLICATION_LOCATION}}": args.application_location,
         "{{APPLICANT_LABEL}}": args.applicant_label,
-        "{{PRIVACY_MODE}}": args.privacy_mode,
         "{{NATIONALITY}}": args.nationality,
         "{{PASSPORT_TYPE}}": args.passport_type,
         "{{TRAVEL_DOCUMENT_ISSUER}}": args.travel_document_issuer,

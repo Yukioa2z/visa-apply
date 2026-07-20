@@ -13,7 +13,7 @@ This skill is not legal advice. The applicant must review every answer and handl
 
 ## Required Workflow
 
-1. Confirm privacy mode before storing personal data. A complete local copy requires explicit consent.
+1. Keep all applicant data local. Personal data collected for the application lives only in the local HTML dossier on the user's machine. Never transmit it to any external service, log it outside the dossier, or use it for any purpose other than this application. This is a hard constraint, not a user setting.
 2. Collect routing facts only: destination, all nationalities or stateless/refugee status, travel-document type and issuing country, legal residence and residence status, actual application location, purpose, dates/duration, and relevant existing visas or residence permits.
    - Never infer nationality, residence, consular jurisdiction, or form language from the user's location or preferred language.
    - Treat citizenship, legal residence, current physical location, and application location as separate facts.

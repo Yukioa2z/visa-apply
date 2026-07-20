@@ -18,30 +18,52 @@
       "iso2": "US",
       "name": "United States",
       "region": "North America",
-      "aliases": ["usa", "united states of america"],
+      "aliases": [
+        "usa",
+        "united states of america"
+      ],
       "support_level": "full_adapter",
+      "last_verified": "2026-07-17",
       "adapter": "countries/us.md",
       "sources": [
         {
           "label": "U.S. Visas",
           "url": "https://travel.state.gov/content/travel/en/us-visas.html",
           "authority": "U.S. Department of State",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_types", "eligibility", "fees", "embassies"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_types",
+            "eligibility",
+            "fees",
+            "embassies"
+          ]
         },
         {
           "label": "DS-160",
           "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application.html",
           "authority": "U.S. Department of State",
-          "roles": ["authoritative_rules"],
-          "covers": ["form", "submission", "next_steps"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "form",
+            "submission",
+            "next_steps"
+          ]
         },
         {
           "label": "CEAC DS-160",
           "url": "https://ceac.state.gov/genniv/",
           "authority": "U.S. Department of State",
-          "roles": ["official_application"],
-          "covers": ["application", "retrieve"]
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "application",
+            "retrieve"
+          ]
         }
       ]
     },
@@ -52,20 +74,38 @@
       "region": "North America",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Immigration and citizenship",
           "url": "https://www.canada.ca/en/services/immigration-citizenship.html",
           "authority": "Immigration, Refugees and Citizenship Canada",
-          "roles": ["authoritative_rules"],
-          "covers": ["visit", "study", "work", "permanent_residence", "status"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visit",
+            "study",
+            "work",
+            "permanent_residence",
+            "status"
+          ]
         },
         {
           "label": "Visit Canada",
           "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html",
           "authority": "Immigration, Refugees and Citizenship Canada",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visitor_visa", "eta", "transit", "business_visit", "apply"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visitor_visa",
+            "eta",
+            "transit",
+            "business_visit",
+            "apply"
+          ]
         }
       ]
     },
@@ -74,22 +114,44 @@
       "iso2": "GB",
       "name": "United Kingdom",
       "region": "Europe",
-      "aliases": ["great britain", "britain", "gb"],
+      "aliases": [
+        "great britain",
+        "britain",
+        "gb"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visas and immigration",
           "url": "https://www.gov.uk/browse/visas-immigration",
           "authority": "UK Visas and Immigration",
-          "roles": ["authoritative_rules"],
-          "covers": ["visit", "work", "study", "family", "settlement", "eta"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visit",
+            "work",
+            "study",
+            "family",
+            "settlement",
+            "eta"
+          ]
         },
         {
           "label": "Apply for a UK visa",
           "url": "https://www.gov.uk/apply-to-come-to-the-uk",
           "authority": "UK Visas and Immigration",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["route_selection", "documents", "apply", "biometrics"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "route_selection",
+            "documents",
+            "apply",
+            "biometrics"
+          ]
         }
       ]
     },
@@ -98,15 +160,26 @@
       "iso2": null,
       "name": "Schengen Area",
       "region": "Europe",
-      "aliases": ["eu schengen", "schengen visa"],
+      "aliases": [
+        "eu schengen",
+        "schengen visa"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "EU visa policy",
           "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy_en",
           "authority": "European Commission",
-          "roles": ["authoritative_rules"],
-          "covers": ["short_stay", "airport_transit", "visa_required", "common_rules"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "short_stay",
+            "airport_transit",
+            "visa_required",
+            "common_rules"
+          ]
         }
       ],
       "notes": "Resolve the main destination and the responsible member-state consulate. National visas over 90 days follow national rules."
@@ -118,13 +191,24 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "France-Visas",
           "url": "https://france-visas.gouv.fr/en/",
           "authority": "Government of France",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_wizard", "requirements", "documents", "apply", "appointment", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_wizard",
+            "requirements",
+            "documents",
+            "apply",
+            "appointment",
+            "status"
+          ]
         }
       ]
     },
@@ -135,13 +219,22 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visa and Service",
           "url": "https://www.auswaertiges-amt.de/en/visa-service",
           "authority": "German Federal Foreign Office",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["schengen", "national_visa", "requirements", "consular_portal"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "schengen",
+            "national_visa",
+            "requirements",
+            "consular_portal"
+          ]
         }
       ]
     },
@@ -152,20 +245,35 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Entry visa",
           "url": "https://www.esteri.it/en/servizi-opportunita/ingressosoggiornoinitalia/visto_ingresso/",
           "authority": "Italian Ministry of Foreign Affairs and International Cooperation",
-          "roles": ["authoritative_rules"],
-          "covers": ["schengen", "national_visa", "visa_types", "consular_responsibility"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "schengen",
+            "national_visa",
+            "visa_types",
+            "consular_responsibility"
+          ]
         },
         {
           "label": "Visa for Italy",
           "url": "https://vistoperitalia.esteri.it/?lang=en",
           "authority": "Italian Ministry of Foreign Affairs and International Cooperation",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_wizard", "documents", "forms"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_wizard",
+            "documents",
+            "forms"
+          ]
         }
       ]
     },
@@ -176,13 +284,20 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Consular visa services",
           "url": "https://www.exteriores.gob.es/en/ServiciosAlCiudadano/Paginas/Servicios-consulares.aspx",
           "authority": "Spanish Ministry of Foreign Affairs, European Union and Cooperation",
-          "roles": ["authoritative_rules"],
-          "covers": ["schengen", "national_visa", "consulates"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "schengen",
+            "national_visa",
+            "consulates"
+          ]
         }
       ],
       "notes": "Use the Spanish mission responsible for the applicant's residence for the final checklist and delegated application location."
@@ -192,15 +307,27 @@
       "iso2": "NL",
       "name": "Netherlands",
       "region": "Europe",
-      "aliases": ["holland"],
+      "aliases": [
+        "holland"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visa for the Netherlands",
           "url": "https://www.netherlandsworldwide.nl/visa-the-netherlands",
           "authority": "Government of the Netherlands",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_required", "visa_types", "forms", "appointment", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_required",
+            "visa_types",
+            "forms",
+            "appointment",
+            "status"
+          ]
         }
       ]
     },
@@ -211,13 +338,23 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Entering Switzerland",
           "url": "https://www.sem.admin.ch/sem/en/home/overview-einreise.html",
           "authority": "Swiss State Secretariat for Migration",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_required", "schengen", "national_visa", "entry", "apply"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_required",
+            "schengen",
+            "national_visa",
+            "entry",
+            "apply"
+          ]
         }
       ]
     },
@@ -228,20 +365,36 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Irish Immigration Service",
           "url": "https://www.irishimmigration.ie/",
           "authority": "Immigration Service Delivery, Department of Justice",
-          "roles": ["authoritative_rules"],
-          "covers": ["visit", "study", "work", "family", "documents"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visit",
+            "study",
+            "work",
+            "family",
+            "documents"
+          ]
         },
         {
           "label": "AVATS application guide",
           "url": "https://www.irishimmigration.ie/coming-to-visit-ireland/giving-your-details-on-avats-for-a-visa-preclearance-application/",
           "authority": "Immigration Service Delivery, Department of Justice",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["form_fields", "application", "submission"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "form_fields",
+            "application",
+            "submission"
+          ]
         }
       ]
     },
@@ -252,13 +405,24 @@
       "region": "Oceania",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Australian visa list",
           "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing",
           "authority": "Australian Department of Home Affairs",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visit", "study", "work", "family", "visa_finder", "apply"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visit",
+            "study",
+            "work",
+            "family",
+            "visa_finder",
+            "apply"
+          ]
         }
       ]
     },
@@ -269,13 +433,24 @@
       "region": "Oceania",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Find and choose a visa",
           "url": "https://www.immigration.govt.nz/process-to-apply/find-a-visa-tool/",
           "authority": "Immigration New Zealand",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_search", "visit", "study", "work", "residence", "apply"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_search",
+            "visit",
+            "study",
+            "work",
+            "residence",
+            "apply"
+          ]
         }
       ]
     },
@@ -286,20 +461,36 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visa information",
           "url": "https://www.mofa.go.jp/j_info/visit/visa/index.html",
           "authority": "Ministry of Foreign Affairs of Japan",
-          "roles": ["authoritative_rules"],
-          "covers": ["short_stay", "long_stay", "documents", "embassies"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "short_stay",
+            "long_stay",
+            "documents",
+            "embassies"
+          ]
         },
         {
           "label": "Japan eVISA",
           "url": "https://www.mofa.go.jp/j_info/visit/visa/visaonline.html",
           "authority": "Ministry of Foreign Affairs of Japan",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["eligibility", "tourism", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "eligibility",
+            "tourism",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -308,15 +499,28 @@
       "iso2": "KR",
       "name": "South Korea",
       "region": "Asia",
-      "aliases": ["korea", "republic of korea"],
+      "aliases": [
+        "korea",
+        "republic of korea"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Korea Visa Portal",
           "url": "https://visa.go.kr/",
           "authority": "Ministry of Justice, Republic of Korea",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_navigator", "visa_types", "electronic_form", "evisa", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_navigator",
+            "visa_types",
+            "electronic_form",
+            "evisa",
+            "status"
+          ]
         }
       ]
     },
@@ -325,22 +529,39 @@
       "iso2": "CN",
       "name": "China",
       "region": "Asia",
-      "aliases": ["prc", "people's republic of china"],
+      "aliases": [
+        "prc",
+        "people's republic of china"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Chinese visa categories",
           "url": "https://cs.mfa.gov.cn/gyls/lscs/201106/t20110615_876353.shtml",
           "authority": "Ministry of Foreign Affairs of the People's Republic of China",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_types", "purposes"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_types",
+            "purposes"
+          ]
         },
         {
           "label": "Chinese Visa Application Service Center",
           "url": "https://www.visaforchina.cn/",
           "authority": "Chinese Visa Application Service Center",
-          "roles": ["delegated_application"],
-          "covers": ["local_requirements", "form", "appointment", "submission", "status"]
+          "roles": [
+            "delegated_application"
+          ],
+          "covers": [
+            "local_requirements",
+            "form",
+            "appointment",
+            "submission",
+            "status"
+          ]
         }
       ],
       "notes": "The service center is a delegated commercial operator. Use the responsible Chinese embassy or consulate as the rule authority."
@@ -352,13 +573,21 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Entry visa requirements",
           "url": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements",
           "authority": "Singapore Immigration and Checkpoints Authority",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_required", "documents", "application_channels"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_required",
+            "documents",
+            "application_channels"
+          ]
         }
       ]
     },
@@ -369,20 +598,33 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visa requirement by country",
           "url": "https://www.imi.gov.my/index.php/en/main-services/visa/visa-requirement-by-country/",
           "authority": "Immigration Department of Malaysia",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_required", "visa_types", "entry"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_required",
+            "visa_types",
+            "entry"
+          ]
         },
         {
           "label": "Malaysia eVISA",
           "url": "https://malaysiavisa.imi.gov.my/",
           "authority": "Immigration Department of Malaysia",
-          "roles": ["official_application"],
-          "covers": ["evisa", "apply", "status"]
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "evisa",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -393,13 +635,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Thai e-Visa",
           "url": "https://thaievisa.go.th/",
           "authority": "Ministry of Foreign Affairs of Thailand",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_required", "visa_types", "documents", "apply", "payment", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_required",
+            "visa_types",
+            "documents",
+            "apply",
+            "payment",
+            "status"
+          ]
         }
       ]
     },
@@ -408,15 +661,27 @@
       "iso2": "VN",
       "name": "Vietnam",
       "region": "Asia",
-      "aliases": ["viet nam"],
+      "aliases": [
+        "viet nam"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Vietnam electronic visa",
           "url": "https://evisa.gov.vn/",
           "authority": "Immigration Department, Ministry of Public Security",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["evisa", "form_fields", "documents", "payment", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "evisa",
+            "form_fields",
+            "documents",
+            "payment",
+            "status"
+          ]
         }
       ]
     },
@@ -427,13 +692,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Indonesia e-Visa",
           "url": "https://evisa.imigrasi.go.id/",
           "authority": "Directorate General of Immigration, Indonesia",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_types", "requirements", "apply", "payment", "status", "extension"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_types",
+            "requirements",
+            "apply",
+            "payment",
+            "status",
+            "extension"
+          ]
         }
       ]
     },
@@ -444,13 +720,23 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "India Visa Online",
           "url": "https://indianvisaonline.gov.in/",
           "authority": "Bureau of Immigration, Ministry of Home Affairs",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["regular_visa", "evisa", "visa_on_arrival", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "regular_visa",
+            "evisa",
+            "visa_on_arrival",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -459,22 +745,41 @@
       "iso2": "TR",
       "name": "Türkiye",
       "region": "Europe and Asia",
-      "aliases": ["turkey", "turkiye"],
+      "aliases": [
+        "turkey",
+        "turkiye"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visa information for foreigners",
           "url": "https://www.mfa.gov.tr/visa-information-for-foreigners.en.mfa",
           "authority": "Ministry of Foreign Affairs of Türkiye",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_required", "passport_type", "nationality_rules", "embassy_route"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_required",
+            "passport_type",
+            "nationality_rules",
+            "embassy_route"
+          ]
         },
         {
           "label": "Türkiye e-Visa",
           "url": "https://www.evisa.gov.tr/",
           "authority": "Ministry of Foreign Affairs of Türkiye",
-          "roles": ["official_application"],
-          "covers": ["tourism", "commerce", "apply", "payment", "status"]
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "tourism",
+            "commerce",
+            "apply",
+            "payment",
+            "status"
+          ]
         }
       ]
     },
@@ -483,22 +788,42 @@
       "iso2": "AE",
       "name": "United Arab Emirates",
       "region": "Middle East",
-      "aliases": ["uae"],
+      "aliases": [
+        "uae"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visit visas",
           "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/visit-visas",
           "authority": "Official Platform of the UAE Government",
-          "roles": ["authoritative_rules"],
-          "covers": ["visit", "tourism", "business", "medical", "study", "transit"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visit",
+            "tourism",
+            "business",
+            "medical",
+            "study",
+            "transit"
+          ]
         },
         {
           "label": "Where to apply",
           "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Apply-and-track-visa/where-to-apply-for-entry-permits-or-visas",
           "authority": "Official Platform of the UAE Government",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["icp", "gdrfa", "application_channels", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "icp",
+            "gdrfa",
+            "application_channels",
+            "status"
+          ]
         }
       ]
     },
@@ -507,22 +832,40 @@
       "iso2": "SA",
       "name": "Saudi Arabia",
       "region": "Middle East",
-      "aliases": ["ksa"],
+      "aliases": [
+        "ksa"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "KSA Visa",
           "url": "https://ksavisa.sa/",
           "authority": "Ministry of Foreign Affairs of Saudi Arabia",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_types", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_types",
+            "apply",
+            "status"
+          ]
         },
         {
           "label": "Saudi tourist eVisa",
           "url": "https://visa.visitsaudi.com/",
           "authority": "Saudi Tourism Authority",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["tourism", "eligibility", "apply", "payment"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "tourism",
+            "eligibility",
+            "apply",
+            "payment"
+          ]
         }
       ]
     },
@@ -533,13 +876,24 @@
       "region": "Africa",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "South African visas",
           "url": "https://www.dha.gov.za/index.php/immigration-services/types-of-visas",
           "authority": "South African Department of Home Affairs",
-          "roles": ["authoritative_rules"],
-          "covers": ["visitor", "work", "study", "business", "medical", "documents", "exemptions"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visitor",
+            "work",
+            "study",
+            "business",
+            "medical",
+            "documents",
+            "exemptions"
+          ]
         }
       ]
     },
@@ -550,13 +904,23 @@
       "region": "North America",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visas for foreigners",
           "url": "https://www.gob.mx/sre/en/acciones-y-programas/visas-para-extranjeros-8036",
           "authority": "Secretariat of Foreign Affairs of Mexico",
-          "roles": ["authoritative_rules"],
-          "covers": ["tourism", "business", "student", "temporary_residence", "permanent_residence", "forms"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "tourism",
+            "business",
+            "student",
+            "temporary_residence",
+            "permanent_residence",
+            "forms"
+          ]
         }
       ]
     },
@@ -567,13 +931,20 @@
       "region": "South America",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Brazilian visas",
           "url": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/quem-contatar/vistos",
           "authority": "Ministry of Foreign Affairs of Brazil",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_types", "consular_network", "local_requirements"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_types",
+            "consular_network",
+            "local_requirements"
+          ]
         }
       ],
       "notes": "Resolve the responsible Brazilian consular post; requirements vary by nationality and place of application."
@@ -583,15 +954,29 @@
       "iso2": "HK",
       "name": "Hong Kong",
       "region": "Asia",
-      "aliases": ["hong kong sar", "hksar"],
+      "aliases": [
+        "hong kong sar",
+        "hksar"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Visit and transit",
           "url": "https://www.immd.gov.hk/eng/services/visas/visit_transit.html",
           "authority": "Hong Kong Immigration Department",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_waiver", "visit", "transit", "documents", "apply", "extension"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_waiver",
+            "visit",
+            "transit",
+            "documents",
+            "apply",
+            "extension"
+          ]
         }
       ]
     },
@@ -600,15 +985,27 @@
       "iso2": "MO",
       "name": "Macau",
       "region": "Asia",
-      "aliases": ["macao", "macau sar"],
+      "aliases": [
+        "macao",
+        "macau sar"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Immigration clearance of non-residents",
           "url": "https://www.gov.mo/en/services/ps-1474/ps-1474b/",
           "authority": "Macao Public Security Police Force",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_exemption", "prior_authorization", "visa_on_arrival", "passport_validity", "fees"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_exemption",
+            "prior_authorization",
+            "visa_on_arrival",
+            "passport_validity",
+            "fees"
+          ]
         }
       ]
     },
@@ -617,22 +1014,41 @@
       "iso2": "TW",
       "name": "Taiwan",
       "region": "Asia",
-      "aliases": ["roc", "republic of china"],
+      "aliases": [
+        "roc",
+        "republic of china"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Taiwan visa information",
           "url": "https://www.boca.gov.tw/np-137-2.html",
           "authority": "Bureau of Consular Affairs, Ministry of Foreign Affairs",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_exempt", "landing_visa", "evisa", "visitor", "resident", "study", "work"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_exempt",
+            "landing_visa",
+            "evisa",
+            "visitor",
+            "resident",
+            "study",
+            "work"
+          ]
         },
         {
           "label": "Taiwan online visa application",
           "url": "https://visawebapp.boca.gov.tw/BOCA_EVISA/MRV04FORM.doYou",
           "authority": "Bureau of Consular Affairs, Ministry of Foreign Affairs",
-          "roles": ["official_application"],
-          "covers": ["evisa", "application"]
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "evisa",
+            "application"
+          ]
         }
       ]
     },
@@ -643,13 +1059,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Philippine visa policy and eVisa",
           "url": "https://evisa.gov.ph/page/policy?l2=Free+to+enter+the+Philippines+without+Visa",
           "authority": "Department of Foreign Affairs of the Philippines",
-          "roles": ["authoritative_rules", "official_application"],
-          "covers": ["visa_free", "nationality_exceptions", "entry_ports", "transit", "visa_types", "evisa"]
+          "roles": [
+            "authoritative_rules",
+            "official_application"
+          ],
+          "covers": [
+            "visa_free",
+            "nationality_exceptions",
+            "entry_ports",
+            "transit",
+            "visa_types",
+            "evisa"
+          ]
         }
       ]
     },
@@ -660,13 +1087,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Cambodia eVisa",
           "url": "https://www.evisa.gov.kh/",
           "authority": "Ministry of Foreign Affairs and International Cooperation of Cambodia",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["evisa", "eligibility", "entry_ports", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "evisa",
+            "eligibility",
+            "entry_ports",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -675,15 +1113,30 @@
       "iso2": "LA",
       "name": "Laos",
       "region": "Asia",
-      "aliases": ["lao pdr"],
+      "aliases": [
+        "lao pdr"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Lao eVisa",
           "url": "https://laoevisa.gov.la/",
           "authority": "Lao Immigration Department",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["evisa", "eligibility", "documents", "processing", "fees", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "evisa",
+            "eligibility",
+            "documents",
+            "processing",
+            "fees",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -692,15 +1145,29 @@
       "iso2": "MM",
       "name": "Myanmar",
       "region": "Asia",
-      "aliases": ["burma"],
+      "aliases": [
+        "burma"
+      ],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Myanmar eVisa",
           "url": "https://evisa.moip.gov.mm/",
           "authority": "Ministry of Immigration and Population of Myanmar",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["tourist", "business", "eligibility", "entry_ports", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "tourist",
+            "business",
+            "eligibility",
+            "entry_ports",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -711,13 +1178,22 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Nepal visa on arrival",
           "url": "https://www.immigration.gov.np/en/page/visa-on-arrival",
           "authority": "Department of Immigration of Nepal",
-          "roles": ["authoritative_rules"],
-          "covers": ["visa_on_arrival", "exemptions", "fees", "duration", "entry_process"]
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_on_arrival",
+            "exemptions",
+            "fees",
+            "duration",
+            "entry_process"
+          ]
         }
       ]
     },
@@ -728,13 +1204,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Sri Lanka ETA",
           "url": "https://www.eta.gov.lk/slvisa/",
           "authority": "Department of Immigration and Emigration of Sri Lanka",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["eta", "eligibility", "fees", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "eta",
+            "eligibility",
+            "fees",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -745,13 +1232,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Pakistan online visa",
           "url": "https://visa.nadra.gov.pk/",
           "authority": "Government of Pakistan",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["visa_types", "eligibility", "documents", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "visa_types",
+            "eligibility",
+            "documents",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -762,13 +1260,26 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Bangladesh online visa application",
           "url": "https://visa.gov.bd/",
           "authority": "Department of Immigration and Passports of Bangladesh",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["visa", "extension", "no_visa_required", "visa_on_arrival", "fees", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "visa",
+            "extension",
+            "no_visa_required",
+            "visa_on_arrival",
+            "fees",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -779,13 +1290,24 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Mongolia eVisa",
           "url": "https://evisa.mn/",
           "authority": "Government of Mongolia",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["visa_free", "evisa", "visa_countries", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "visa_free",
+            "evisa",
+            "visa_countries",
+            "apply",
+            "status"
+          ]
         }
       ]
     },
@@ -796,13 +1318,25 @@
       "region": "Africa",
       "aliases": [],
       "support_level": "source_seeded",
+      "last_verified": "2026-07-17",
       "sources": [
         {
           "label": "Kenya Electronic Travel Authorisation",
           "url": "https://www.etakenya.go.ke/",
           "authority": "Directorate of Immigration Services of Kenya",
-          "roles": ["authoritative_rules", "official_application", "official_status"],
-          "covers": ["eta", "eligibility", "exemptions", "requirements", "apply", "status"]
+          "roles": [
+            "authoritative_rules",
+            "official_application",
+            "official_status"
+          ],
+          "covers": [
+            "eta",
+            "eligibility",
+            "exemptions",
+            "requirements",
+            "apply",
+            "status"
+          ]
         }
       ]
     }
