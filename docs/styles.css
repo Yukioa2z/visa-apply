@@ -429,8 +429,8 @@ main > section {
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .terminal-bar .dot {
@@ -542,7 +542,8 @@ main > section {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 820px) {
-  .route-grid {
+  .route-grid,
+  .install-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -571,9 +572,9 @@ main > section {
 }
 
 @media (max-width: 560px) {
-  .install-tool {
-    grid-template-columns: 1fr;
-    padding: 14px;
+  .install-foot {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .copy-button {
@@ -581,7 +582,6 @@ main > section {
   }
 
   .copy-status {
-    grid-column: 1;
     text-align: center;
   }
 }
