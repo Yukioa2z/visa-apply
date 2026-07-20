@@ -5,7 +5,7 @@ Research, prepare, review, and track visa applications with current official sou
 [Website](https://yukioa2z.github.io/visa-apply/) · [Source](https://github.com/Yukioa2z/visa-apply)
 
 ```sh
-npx --yes @yukioa2z/visa-apply
+npx @yukioa2z/visa-apply
 ```
 
 Then invoke. To just check whether you need a visa:
@@ -23,7 +23,7 @@ Use $visa-apply to help me prepare a visa application for my destination and vis
 The installer copies the skill to `~/.codex/skills/visa-apply`. For Claude Code, Hermes, OpenClaw, or another agent with a different skill directory:
 
 ```sh
-npx --yes @yukioa2z/visa-apply -- --dest ~/.claude/skills
+npx @yukioa2z/visa-apply -- --dest ~/.claude/skills
 ```
 
 ## Pipeline

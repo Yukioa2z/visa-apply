@@ -6,10 +6,13 @@
   --muted: #6b6f73;
   --faint: #9a9ea2;
   --rule: #e4e3de;
-  --rule-strong: #d0cfc9;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   --gutter: 24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
 }
 
 * {
@@ -64,7 +67,7 @@ img {
   padding: 8px 12px;
   background: var(--ink);
   color: var(--bg);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   transform: translateY(-160%);
   transition: transform 0.15s ease;
 }
@@ -82,7 +85,7 @@ img {
   padding: 10px 16px;
   background: var(--ink);
   color: var(--bg);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   box-shadow: 0 8px 24px rgba(22, 24, 26, 0.18);
   font-size: 14px;
   line-height: 1.4;
@@ -229,7 +232,7 @@ main > section {
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
@@ -257,8 +260,8 @@ main > section {
 .hero-shot img {
   width: 100%;
   height: auto;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
 }
@@ -375,7 +378,7 @@ main > section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--rule);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
@@ -432,7 +435,7 @@ main > section {
   width: 100%;
   max-width: 360px;
   border: 1px solid var(--rule);
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   padding: 6px 6px 6px 16px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -456,7 +459,7 @@ main > section {
   font: inherit;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: opacity 0.12s ease;
 }
@@ -540,7 +543,6 @@ main > section {
   .copy-button {
     width: 100%;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
