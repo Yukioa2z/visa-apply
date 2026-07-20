@@ -543,6 +543,12 @@ main > section {
   .copy-button {
     width: 100%;
   }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
