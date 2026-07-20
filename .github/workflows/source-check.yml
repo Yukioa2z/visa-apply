@@ -14,7 +14,7 @@ on:
       - "tests/**"
   schedule:
     - cron: "0 0 * * 1"
-      timezone: "Asia/Shanghai"
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
     inputs:
       release:

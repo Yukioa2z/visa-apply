@@ -49,7 +49,7 @@ Government immigration, foreign-ministry, and embassy pages are the rule authori
 
 ## Weekly source monitoring
 
-Every Monday at 00:00 Asia/Shanghai, GitHub Actions compares normalized content fingerprints for every registered official visa source. All 250 destinations appear in the generated monitor: destinations with registered sources receive a change status, while destinations without a source seed are explicitly marked as requiring live official-source discovery.
+Every Monday at 00:00 America/Los_Angeles, GitHub Actions compares normalized content fingerprints for every registered official visa source. All 250 destinations appear in the generated monitor: destinations with registered sources receive a change status, while destinations without a source seed are explicitly marked as requiring live official-source discovery.
 
 A new fingerprint is first recorded as a review candidate and is only confirmed as changed when the same fingerprint appears in the next run. Either state is a review signal, not a visa-policy verdict. The workflow records the result in `skill/references/policy-monitor.json`, increments the package patch version, commits the report, and dispatches the npm trusted-publishing workflow. This keeps the installable skill current without turning an arbitrary webpage edit into legal guidance.
 
