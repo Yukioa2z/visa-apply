@@ -1,6 +1,21 @@
 const copyButtons = Array.from(document.querySelectorAll("[data-copy-command]"));
 const copyStatus = document.querySelector(".copy-status");
 const command = document.querySelector("[data-command]");
+const copyToast = document.querySelector(".copy-toast");
+let copyToastTimer;
+
+function showCopyToast(message) {
+  if (!copyToast) return;
+
+  window.clearTimeout(copyToastTimer);
+  copyToast.textContent = message;
+  copyToast.classList.add("is-visible");
+
+  copyToastTimer = window.setTimeout(() => {
+    copyToast.classList.remove("is-visible");
+    copyToast.textContent = "";
+  }, 2200);
+}
 
 async function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) {
@@ -28,25 +43,18 @@ copyButtons.forEach((button) => {
     if (!command) return;
 
     const isHeroButton = button.classList.contains("hero-copy-button");
-    const defaultLabel = button.textContent;
 
     try {
       await copyText(command.dataset.command);
 
       if (isHeroButton) {
-        button.textContent = "Copied";
-        window.setTimeout(() => {
-          button.textContent = defaultLabel;
-        }, 1600);
+        showCopyToast("Copied, now paste to your agent.");
       } else {
         copyStatus.textContent = "Command copied.";
       }
     } catch {
       if (isHeroButton) {
-        button.textContent = "Copy failed";
-        window.setTimeout(() => {
-          button.textContent = defaultLabel;
-        }, 1600);
+        showCopyToast("Copy failed. Copy the command below.");
       } else {
         copyStatus.textContent = "Copy failed. Select the command manually.";
       }
