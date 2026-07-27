@@ -1,6 +1,6 @@
 # Canada Adapter: Temporary Resident Visa (visitor visa) via IRCC
 
-Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure account is login-walled and not field-scriptable). Verified against IRCC / canada.ca on 2026-07-20. A few specifics are marked **pending exact-page reconfirmation** because those pages 404'd or dropped the connection on the verification date.
+Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure account is login-walled and not field-scriptable). Verified against public IRCC / canada.ca pages on 2026-07-27. Logged-out source checks cannot guarantee legal accuracy; re-check IRCC before filing or travel.
 
 ## Metadata
 
@@ -10,7 +10,7 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
   - **eTA (Electronic Travel Authorization)** — a *separate, simpler* route for visa-exempt foreign nationals arriving **by air**. Not a visa. Determines whether the visa workflow applies at all.
   - **Super Visa** — long-validity multiple-entry visa for parents/grandparents of Canadian citizens/PRs/registered Indians. A TRV variant with extra insurance + host-income requirements.
 - **Applicant assumptions:** Nationality- and residence-agnostic. The responsible visa office is the IRCC visa office / VAC network servicing the applicant's country of residence; country-specific instructions attach to the online personalized document checklist. Applicant is assumed to be **outside Canada** at time of application.
-- **Last verified date:** 2026-07-20
+- **Last verified date:** 2026-07-27
 - **Official source IDs/URLs:** see `official-sources.json`.
 - **Support level:** `full_adapter`
 
@@ -22,7 +22,7 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 - **Exempt from eTA (carry other ID instead):** U.S. citizens (carry valid U.S. passport); U.S. lawful permanent residents (carry valid PR card [I-551] or re-entry permit [I-327] **plus** a valid passport of nationality); Canadian citizens/dual citizens (Canadian passport); Canadian PRs (PR card / PR travel document).
 - **Duration/validity:** Valid up to five years or until the passport expires, electronically linked to the passport. Does not guarantee entry.
 - **Split rule (load-bearing):** Visa-exempt + air → **use the eTA route, not this TRV workflow.** Visa-exempt + land/sea → nothing needed. Some visa-required nationals may be eTA-eligible for air travel but **still need a TRV for land/sea entry.**
-- **Fee:** eTA is CAD $7 (confirm on the eTA facts page at apply time — the facts page opened on 2026-07-20 did not restate the amount, so treat as **pending exact-page reconfirmation**).
+- **Fee:** eTA is CAD $7; the official facts page reconfirmed this on 2026-07-27.
 - **Timatic/carrier cross-check:** Airlines validate eTA/visa status at boarding against IRCC systems; mismatch = denied boarding. Cross-check nationality + arrival mode against the eTA-vs-TRV decision before assuming the visa workflow applies.
 
 ### Branch B — Temporary Resident Visa (visitor visa)
@@ -38,6 +38,12 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 - **Visa validity:** May be issued for up to 10 years or until the expiry of the passport or biometrics, whichever comes first. Renewing biometrics does not automatically extend the visa to 10 years.
 - **Medical exam triggers:** Stays **≤6 months** — generally not required, except jobs in close contact with people (health care, clinical lab, childcare, medical students) and certain agricultural workers who lived in/visited a designated country 6+ consecutive months in the prior year. Stays **>6 months** — required if at least one applies: lived in/traveled to a designated country for 6+ consecutive months in the year before coming; OR coming to work a public-health-sensitive job; OR applying for a parent/grandparent super visa. The designated-country list was updated **November 3, 2025** — re-check the current list.
 - **Policy freshness trigger:** Re-verify each cycle: fee schedule, biometrics fee/exemptions, medical designated-country list (last change 2025-11-03), and LICO income tables (annual).
+
+### Temporary 2026 Ebola measures — all visitor routes
+- **Residence-based document suspension:** From 23:59:59 ET on **May 27, 2026** through 23:59:59 ET on **August 28, 2026**, Canada temporarily suspends immigration documents of foreign nationals who listed the Democratic Republic of the Congo, South Sudan, or Uganda as their last country of residence. This includes TRVs and eTAs; applications continue to be processed but are not finalized during the measure.
+- **Recent-travel restriction:** From **July 20, 2026**, foreign nationals who visited the Democratic Republic of the Congo in the previous 21 days cannot travel to Canada. Canadian citizens and permanent residents may return subject to medical screening and public-health measures.
+- **Scope and exemptions:** The residence rule is based on the last country of residence stated in the application, not citizenship. Case-by-case exemptions may be requested with evidence through IRCC's crisis web form.
+- **Freshness:** These are time-limited emergency measures. Re-check the official Ebola measures page before relying on the August 28 end date because the government may repeal, extend, or replace them.
 
 ### Branch C — Super Visa (parents & grandparents)
 - **Who:** Parents/grandparents (biological or adopted) of a child/grandchild who is a Canadian citizen, PR, or registered Indian, aged 18+ and living in Canada. Cannot include dependants.
@@ -121,4 +127,5 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 5. **Dual intent:** Visiting while also pursuing PR is permissible, but the applicant must still satisfy the officer they will leave at the end of the visit. Ties evidence must be genuine and specific.
 6. **Minors / custody:** Minors traveling alone or with one parent need an authorization letter signed by both parents/legal guardians; custody/consent gaps trigger scrutiny.
 7. **Super Visa specifics:** Insurance must be a purchased policy of ≥$100,000 valid ≥1 year (quotes rejected); host income must meet current-year LICO; medical exam is mandatory. Any missing = refusal.
-8. **Freshness:** Medical designated-country list changed 2025-11-03; LICO and fees update periodically — re-verify at application time.
+8. **Temporary Ebola measures:** Screen the applicant's last country of residence and travel during the prior 21 days against the current IRCC emergency page. The present measures are scheduled through 2026-08-28 but may change.
+9. **Freshness:** Medical designated-country list changed 2025-11-03; LICO and fees update periodically — re-verify at application time.

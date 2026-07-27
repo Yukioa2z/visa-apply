@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-07-20",
+  "last_verified": "2026-07-27",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -77,7 +77,7 @@
         "canada"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-07-20",
+      "last_verified": "2026-07-27",
       "sources": [
         {
           "label": "IRCC — eTA facts (eTA vs visitor visa)",
@@ -230,10 +230,24 @@
             "2FA",
             "personal_reference_code"
           ]
+        },
+        {
+          "label": "IRCC — Ebola disease temporary measures (2026)",
+          "authority": "IRCC / canada.ca",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/special-measures/ebola-2026.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "temporary_travel_restrictions",
+            "document_suspension",
+            "effective_dates",
+            "exemptions"
+          ]
         }
       ],
       "adapter": "countries/ca.md",
-      "notes": "Temporary Resident Visa (visitor) via IRCC at rules+checklist depth; IRCC secure account login-walled. eTA-vs-TRV split load-bearing: visa-exempt fliers need an eTA (not TRV); visa-exempt land/sea entrants need neither; US citizens/green-card holders are eTA-exempt. TRV fees CAD 100 individual / 500 family(5+), biometrics 85 / 170 family cap. Super Visa requires 100000 medical insurance (health/hospitalization/repatriation, valid 1yr) + host LICO income; mandatory medical exam. Pending exact-page reconfirmation (pages 404'd on 2026-07-20): eTA 7 fee amount, biometrics 10-year reuse exact wording, visa photo spec exact mm, current LICO table."
+      "notes": "Temporary Resident Visa (visitor) via IRCC at rules+checklist depth; IRCC secure account login-walled. eTA-vs-TRV split load-bearing: visa-exempt fliers need an eTA (not TRV); visa-exempt land/sea entrants need neither; US citizens/green-card holders are eTA-exempt. TRV fees CAD 100 individual / 500 family(5+), biometrics 85 / 170 family cap. Super Visa requires 100000 medical insurance (health/hospitalization/repatriation, valid 1yr) + host LICO income; mandatory medical exam. Temporary Ebola measures currently affect specified residence and recent-travel routes through 2026-08-28; recheck before travel. Biometrics reuse wording, visa photo dimensions, and the current LICO table remain application-time checks."
     },
     {
       "id": "uk",
@@ -1267,7 +1281,7 @@
         "turkiye"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-07-27",
       "sources": [
         {
           "label": "Visa information for foreigners",
@@ -1282,23 +1296,9 @@
             "nationality_rules",
             "embassy_route"
           ]
-        },
-        {
-          "label": "Türkiye e-Visa",
-          "url": "https://www.evisa.gov.tr/",
-          "authority": "Ministry of Foreign Affairs of Türkiye",
-          "roles": [
-            "official_application"
-          ],
-          "covers": [
-            "tourism",
-            "commerce",
-            "apply",
-            "payment",
-            "status"
-          ]
         }
-      ]
+      ],
+      "notes": "The previously registered evisa.gov.tr URL redirected to a non-government commercial site on 2026-07-27 and was removed. Use the MFA rules page and locate any application route from a current official government page; do not trust the former domain."
     },
     {
       "id": "ae",
@@ -1309,7 +1309,7 @@
         "uae"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-07-27",
       "sources": [
         {
           "label": "Visit visas",
@@ -1536,7 +1536,7 @@
         "republic of china"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-07-27",
       "sources": [
         {
           "label": "Taiwan visa information",
@@ -1564,10 +1564,14 @@
           ],
           "covers": [
             "evisa",
-            "application"
+            "application",
+            "eligibility_windows_2026_2027",
+            "validity",
+            "duration_of_stay"
           ]
         }
-      ]
+      ],
+      "notes": "The official eVisa application page reviewed 2026-07-27 lists time-limited eligibility conditions: Armenia, Kazakhstan, and Uzbekistan from 2026-03-31 through 2027-03-31; Russian ordinary-passport holders from 2026-07-07 through 2027-07-06. Nationality-specific conditions apply."
     },
     {
       "id": "ph",
@@ -1854,6 +1858,349 @@
             "apply",
             "status"
           ]
+        }
+      ]
+    },
+    {
+      "id": "ar",
+      "iso2": "AR",
+      "name": "Argentina",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Tourist visa for Argentina",
+          "url": "https://www.argentina.gob.ar/servicio/obtener-visa-de-turista-para-ingresar-la-argentina",
+          "authority": "Government of Argentina",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourist_visa", "documents", "fees", "consular_process"]
+        }
+      ]
+    },
+    {
+      "id": "cl",
+      "iso2": "CL",
+      "name": "Chile",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Temporary stay in Chile",
+          "url": "https://serviciomigraciones.cl/permanencia-transitoria/",
+          "authority": "National Migration Service of Chile",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourism", "prior_authorization", "duration", "extension", "work_restrictions"]
+        }
+      ]
+    },
+    {
+      "id": "co",
+      "iso2": "CO",
+      "name": "Colombia",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Colombian visa types",
+          "url": "https://www.cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/necesito-un-visa",
+          "authority": "Ministry of Foreign Affairs of Colombia",
+          "roles": ["authoritative_rules"],
+          "covers": ["visitor_visa", "visa_types", "eligibility", "requirements"]
+        }
+      ]
+    },
+    {
+      "id": "pe",
+      "iso2": "PE",
+      "name": "Peru",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Peru temporary visa application",
+          "url": "https://visasonline.rree.gob.pe/",
+          "authority": "Ministry of Foreign Affairs of Peru",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["tourist_visa", "business_visa", "requirements", "apply"]
+        }
+      ]
+    },
+    {
+      "id": "ec",
+      "iso2": "EC",
+      "name": "Ecuador",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Ecuador electronic visa system",
+          "url": "https://www.cancilleria.gob.ec/2024/07/05/ecuador-da-la-bienvenida-a-los-visitantes-con-una-opcion-facil-y-segura-la-visa-electronica/",
+          "authority": "Ministry of Foreign Affairs and Human Mobility of Ecuador",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["evisa", "tourism", "online_application"]
+        }
+      ]
+    },
+    {
+      "id": "pa",
+      "iso2": "PA",
+      "name": "Panama",
+      "region": "Central America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Tourist entry requirements for Panama",
+          "url": "https://www.migracion.gob.pa/turistas/",
+          "authority": "National Migration Service of Panama",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourist_entry", "visa", "passport", "funds", "return_ticket"]
+        }
+      ]
+    },
+    {
+      "id": "jm",
+      "iso2": "JM",
+      "name": "Jamaica",
+      "region": "Caribbean",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Jamaica entry visa requirements",
+          "url": "https://www.pica.gov.jm/node/101",
+          "authority": "Passport, Immigration and Citizenship Agency of Jamaica",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_by_nationality", "entry_documents", "duration"]
+        }
+      ]
+    },
+    {
+      "id": "bb",
+      "iso2": "BB",
+      "name": "Barbados",
+      "region": "Caribbean",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Barbados visa requirements",
+          "url": "https://immigration.gov.bb/pages/Visa_Requirements.aspx",
+          "authority": "Barbados Immigration Department",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_required", "documents", "fees", "processing"]
+        }
+      ]
+    },
+    {
+      "id": "il",
+      "iso2": "IL",
+      "name": "Israel",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Israel tourist visa and ETA requirements",
+          "url": "https://www.gov.il/en/departments/dynamiccollectors/ashrotzarim?skip=0",
+          "authority": "Government of Israel",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourist_visa", "visa_exemption", "eta_il"]
+        }
+      ]
+    },
+    {
+      "id": "jo",
+      "iso2": "JO",
+      "name": "Jordan",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Jordan electronic visa services",
+          "url": "https://moi.gov.jo/EN/Pages/E_Applications_for_Visa_and_Residence_Permits",
+          "authority": "Ministry of Interior of Jordan",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_services", "online_application", "fees", "processing"]
+        }
+      ]
+    },
+    {
+      "id": "qa",
+      "iso2": "QA",
+      "name": "Qatar",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Qatar visit visas",
+          "url": "https://portal.moi.gov.qa/qatarvisas/",
+          "authority": "Ministry of Interior of Qatar",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourist_visa", "visa_on_arrival", "hayya", "passport", "insurance"]
+        }
+      ]
+    },
+    {
+      "id": "om",
+      "iso2": "OM",
+      "name": "Oman",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Royal Oman Police eVisa",
+          "url": "https://evisa.rop.gov.om/en/visa-eligibility",
+          "authority": "Royal Oman Police",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_eligibility", "evisa", "gcc_residents", "apply"]
+        }
+      ]
+    },
+    {
+      "id": "kw",
+      "iso2": "KW",
+      "name": "Kuwait",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Kuwait e-Visa",
+          "url": "https://e.gov.kw/sites/kgoenglish/Pages/eServices/MOI/KuwaiteVisa.aspx",
+          "authority": "Ministry of Interior of Kuwait",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["tourist_visa", "evisa", "apply"]
+        }
+      ]
+    },
+    {
+      "id": "am",
+      "iso2": "AM",
+      "name": "Armenia",
+      "region": "Europe and Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Armenia eVisa",
+          "url": "https://evisa.mfa.am/",
+          "authority": "Ministry of Foreign Affairs of Armenia",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visitor_visa", "evisa", "fees", "processing", "status"]
+        }
+      ]
+    },
+    {
+      "id": "az",
+      "iso2": "AZ",
+      "name": "Azerbaijan",
+      "region": "Europe and Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Azerbaijan ASAN Visa",
+          "url": "https://evisa.gov.az/en/",
+          "authority": "State Agency for Public Service and Social Innovations of Azerbaijan",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["evisa", "eligibility", "fees", "processing", "status"]
+        }
+      ],
+      "notes": "The official eligible-country page reviewed 2026-07-27 lists temporary visa-free entry windows for Saudi, Omani, Kuwaiti, and Bahraini citizens (2026-02-15 through 2027-02-15) and Japanese and South Korean citizens (2026-07-01 through 2027-07-01), limited to three entries in one year and up to 30 days each."
+    },
+    {
+      "id": "ge",
+      "iso2": "GE",
+      "name": "Georgia",
+      "region": "Europe and Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Georgia e-Visa portal",
+          "url": "https://www.evisa.gov.ge/GeoVisa/en/Home/AboutVisa",
+          "authority": "Ministry of Foreign Affairs of Georgia",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["short_stay", "evisa", "documents", "apply"]
+        }
+      ]
+    },
+    {
+      "id": "kz",
+      "iso2": "KZ",
+      "name": "Kazakhstan",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Kazakhstan visa regime",
+          "url": "https://www.gov.kz/memleket/entities/mfa/activities/34747?lang=en&parentId=3053",
+          "authority": "Ministry of Foreign Affairs of Kazakhstan",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_by_nationality", "passport_type", "visa_free_duration"]
+        }
+      ]
+    },
+    {
+      "id": "uz",
+      "iso2": "UZ",
+      "name": "Uzbekistan",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Uzbekistan e-Visa portal",
+          "url": "https://www.e-visa.gov.uz/what-you-need-to-know",
+          "authority": "Ministry of Foreign Affairs of Uzbekistan",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["evisa", "eligibility", "fees", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "tz",
+      "iso2": "TZ",
+      "name": "Tanzania",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-07-27",
+      "sources": [
+        {
+          "label": "Tanzania electronic visa",
+          "url": "https://visa.immigration.go.tz/",
+          "authority": "Tanzania Immigration Services Department",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa_types", "visa_exemptions", "evisa", "apply", "status"]
         }
       ]
     }
