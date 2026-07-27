@@ -206,10 +206,11 @@ main > section {
 }
 
 .hero-title-row {
-  display: inline-flex;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .download-count {
@@ -568,13 +569,6 @@ main > section {
 }
 
 @media (max-width: 560px) {
-  .hero-title-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
   .copy-toast {
     white-space: normal;
   }
