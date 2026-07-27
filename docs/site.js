@@ -1,7 +1,37 @@
 const copyButtons = Array.from(document.querySelectorAll("[data-copy-command]"));
 const command = document.querySelector("[data-command]");
 const copyToast = document.querySelector(".copy-toast");
+const downloadCount = document.querySelector("[data-download-count]");
+const downloadCountValue = document.querySelector("[data-download-count-value]");
 let copyToastTimer;
+
+const NPM_PACKAGE = "@yukioa2z/visa-apply";
+const NPM_LAUNCH_DATE = "2026-07-20";
+
+async function updateDownloadCount() {
+  if (!downloadCount || !downloadCountValue) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+  const packageName = encodeURIComponent(NPM_PACKAGE);
+  const endpoint =
+    `https://api.npmjs.org/downloads/point/${NPM_LAUNCH_DATE}:${today}/${packageName}`;
+
+  try {
+    const response = await fetch(endpoint, { mode: "cors" });
+    if (!response.ok) throw new Error(`npm downloads returned ${response.status}`);
+
+    const result = await response.json();
+    if (!Number.isFinite(result.downloads)) {
+      throw new Error("npm downloads response did not include a number");
+    }
+
+    downloadCountValue.textContent = new Intl.NumberFormat("en").format(result.downloads);
+    downloadCount.dataset.status = "live";
+  } catch {
+    downloadCountValue.textContent = downloadCount.dataset.fallbackCount || "500+";
+    downloadCount.dataset.status = "fallback";
+  }
+}
 
 function showCopyToast(message) {
   if (!copyToast) return;
@@ -49,3 +79,5 @@ copyButtons.forEach((button) => {
     }
   });
 });
+
+updateDownloadCount();

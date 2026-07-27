@@ -205,6 +205,33 @@ main > section {
   letter-spacing: -0.035em;
 }
 
+.hero-title-row {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+}
+
+.download-count {
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+
+.download-count-value {
+  color: var(--ink);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
 .hero-lead {
   margin: 22px auto 0;
   max-width: 600px;
@@ -541,6 +568,13 @@ main > section {
 }
 
 @media (max-width: 560px) {
+  .hero-title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
   .copy-toast {
     white-space: normal;
   }
