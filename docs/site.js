@@ -3,6 +3,7 @@ const command = document.querySelector("[data-command]");
 const copyToast = document.querySelector(".copy-toast");
 const downloadCount = document.querySelector("[data-download-count]");
 const downloadCountValue = document.querySelector("[data-download-count-value]");
+const cloneCountValue = document.querySelector("[data-clone-count-value]");
 let copyToastTimer;
 
 const NPM_PACKAGE = "@yukioa2z/visa-apply";
@@ -30,6 +31,26 @@ async function updateDownloadCount() {
   } catch {
     downloadCountValue.textContent = downloadCount.dataset.fallbackCount || "500+";
     downloadCount.dataset.status = "fallback";
+  }
+}
+
+async function updateCloneCount() {
+  if (!downloadCount || !cloneCountValue) return;
+
+  try {
+    const response = await fetch(`metrics.json?v=${Date.now()}`);
+    if (!response.ok) throw new Error(`traffic metrics returned ${response.status}`);
+
+    const result = await response.json();
+    if (!Number.isFinite(result.cumulative_clone_events)) {
+      throw new Error("traffic metrics did not include cumulative clone events");
+    }
+
+    cloneCountValue.textContent = new Intl.NumberFormat("en").format(
+      result.cumulative_clone_events,
+    );
+  } catch {
+    cloneCountValue.textContent = "250+";
   }
 }
 
@@ -81,3 +102,4 @@ copyButtons.forEach((button) => {
 });
 
 updateDownloadCount();
+updateCloneCount();

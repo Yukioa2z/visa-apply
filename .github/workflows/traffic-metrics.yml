@@ -1,0 +1,73 @@
+name: Refresh public traffic metrics
+
+on:
+  schedule:
+    - cron: "23 2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-public-traffic-metrics
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPOSITORY: ${{ github.repository }}
+    steps:
+      - name: Merge GitHub clone traffic into public metrics
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          traffic="$(gh api "repos/${REPOSITORY}/traffic/clones")"
+          current="$(gh api "repos/${REPOSITORY}/contents/docs/metrics.json?ref=main")"
+          sha="$(jq -r '.sha' <<<"$current")"
+          existing="$(jq -r '.content' <<<"$current" | tr -d '\n' | base64 --decode)"
+          updated_at="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+          merged="$(
+            jq \
+              --arg updated_at "$updated_at" \
+              --argjson traffic "$traffic" \
+              '
+                .updated_at = $updated_at
+                | .github = {
+                    window_days: 14,
+                    clone_events: $traffic.count,
+                    unique_cloners: $traffic.uniques,
+                    daily: $traffic.clones
+                  }
+                | .clone_history = (
+                    ((.clone_history // []) + ($traffic.clones | map({
+                      timestamp,
+                      count
+                    })))
+                    | group_by(.timestamp)
+                    | map(last)
+                  )
+                | .cumulative_clone_events = (
+                    [.clone_history[].count] | add // 0
+                  )
+              ' <<<"$existing"
+          )"
+
+          if jq -e --argjson traffic "$traffic" '
+            .github.daily == $traffic.clones
+          ' <<<"$existing" >/dev/null; then
+            echo "Clone window unchanged; no commit needed."
+            exit 0
+          fi
+
+          encoded="$(printf '%s\n' "$merged" | base64 | tr -d '\n')"
+          gh api \
+            --method PUT \
+            "repos/${REPOSITORY}/contents/docs/metrics.json" \
+            -f message="Refresh public traffic metrics" \
+            -f content="$encoded" \
+            -f sha="$sha" \
+            -f branch="main"

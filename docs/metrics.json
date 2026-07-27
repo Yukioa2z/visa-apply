@@ -1,0 +1,41 @@
+{
+  "updated_at": "2026-07-27T16:15:00Z",
+  "github": {
+    "window_days": 14,
+    "clone_events": 254,
+    "unique_cloners": 116,
+    "daily": [
+      {"timestamp": "2026-07-13T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-14T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-15T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-16T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-17T00:00:00Z", "count": 33, "uniques": 19},
+      {"timestamp": "2026-07-18T00:00:00Z", "count": 2, "uniques": 2},
+      {"timestamp": "2026-07-19T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-20T00:00:00Z", "count": 179, "uniques": 65},
+      {"timestamp": "2026-07-21T00:00:00Z", "count": 3, "uniques": 3},
+      {"timestamp": "2026-07-22T00:00:00Z", "count": 3, "uniques": 3},
+      {"timestamp": "2026-07-23T00:00:00Z", "count": 20, "uniques": 18},
+      {"timestamp": "2026-07-24T00:00:00Z", "count": 8, "uniques": 8},
+      {"timestamp": "2026-07-25T00:00:00Z", "count": 0, "uniques": 0},
+      {"timestamp": "2026-07-26T00:00:00Z", "count": 6, "uniques": 5}
+    ]
+  },
+  "clone_history": [
+    {"timestamp": "2026-07-13T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-14T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-15T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-16T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-17T00:00:00Z", "count": 33},
+    {"timestamp": "2026-07-18T00:00:00Z", "count": 2},
+    {"timestamp": "2026-07-19T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-20T00:00:00Z", "count": 179},
+    {"timestamp": "2026-07-21T00:00:00Z", "count": 3},
+    {"timestamp": "2026-07-22T00:00:00Z", "count": 3},
+    {"timestamp": "2026-07-23T00:00:00Z", "count": 20},
+    {"timestamp": "2026-07-24T00:00:00Z", "count": 8},
+    {"timestamp": "2026-07-25T00:00:00Z", "count": 0},
+    {"timestamp": "2026-07-26T00:00:00Z", "count": 6}
+  ],
+  "cumulative_clone_events": 254
+}
