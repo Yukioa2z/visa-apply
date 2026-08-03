@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-07-27",
+  "last_verified": "2026-08-03",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -865,7 +865,7 @@
       "region": "Oceania",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-08-03",
       "sources": [
         {
           "label": "Find and choose a visa",
@@ -884,7 +884,8 @@
             "apply"
           ]
         }
-      ]
+      ],
+      "notes": "Visitor Visa and NZeTA routes rechecked 2026-08-03. A current Immigration New Zealand notice says eligible Chinese and Pacific Islands Forum passport holders travelling from Australia with an eligible Australian visa may use an NZeTA during the continuing trial; route conditions remain passport, residence, and itinerary specific."
     },
     {
       "id": "jp",
@@ -897,7 +898,7 @@
         "日本"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-07-20",
+      "last_verified": "2026-08-03",
       "sources": [
         {
           "label": "MOFA — Visa (top / procedures & documents)",
@@ -1010,6 +1011,19 @@
           ]
         },
         {
+          "label": "MOFA — Visa Fees from July 1, 2026",
+          "authority": "Ministry of Foreign Affairs of Japan",
+          "url": "https://www.mofa.go.jp/j_info/visit/visa/procedure/pagewe_000001_00391.html",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "fees",
+            "effective_date",
+            "exemptions"
+          ]
+        },
+        {
           "label": "Immigration Services Agency of Japan",
           "authority": "Immigration Services Agency (Ministry of Justice)",
           "url": "https://www.moj.go.jp/isa/index.html",
@@ -1023,7 +1037,7 @@
         }
       ],
       "adapter": "countries/jp.md",
-      "notes": "Short-Term Stay (Temporary Visitor). Three branches: (1) visa exemption for 74 countries/regions per MOFA novisa page (Sept 1 2025) - resolve live per nationality; per-country stay 15/30/90 days. (2) JAPAN eVISA - single-entry, tourism-only, ordinary passport, up to 90 days, eligible residences only; direct-online for AU/BR/KH/CA/SA/ZA/TW/UK/US, agency-mediated for CN/PH/VN + HK/IN/ID/MO/MN/KR/SG/AE; electronic issuance, display Visa Issuance Notice QR live at boarding (no PDF/screenshot). (3) Consular short-term visa via responsible mission or accredited agency/JVAC; China (all purposes) and PH/VN packaged tours are accredited-agency-only. Photo 45x35mm. Fees reciprocity-based, set per mission, some waived. Processing min 5 working days. Verified live mofa.go.jp 2026-07-20."
+      "notes": "Short-Term Stay (Temporary Visitor). Three branches: (1) visa exemption for 74 countries/regions per MOFA novisa page (Sept 1 2025) - resolve live per nationality; per-country stay 15/30/90 days. (2) JAPAN eVISA - single-entry, tourism-only, ordinary passport, up to 90 days, eligible residences only; direct-online for AU/BR/KH/CA/SA/ZA/TW/UK/US, agency-mediated for CN/PH/VN + HK/IN/ID/MO/MN/KR/SG/AE; electronic issuance, display Visa Issuance Notice QR live at boarding (no PDF/screenshot). (3) Consular short-term visa via responsible mission or accredited agency/JVAC; China (all purposes) and PH/VN packaged tours are accredited-agency-only. Photo 45x35mm. For applications accepted on or after 2026-07-01, MOFA gives approximate standard fees of JPY 15000 single-entry and JPY 30000 multiple-entry, subject to local-currency conversion, nationality, purpose, reciprocal waivers, and agency charges. Processing min 5 working days. Verified live mofa.go.jp 2026-08-03."
     },
     {
       "id": "kr",
@@ -1129,7 +1143,7 @@
       "region": "Asia",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-08-03",
       "sources": [
         {
           "label": "Visa requirement by country",
@@ -1157,7 +1171,8 @@
             "status"
           ]
         }
-      ]
+      ],
+      "notes": "Official country table rechecked 2026-08-03. It states that Indian citizens are visa-exempt through 2026-12-31; other nationality, passport, purpose, and arrival-mode conditions remain route-specific and must be rechecked before travel."
     },
     {
       "id": "th",
@@ -2183,6 +2198,186 @@
           "authority": "Ministry of Foreign Affairs of Uzbekistan",
           "roles": ["authoritative_rules", "official_application", "official_status"],
           "covers": ["evisa", "eligibility", "fees", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "bh",
+      "iso2": "BH",
+      "name": "Bahrain",
+      "region": "Middle East",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Bahrain visas",
+          "url": "https://www.bahrain.gov.bh/wps/portal/en/BNP/HomeNationalPortal/ContentDetailsPage/!ut/p/z1/rVNNU8IwEP0reOgxk20a0nBEHb5m_OJDpRcnTVOI0LS0oei_N-jBAURwxr1ls2_nvd23OMLPODKi1jNhdW7E0r2nEXvx-03o8SuA-2tK4OGxNWSXNz7cdAP8iCMcFVIneBr7LOCEMBSmhCLq0xQJ4jMkAsrDOOaJBLmtlsYWdu7qTfGijAcizte2YeeqsdBmluSZB7YUtVo2hEkaNl-XunK5Ui2FVdtEoWXlQa0rUeGnXYKtyaQDjHc7lDI-DJshjna-xy0GjJA2JaNuAHewj_fHE3AC--3hXefaB-rv4g_1f-HhSLThPPwvBP-GPyyIfqf3tN3IiQmc6rHX4XAHU0cyPFpw61jUWm3wxORl5kw3-vYUVwRoyhOkYuk81UolElymiEgqY5oGMRFN3AM8OEXBGVm_rlZR2_kvN1a9WfzsbO4BDT2Y5bUqTaaMRSa3OtXy0_8VqlRZa6n2BexNuR8cF3DWUQxObfkn9v9yPiNlcJFlPHjXLtBiyDfjdL6ss6uYvwebiw9JmnXO/",
+          "authority": "Government of Bahrain / Nationality, Passports and Residence Affairs",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_requirement", "visa_on_arrival", "evisa", "application"]
+        }
+      ]
+    },
+    {
+      "id": "eg",
+      "iso2": "EG",
+      "name": "Egypt",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Egypt e-Visa portal",
+          "url": "https://visa2egypt.gov.eg/eVisa/FAQ",
+          "authority": "Government of Egypt",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["evisa", "eligibility", "requirements", "application"]
+        }
+      ]
+    },
+    {
+      "id": "al",
+      "iso2": "AL",
+      "name": "Albania",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Albania visa regime for foreign citizens",
+          "url": "https://punetejashtme.gov.al/en/regji",
+          "authority": "Ministry for Europe and Foreign Affairs of Albania",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_exemptions", "visa_types", "requirements", "application_route"]
+        }
+      ]
+    },
+    {
+      "id": "ao",
+      "iso2": "AO",
+      "name": "Angola",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Angola SME e-Visa",
+          "url": "https://www.smevisa.gov.ao/",
+          "authority": "Migration and Foreigners Service of Angola",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["evisa", "visa_types", "application"]
+        }
+      ]
+    },
+    {
+      "id": "bw",
+      "iso2": "BW",
+      "name": "Botswana",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Botswana e-Visa",
+          "url": "https://www.evisa.gov.bw/",
+          "authority": "Government of Botswana",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa_requirement", "evisa", "application", "status"]
+        }
+      ]
+    },
+    {
+      "id": "cv",
+      "iso2": "CV",
+      "name": "Cabo Verde",
+      "region": "Africa",
+      "aliases": ["cape verde"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Cabo Verde visa guidance",
+          "url": "https://www.gov.cv/en/pedir-visto",
+          "authority": "Government of Cabo Verde",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_exemptions", "visa_requirement", "pre_registration", "fees", "application"]
+        }
+      ]
+    },
+    {
+      "id": "dj",
+      "iso2": "DJ",
+      "name": "Djibouti",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Djibouti electronic visa",
+          "url": "https://www.evisa.gouv.dj/",
+          "authority": "Immigration Directorate of Djibouti",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["evisa", "requirements", "application"]
+        }
+      ]
+    },
+    {
+      "id": "et",
+      "iso2": "ET",
+      "name": "Ethiopia",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Ethiopia e-Visa information",
+          "url": "https://www.evisa.gov.et/information",
+          "authority": "Immigration and Citizenship Service of Ethiopia",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["evisa", "visa_types", "requirements", "fees", "application", "status"]
+        }
+      ]
+    },
+    {
+      "id": "fj",
+      "iso2": "FJ",
+      "name": "Fiji",
+      "region": "Oceania",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Fiji visa application requirements",
+          "url": "https://www.immigration.gov.fj/visa-application/",
+          "authority": "Ministry of Immigration of Fiji",
+          "roles": ["authoritative_rules", "official_application"],
+          "covers": ["visa_exemptions", "visitor_visa", "transit", "requirements", "fees", "application"]
+        }
+      ]
+    },
+    {
+      "id": "kg",
+      "iso2": "KG",
+      "name": "Kyrgyzstan",
+      "region": "Asia",
+      "aliases": ["kyrgyz republic"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-03",
+      "sources": [
+        {
+          "label": "Kyrgyz Republic e-Visa",
+          "url": "https://www.evisa.e-gov.kg/",
+          "authority": "Ministry of Foreign Affairs of the Kyrgyz Republic",
+          "roles": ["authoritative_rules", "official_application", "official_status"],
+          "covers": ["visa_requirement", "evisa", "visa_types", "requirements", "application", "status"]
         }
       ]
     },
