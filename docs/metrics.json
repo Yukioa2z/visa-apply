@@ -1,30 +1,10 @@
 {
-  "updated_at": "2026-08-01T05:38:20Z",
+  "updated_at": "2026-08-05T05:26:48Z",
   "github": {
     "window_days": 14,
-    "clone_events": 323,
-    "unique_cloners": 142,
+    "clone_events": 159,
+    "unique_cloners": 89,
     "daily": [
-      {
-        "timestamp": "2026-07-18T00:00:00Z",
-        "count": 2,
-        "uniques": 2
-      },
-      {
-        "timestamp": "2026-07-19T00:00:00Z",
-        "count": 0,
-        "uniques": 0
-      },
-      {
-        "timestamp": "2026-07-20T00:00:00Z",
-        "count": 179,
-        "uniques": 65
-      },
-      {
-        "timestamp": "2026-07-21T00:00:00Z",
-        "count": 3,
-        "uniques": 3
-      },
       {
         "timestamp": "2026-07-22T00:00:00Z",
         "count": 3,
@@ -74,6 +54,26 @@
         "timestamp": "2026-07-31T00:00:00Z",
         "count": 4,
         "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-01T00:00:00Z",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-08-02T00:00:00Z",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": "2026-08-03T00:00:00Z",
+        "count": 14,
+        "uniques": 8
+      },
+      {
+        "timestamp": "2026-08-04T00:00:00Z",
+        "count": 1,
+        "uniques": 1
       }
     ]
   },
@@ -153,7 +153,23 @@
     {
       "timestamp": "2026-07-31T00:00:00Z",
       "count": 4
+    },
+    {
+      "timestamp": "2026-08-01T00:00:00Z",
+      "count": 4
+    },
+    {
+      "timestamp": "2026-08-02T00:00:00Z",
+      "count": 1
+    },
+    {
+      "timestamp": "2026-08-03T00:00:00Z",
+      "count": 14
+    },
+    {
+      "timestamp": "2026-08-04T00:00:00Z",
+      "count": 1
     }
   ],
-  "cumulative_clone_events": 356
+  "cumulative_clone_events": 376
 }
