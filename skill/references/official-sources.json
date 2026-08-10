@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-08-03",
+  "last_verified": "2026-08-10",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -2396,6 +2396,42 @@
           "authority": "Tanzania Immigration Services Department",
           "roles": ["authoritative_rules", "official_application", "official_status"],
           "covers": ["visa_types", "visa_exemptions", "evisa", "apply", "status"]
+        }
+      ]
+    },
+    {
+      "id": "mv",
+      "iso2": "MV",
+      "name": "Maldives",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-10",
+      "sources": [
+        {
+          "label": "Tourist Visa - On Arrival",
+          "url": "https://immigration.gov.mv/visa/tourist-visa",
+          "authority": "Maldives Immigration",
+          "roles": ["authoritative_rules"],
+          "covers": ["tourist_visa", "visa_on_arrival", "entry_requirements", "traveller_declaration"]
+        }
+      ]
+    },
+    {
+      "id": "mu",
+      "iso2": "MU",
+      "name": "Mauritius",
+      "region": "Africa",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-10",
+      "sources": [
+        {
+          "label": "Visa Requirements",
+          "url": "https://passport.govmu.org/passport/?page_id=605",
+          "authority": "Passport and Immigration Office of Mauritius",
+          "roles": ["authoritative_rules"],
+          "covers": ["visa_requirements", "visa_exemptions", "tourist_visa", "visa_on_arrival"]
         }
       ]
     }
