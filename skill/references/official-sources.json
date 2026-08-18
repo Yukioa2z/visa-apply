@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-08-10",
+  "last_verified": "2026-08-18",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -2432,6 +2432,60 @@
           "authority": "Passport and Immigration Office of Mauritius",
           "roles": ["authoritative_rules"],
           "covers": ["visa_requirements", "visa_exemptions", "tourist_visa", "visa_on_arrival"]
+        }
+      ]
+    },
+    {
+      "id": "bg",
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-18",
+      "sources": [
+        {
+          "label": "Visa for Bulgaria",
+          "url": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria",
+          "authority": "Ministry of Foreign Affairs of the Republic of Bulgaria",
+          "roles": ["authoritative_rules"],
+          "covers": ["schengen_visa", "visa_requirement", "short_stay", "application_requirements"]
+        }
+      ]
+    },
+    {
+      "id": "cz",
+      "iso2": "CZ",
+      "name": "Czechia",
+      "region": "Europe",
+      "aliases": ["czech republic"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-18",
+      "sources": [
+        {
+          "label": "Schengen Visas",
+          "url": "https://mzv.gov.cz/jnp/en/information_for_aliens/short_stay_visa/index.html",
+          "authority": "Ministry of Foreign Affairs of the Czech Republic",
+          "roles": ["authoritative_rules"],
+          "covers": ["schengen_visa", "short_stay", "visa_purposes", "application_requirements"]
+        }
+      ]
+    },
+    {
+      "id": "dk",
+      "iso2": "DK",
+      "name": "Denmark",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-18",
+      "sources": [
+        {
+          "label": "Short-stay visa",
+          "url": "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa",
+          "authority": "Danish Immigration Service",
+          "roles": ["authoritative_rules"],
+          "covers": ["schengen_visa", "short_stay", "90_in_180_days", "application"]
         }
       ]
     }
