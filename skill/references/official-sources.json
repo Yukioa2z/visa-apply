@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-08-18",
+  "last_verified": "2026-08-24",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -2488,6 +2488,310 @@
           "covers": ["schengen_visa", "short_stay", "90_in_180_days", "application"]
         }
       ]
+    },
+    {
+      "id": "hr",
+      "iso2": "HR",
+      "name": "Croatia",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "General visa information",
+        "url": "https://mvep.gov.hr/consular-information-100882/general-visa-information/179955",
+        "authority": "Ministry of Foreign and European Affairs of Croatia",
+        "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "short_stay", "national_visa", "application_requirements"]
+      }]
+    },
+    {
+      "id": "hu",
+      "iso2": "HU",
+      "name": "Hungary",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "How to apply for a visa",
+        "url": "https://konzinfo.mfa.gov.hu/en/how-apply-visa",
+        "authority": "Consular Service of Hungary",
+        "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "short_stay", "long_stay", "application"]
+      }]
+    },
+    {
+      "id": "is",
+      "iso2": "IS",
+      "name": "Iceland",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Check if you need a visa",
+        "url": "https://island.is/en/do-you-need-a-visa",
+        "authority": "Government of Iceland",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "short_stay"]
+      }]
+    },
+    {
+      "id": "lv",
+      "iso2": "LV",
+      "name": "Latvia",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Applying for a visa",
+        "url": "https://www.mfa.gov.lv/en/applying-visa",
+        "authority": "Ministry of Foreign Affairs of Latvia",
+        "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "short_stay", "long_stay", "application_location", "application"]
+      }]
+    },
+    {
+      "id": "lu",
+      "iso2": "LU",
+      "name": "Luxembourg",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Entry visa for third-country nationals",
+        "url": "https://guichet.public.lu/en/citoyens/immigration/moins-3-mois/ressortissant-tiers/entree-visa.html",
+        "authority": "Government of Luxembourg",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "short_stay", "application_requirements"]
+      }]
+    },
+    {
+      "id": "no",
+      "iso2": "NO",
+      "name": "Norway",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visitor visa to Norway",
+        "url": "https://www.udi.no/en/want-to-apply/visit-and-holiday/visitors-visa-to-norway/",
+        "authority": "Norwegian Directorate of Immigration",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "visitor_visa", "application"]
+      }]
+    },
+    {
+      "id": "pt",
+      "iso2": "PT",
+      "name": "Portugal",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Short-stay visa types",
+        "url": "https://vistos.mne.gov.pt/en/short-stay-visas-schengen/general-information/type-of-visas",
+        "authority": "Ministry of Foreign Affairs of Portugal",
+        "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "short_stay", "visa_types"]
+      }]
+    },
+    {
+      "id": "ro",
+      "iso2": "RO",
+      "name": "Romania",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visas",
+        "url": "https://www.mae.ro/en/node/2035",
+        "authority": "Ministry of Foreign Affairs of Romania",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "short_stay", "90_in_180_days", "application"]
+      }]
+    },
+    {
+      "id": "sk",
+      "iso2": "SK",
+      "name": "Slovakia",
+      "region": "Europe",
+      "aliases": ["slovak republic"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visas for foreigners to enter Slovakia",
+        "url": "https://www.mzv.sk/en/services/information-for-foreigners/visas-for-foreigners-to-enter-sr",
+        "authority": "Ministry of Foreign and European Affairs of the Slovak Republic",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "short_stay", "application"]
+      }]
+    },
+    {
+      "id": "se",
+      "iso2": "SE",
+      "name": "Sweden",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Apply for a Schengen visa",
+        "url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
+        "authority": "Swedish Migration Agency",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "short_stay", "application_requirements"]
+      }]
+    },
+    {
+      "id": "md",
+      "iso2": "MD",
+      "name": "Moldova",
+      "region": "Europe",
+      "aliases": ["republic of moldova"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visa regime for foreigners",
+        "url": "https://mfa.gov.md/en/content/visa-regime-foreigners",
+        "authority": "Ministry of Foreign Affairs of Moldova",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_types"]
+      }]
+    },
+    {
+      "id": "me",
+      "iso2": "ME",
+      "name": "Montenegro",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visas and entry requirements",
+        "url": "https://www.gov.me/en/government-of-montenegro/visas-and-entry-requirements",
+        "authority": "Government of Montenegro",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_regime", "visa_requirement", "application_form"]
+      }]
+    },
+    {
+      "id": "mk",
+      "iso2": "MK",
+      "name": "North Macedonia",
+      "region": "Europe",
+      "aliases": ["republic of north macedonia"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Do you need a visa?",
+        "url": "https://mfa.gov.mk/en-GB/konzularni-uslugi/dali-ti-e-potrebna-viza",
+        "authority": "Ministry of Foreign Affairs and Foreign Trade of North Macedonia",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_types", "application"]
+      }]
+    },
+    {
+      "id": "rs",
+      "iso2": "RS",
+      "name": "Serbia",
+      "region": "Europe",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visa regime",
+        "url": "https://www.mfa.gov.rs/en/citizens/travel-serbia/visa-regime",
+        "authority": "Ministry of Foreign Affairs of Serbia",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_regime"]
+      }]
+    },
+    {
+      "id": "uy",
+      "iso2": "UY",
+      "name": "Uruguay",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visas to enter Uruguay",
+        "url": "https://www.gub.uy/ministerio-relaciones-exteriores/comunicacion/publicaciones/visas-para-ingresar-uruguay",
+        "authority": "Ministry of Foreign Affairs of Uruguay",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_types", "tourist_visa", "application"]
+      }]
+    },
+    {
+      "id": "py",
+      "iso2": "PY",
+      "name": "Paraguay",
+      "region": "South America",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visas",
+        "url": "https://www.mre.gov.py/visas/",
+        "authority": "Ministry of Foreign Affairs of Paraguay",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_types", "non_resident_visa", "application"]
+      }]
+    },
+    {
+      "id": "iq",
+      "iso2": "IQ",
+      "name": "Iraq",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Visa",
+        "url": "https://mofa.gov.iq/visa/",
+        "authority": "Ministry of Foreign Affairs of Iraq",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_types", "validity", "duration"]
+      }]
+    },
+    {
+      "id": "ir",
+      "iso2": "IR",
+      "name": "Iran",
+      "region": "Asia",
+      "aliases": ["islamic republic of iran"],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Iran electronic visa",
+        "url": "https://evisa.mfa.ir/",
+        "authority": "Ministry of Foreign Affairs of Iran",
+        "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "visa_types", "application"]
+      }]
+    },
+    {
+      "id": "lb",
+      "iso2": "LB",
+      "name": "Lebanon",
+      "region": "Asia",
+      "aliases": [],
+      "support_level": "source_seeded",
+      "last_verified": "2026-08-24",
+      "sources": [{
+        "label": "Types of visas",
+        "url": "https://www.general-security.gov.lb/en/posts/37",
+        "authority": "General Directorate of General Security of Lebanon",
+        "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "visa_on_arrival", "entry_visa", "application_requirements"]
+      }]
     }
   ]
 }
