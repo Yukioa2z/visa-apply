@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-08-31",
+  "last_verified": "2026-09-07",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -1463,7 +1463,7 @@
       "region": "South America",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-09-07",
       "sources": [
         {
           "label": "Brazilian visas",
@@ -1477,9 +1477,23 @@
             "consular_network",
             "local_requirements"
           ]
+        },
+        {
+          "label": "Brazil visitor visa requirements and exemptions",
+          "url": "https://www.gov.br/mre/pt-br/consulado-zurique/deutsch/visa-english-1/vivis_en",
+          "authority": "Ministry of Foreign Affairs of Brazil",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visitor_visa",
+            "visa_exemptions",
+            "nationality_rules",
+            "duration"
+          ]
         }
       ],
-      "notes": "Resolve the responsible Brazilian consular post; requirements vary by nationality and place of application."
+      "notes": "Current Brazilian MFA guidance states that, from May 11, 2026, holders of ordinary passports issued by the People's Republic of China may enter Brazil without a visa for stays of up to 30 days per year, with multiple entries. Resolve the responsible Brazilian consular post and recheck nationality, purpose, and local requirements before travel."
     },
     {
       "id": "hk",
@@ -2262,11 +2276,11 @@
       "region": "Africa",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-08-03",
+      "last_verified": "2026-09-07",
       "sources": [
         {
-          "label": "Angola SME e-Visa",
-          "url": "https://www.smevisa.gov.ao/",
+          "label": "Angola official e-Visa portal",
+          "url": "https://evisa.ao/ao/",
           "authority": "Migration and Foreigners Service of Angola",
           "roles": ["authoritative_rules", "official_application"],
           "covers": ["evisa", "visa_types", "application"]
@@ -2899,6 +2913,170 @@
         "label": "Immigration and general services", "url": "https://www.revenue.gov.to/immigration-and-general-services",
         "authority": "Tonga Ministry of Revenue and Customs", "roles": ["authoritative_rules"],
         "covers": ["visa_on_arrival", "visa_requirement", "entry_conditions", "extensions"]
+      }]
+    },
+    {
+      "id": "ru", "iso2": "RU", "name": "Russia", "region": "Europe", "aliases": ["russian federation"],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Unified electronic visa", "url": "https://evisa.kdmid.ru/",
+        "authority": "Ministry of Foreign Affairs of the Russian Federation", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "eligibility", "validity", "duration", "application"]
+      }]
+    },
+    {
+      "id": "sn", "iso2": "SN", "name": "Senegal", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa application guidance", "url": "https://www.diplomatie.gouv.sn/demande-de-visa",
+        "authority": "Ministry of African Integration and Foreign Affairs of Senegal", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "application_requirements", "consular_process"]
+      }]
+    },
+    {
+      "id": "sv", "iso2": "SV", "name": "El Salvador", "region": "North America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa category list", "url": "https://www.migracion.gob.sv/servicios/listado-visa/",
+        "authority": "General Directorate of Migration and Foreigners of El Salvador", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_categories", "nationality_rules", "entry_requirements"]
+      }]
+    },
+    {
+      "id": "td", "iso2": "TD", "name": "Chad", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Decree on admission and stay of foreign nationals", "url": "https://securite.gouv.td/wp-content/uploads/2024/09/decret-0128-du-23-juillet-2024-fixant-les-conditions-dadmission-au-sejour-des-etrangers-sur-le-territoire-de-la-Republique-du-Tchad-.pdf",
+        "authority": "Ministry of Public Security and Immigration of Chad", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "evisa", "visa_types", "entry_conditions", "duration"]
+      }]
+    },
+    {
+      "id": "tg", "iso2": "TG", "name": "Togo", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa guidance", "url": "https://www.dgdn.gouv.tg/fr/titre-et-documents/visa",
+        "authority": "General Directorate of National Documentation of Togo", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_types", "application", "fees"]
+      }]
+    },
+    {
+      "id": "tj", "iso2": "TJ", "name": "Tajikistan", "region": "Asia", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Electronic visa application system", "url": "https://www.mfa.tj/en/main/view/1471/electronic-visa-application-system",
+        "authority": "Ministry of Foreign Affairs of Tajikistan", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "eligibility", "application", "entry_requirements"]
+      }],
+      "notes": "Official MFA materials reviewed in this run were not fully consistent on permitted stay duration; resolve the current duration on the live official application route before filing or travel."
+    },
+    {
+      "id": "tm", "iso2": "TM", "name": "Turkmenistan", "region": "Asia", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Law on migration", "url": "https://www.mfa.gov.tm/ru/articles/79",
+        "authority": "Ministry of Foreign Affairs of Turkmenistan", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_issuance", "entry_conditions", "migration_authority"]
+      }]
+    },
+    {
+      "id": "at", "iso2": "AT", "name": "Austria", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Entrance and residence visa guidance", "url": "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa",
+        "authority": "Federal Ministry for European and International Affairs of Austria", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "visa_types", "visa_exemptions", "application_requirements"]
+      }]
+    },
+    {
+      "id": "be", "iso2": "BE", "name": "Belgium", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa for Belgium", "url": "https://diplomatie.belgium.be/en/travel-belgium/visa-belgium",
+        "authority": "Federal Public Service Foreign Affairs of Belgium", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "visa_requirement", "application_location", "application_process"]
+      }]
+    },
+    {
+      "id": "gr", "iso2": "GR", "name": "Greece", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visas for foreigners travelling to Greece", "url": "https://www.mfa.gr/en/services/visas-for-foreigners-traveling-to-greece/",
+        "authority": "Ministry of Foreign Affairs of Greece", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "visa_requirement", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "lt", "iso2": "LT", "name": "Lithuania", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa types", "url": "https://keliauk.urm.lt/en/entry-to-lithuania/visas/types-of-visa",
+        "authority": "Ministry of Foreign Affairs of Lithuania", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "national_visa", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "mt", "iso2": "MT", "name": "Malta", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Central Visa Unit", "url": "https://identita.gov.mt/central-visa-unit-main-page/",
+        "authority": "Identita Malta Central Visa Unit", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "national_visa", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "pl", "iso2": "PL", "name": "Poland", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visas", "url": "https://www.gov.pl/web/diplomacy/visas",
+        "authority": "Ministry of Foreign Affairs of Poland", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "national_visa", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "si", "iso2": "SI", "name": "Slovenia", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Entry and residence", "url": "https://www.gov.si/en/topics/entry-and-residence/",
+        "authority": "Government of Slovenia", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_visa", "entry_conditions", "residence"]
+      }]
+    },
+    {
+      "id": "ua", "iso2": "UA", "name": "Ukraine", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visa information", "url": "https://mfa.gov.ua/en/consular-affairs/entry-and-stay-foreigners-ukraine/visa-information",
+        "authority": "Ministry of Foreign Affairs of Ukraine", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_types", "evisa", "application_requirements"]
+      }],
+      "notes": "Wartime border access and consular operations can change independently of published visa rules; verify the current operational route before travel."
+    },
+    {
+      "id": "rw", "iso2": "RW", "name": "Rwanda", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visitor visa", "url": "https://www.migration.gov.rw/visa/visitors-visa",
+        "authority": "Directorate General of Immigration and Emigration of Rwanda", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "visa_on_arrival", "eligibility", "fees", "application"]
+      }]
+    },
+    {
+      "id": "ug", "iso2": "UG", "name": "Uganda", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Visas and passes", "url": "https://www.immigration.go.ug/services/visa-passes",
+        "authority": "Directorate of Citizenship and Immigration Control of Uganda", "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "tourist_visa", "visa_exemptions", "application"]
+      }]
+    },
+    {
+      "id": "zm", "iso2": "ZM", "name": "Zambia", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "sources": [{
+        "label": "Information for visitors", "url": "https://www.zambiaimmigration.gov.zm/for-visitors/",
+        "authority": "Department of Immigration of Zambia", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "evisa", "entry_conditions"]
       }]
     }
   ]
