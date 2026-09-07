@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-08-24",
+  "last_verified": "2026-08-31",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -2791,6 +2791,114 @@
         "authority": "General Directorate of General Security of Lebanon",
         "roles": ["authoritative_rules"],
         "covers": ["visa_types", "visa_on_arrival", "entry_visa", "application_requirements"]
+      }]
+    },
+    {
+      "id": "mz", "iso2": "MZ", "name": "Mozambique", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Mozambique eVisa and eTA official portal", "url": "https://evisa.gov.mz/Home",
+        "authority": "Mozambique National Immigration Service", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "eta", "visa_exemptions", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "nr", "iso2": "NR", "name": "Nauru", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Immigration Division", "url": "https://justice.gov.nr/immigration-division/",
+        "authority": "Nauru Department of Justice and Border Control", "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "visitor_visa", "visa_fees", "application_forms"]
+      }]
+    },
+    {
+      "id": "pg", "iso2": "PG", "name": "Papua New Guinea", "region": "Oceania", "aliases": ["png"],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Visitor visa", "url": "https://ica.gov.pg/visa/visit/visitor",
+        "authority": "Papua New Guinea Immigration and Citizenship Authority", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "eligibility", "validity", "application", "extensions"]
+      }]
+    },
+    {
+      "id": "sb", "iso2": "SB", "name": "Solomon Islands", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Visa options", "url": "https://immigration.gov.sb/visas/",
+        "authority": "Solomon Islands Immigration Division", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_types", "visitor_visa", "validity", "application"]
+      }]
+    },
+    {
+      "id": "sc", "iso2": "SC", "name": "Seychelles", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Visiting Seychelles", "url": "https://ics.gov.sc/visa-and-travel/visiting-seychelles",
+        "authority": "Seychelles Immigration and Civil Status", "roles": ["authoritative_rules"],
+        "covers": ["visa_exemption", "visitor_permit", "entry_requirements", "travel_authorisation"]
+      }]
+    },
+    {
+      "id": "sl", "iso2": "SL", "name": "Sierra Leone", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Visa information", "url": "https://www.mfaic.gov.sl/visa/",
+        "authority": "Sierra Leone Ministry of Foreign Affairs and International Cooperation", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_types", "application_requirements"]
+      }]
+    },
+    {
+      "id": "so", "iso2": "SO", "name": "Somalia", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Electronic visa and travel authorisation", "url": "https://immigration.gov.so/",
+        "authority": "Somalia Immigration and Citizenship Agency", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["eta", "evisa", "visa_requirement", "application"]
+      }]
+    },
+    {
+      "id": "sr", "iso2": "SR", "name": "Suriname", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Travel to Suriname", "url": "https://gov.sr/ministeries/ministerie-van-buitenlandse-zaken-internationale-handel-samenwerking/reizen-naar-suriname/",
+        "authority": "Government of Suriname", "roles": ["authoritative_rules"],
+        "covers": ["entry_fee", "visa_requirement", "exemptions", "application"]
+      }]
+    },
+    {
+      "id": "ss", "iso2": "SS", "name": "South Sudan", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "South Sudan eVisa", "url": "https://www.evisa.gov.ss/",
+        "authority": "South Sudan Ministry of Interior", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "application", "processing", "arrival"]
+      }]
+    },
+    {
+      "id": "sz", "iso2": "SZ", "name": "Eswatini", "region": "Africa", "aliases": ["swaziland"],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Visa guidance", "url": "https://www.gov.sz/index.php/services-sp-22242747/visa",
+        "authority": "Eswatini Ministry of Home Affairs", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_duration", "application", "entry_requirements"]
+      }]
+    },
+    {
+      "id": "tl", "iso2": "TL", "name": "Timor-Leste", "region": "Asia", "aliases": ["east timor"],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Obtaining a visa", "url": "https://customs.gov.tl/travelers/obtaining-a-visa/20260316000001000010015115487327",
+        "authority": "Timor-Leste Customs Authority", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "tourist_visa", "business_visa", "visa_authorisation"]
+      }]
+    },
+    {
+      "id": "to", "iso2": "TO", "name": "Tonga", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-08-31",
+      "sources": [{
+        "label": "Immigration and general services", "url": "https://www.revenue.gov.to/immigration-and-general-services",
+        "authority": "Tonga Ministry of Revenue and Customs", "roles": ["authoritative_rules"],
+        "covers": ["visa_on_arrival", "visa_requirement", "entry_conditions", "extensions"]
       }]
     }
   ]
