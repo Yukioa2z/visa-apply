@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-09-07",
+  "last_verified": "2026-09-14",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -3077,6 +3077,159 @@
         "label": "Information for visitors", "url": "https://www.zambiaimmigration.gov.zm/for-visitors/",
         "authority": "Department of Immigration of Zambia", "roles": ["authoritative_rules"],
         "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "evisa", "entry_conditions"]
+      }]
+    },
+    {
+      "id": "af", "iso2": "AF", "name": "Afghanistan", "region": "Asia", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa services", "url": "https://mfa.gov.af/ar/page/29432",
+        "authority": "Ministry of Foreign Affairs of Afghanistan", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_types", "tourist_visa", "transit_visa", "visa_on_arrival", "application"]
+      }]
+    },
+    {
+      "id": "bs", "iso2": "BS", "name": "Bahamas", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa requirements for visitors", "url": "https://www.bahamas.gov.bs/wps/wcm/connect/e2027533-6c36-4a64-8c33-23da63da3a53/Visa%2BRequirements%2Bfor%2BVisitors%2BTravelling%2Bto%2BThe%2BBahamas.pdf?MOD=AJPERES",
+        "authority": "Government of The Bahamas", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "nationality_rules", "visitor_stay"]
+      }, {
+        "label": "eVisa portal", "url": "https://evisa.mofa.gov.bs/bs-evics-entitlement-online-ui/",
+        "authority": "Ministry of Foreign Affairs of The Bahamas", "roles": ["official_application"],
+        "covers": ["application", "status", "fees"]
+      }]
+    },
+    {
+      "id": "bz", "iso2": "BZ", "name": "Belize", "region": "Central America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa eligibility", "url": "https://immigration.gov.bz/visa/visa-who-qualify/",
+        "authority": "Belize Immigration Department", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "nationality_rules", "stay_duration"]
+      }, {
+        "label": "Visa application requirements", "url": "https://immigration.gov.bz/visa/visa-requirements/",
+        "authority": "Belize Immigration Department", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["application_requirements", "documents", "transit"]
+      }]
+    },
+    {
+      "id": "ba", "iso2": "BA", "name": "Bosnia & Herzegovina", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Information for foreigners", "url": "https://msb.gov.ba/en/information-for-foreigners",
+        "authority": "Ministry of Security of Bosnia and Herzegovina", "roles": ["authoritative_rules"],
+        "covers": ["entry_conditions", "visa_requirement", "visa_exemptions", "transit", "visa_types"]
+      }]
+    },
+    {
+      "id": "bn", "iso2": "BN", "name": "Brunei", "region": "Asia", "aliases": ["Brunei Darussalam"],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa information", "url": "https://www.mfa.gov.bn/Pages/Visa-Information.aspx",
+        "authority": "Ministry of Foreign Affairs of Brunei Darussalam", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "nationality_rules"]
+      }, {
+        "label": "Visitor and diplomatic visas", "url": "https://www.immigration.gov.bn/visa-lawatan-diplomatik/",
+        "authority": "Immigration and National Registration Department of Brunei", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "business_visa", "application_requirements"]
+      }]
+    },
+    {
+      "id": "dm", "iso2": "DM", "name": "Dominica", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa requirement for non-nationals", "url": "https://www.dominica.gov.dm/services/passports-and-travel-documents-non-nationals/do-i-need-a-visa-to-enter-into-dominica",
+        "authority": "Government of Dominica", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "nationality_rules", "transit"]
+      }, {
+        "label": "Visitor visa application", "url": "https://www.dominica.gov.dm/services/passports-and-travel-documents-non-nationals/how-do-i-apply-for-a-visitor-s-visa",
+        "authority": "Government of Dominica", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "application_requirements", "documents", "fees"]
+      }]
+    },
+    {
+      "id": "gh", "iso2": "GH", "name": "Ghana", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Ghana visa regime", "url": "https://gis.gov.gh/visas/",
+        "authority": "Ghana Immigration Service", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "transit"]
+      }, {
+        "label": "Ghana eVisa requirements", "url": "https://evisa.immigration.gov.gh/visa-requirements",
+        "authority": "Ghana Immigration Service and Ministry of Foreign Affairs", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "application_requirements", "documents", "validity"]
+      }]
+    },
+    {
+      "id": "na", "iso2": "NA", "name": "Namibia", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa and permits FAQ", "url": "https://mhaiss.gov.na/documents/292728/5839021/VISA%2Band%2BPERMITS%2BFAQ.pdf/3005c430-1833-f89a-a6b6-5bd8fa88fe5f",
+        "authority": "Ministry of Home Affairs, Immigration, Safety and Security of Namibia", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_on_arrival", "entry_conditions", "effective_date"]
+      }, {
+        "label": "Immigration e-services", "url": "https://eservices.mhaiss.gov.na/",
+        "authority": "Ministry of Home Affairs, Immigration, Safety and Security of Namibia", "roles": ["official_application"],
+        "covers": ["visa_on_arrival", "application"]
+      }]
+    },
+    {
+      "id": "ng", "iso2": "NG", "name": "Nigeria", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Tourism visa F5A", "url": "https://immigration.gov.ng/info-center/tourism-visa-f5a/",
+        "authority": "Nigeria Immigration Service", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["tourist_visa", "visa_exemptions", "eligibility", "requirements", "stay_duration"]
+      }, {
+        "label": "Nigeria visa classes", "url": "https://immigration.gov.ng/nigerian-visa/",
+        "authority": "Nigeria Immigration Service", "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "short_visit_visa", "residence_visa"]
+      }]
+    },
+    {
+      "id": "mg", "iso2": "MG", "name": "Madagascar", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa information", "url": "https://www.diplomatie.gov.mg/index.php/le-ministere/passeport-et-visa/visa",
+        "authority": "Ministry of Foreign Affairs of Madagascar", "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "short_stay_visa", "long_stay_visa", "application"]
+      }]
+    },
+    {
+      "id": "gt", "iso2": "GT", "name": "Guatemala", "region": "Central America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Country visa classifications", "url": "https://igm.gob.gt/guatemala-actualiza-la-clasificacion-de-paises-para-el-ingreso-al-territorio-nacional/",
+        "authority": "Guatemalan Migration Institute", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "nationality_rules"]
+      }, {
+        "label": "Entry requirements for foreign nationals", "url": "https://igm.gob.gt/requisitos-para-ingresar-al-pais-extranjeros/",
+        "authority": "Guatemalan Migration Institute", "roles": ["authoritative_rules"],
+        "covers": ["entry_conditions", "visa_requirement", "documents"]
+      }]
+    },
+    {
+      "id": "hn", "iso2": "HN", "name": "Honduras", "region": "Central America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Visa information", "url": "https://inm.gob.hn/visas.html",
+        "authority": "National Migration Institute of Honduras", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "visa_types", "application_requirements", "stay_duration"]
+      }]
+    },
+    {
+      "id": "ve", "iso2": "VE", "name": "Venezuela", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "sources": [{
+        "label": "Tourist visa requirements", "url": "https://mppre.gob.ve/detalle_turismo/2-quienes-deben-solicitar-la-visa-de-turista",
+        "authority": "Ministry of People's Power for Foreign Affairs of Venezuela", "roles": ["authoritative_rules"],
+        "covers": ["tourist_visa", "visa_exemptions", "nationality_rules"]
+      }, {
+        "label": "Visa service", "url": "https://mppre.gob.ve/index.php/detalles_servicio/1",
+        "authority": "Ministry of People's Power for Foreign Affairs of Venezuela", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_types", "application"]
       }]
     }
   ]
