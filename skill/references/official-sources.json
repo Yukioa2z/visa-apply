@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-09-14",
+  "last_verified": "2026-09-22",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -262,7 +262,7 @@
         "united kingdom"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-07-20",
+      "last_verified": "2026-09-22",
       "sources": [
         {
           "label": "GOV.UK — Standard Visitor visa (overview, eligibility, fees)",
@@ -453,7 +453,7 @@
           ],
           "covers": [
             "etias_not_a_visa",
-            "not_operational_2026-07-20",
+            "not_operational_2026-09-22",
             "fee_20eur",
             "reg_2018_1240"
           ]
@@ -472,7 +472,7 @@
           ]
         }
       ],
-      "notes": "Uniform short-stay (Type C) visa, 90/180 rule, 30 participating countries. Core rules (fee EUR 90/45/35/67.50, responsible-post logic, 15-day/6-month timing, 15-45 day processing, ICAO photo, passport 3-months-beyond, fingerprints at submission) verified live against EU Commission pages 2026-07-20. TWO Visa Code figures could NOT be verified live (EUR-Lex HTTP 202 bot-challenge): the EUR 30000 travel-insurance minimum (Art. 15) and the 59-month fingerprint-reuse window (Art. 13) - both marked Pending official verification in the adapter. ETIAS is a separate NON-visa track for visa-exempt travellers and is NOT operational as of 2026-07-20; current ETIAS fee EUR 20. Per-country portals login-walled; rules+document-checklist depth.",
+      "notes": "Uniform short-stay (Type C) visa, 90/180 rule, 30 participating countries. Core rules (fee EUR 90/45/35/67.50, responsible-post logic, 15-day/6-month timing, 15-45 day processing, ICAO photo, passport 3-months-beyond, fingerprints at submission) verified live against EU Commission pages 2026-09-22. TWO Visa Code figures could NOT be verified live: the EUR 30000 travel-insurance minimum (Art. 15) and the 59-month fingerprint-reuse window (Art. 13) - both marked Pending official verification in the adapter. ETIAS is a separate NON-visa track for visa-exempt travellers and is NOT operational as of 2026-09-22; current ETIAS fee EUR 20. Per-country portals login-walled; rules+document-checklist depth.",
       "adapter": "countries/schengen.md"
     },
     {
@@ -1296,7 +1296,7 @@
         "turkiye"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-27",
+      "last_verified": "2026-09-22",
       "sources": [
         {
           "label": "Visa information for foreigners",
@@ -1311,9 +1311,23 @@
             "nationality_rules",
             "embassy_route"
           ]
+        },
+        {
+          "label": "Türkiye e-Visa",
+          "url": "https://www.evisa.gov.tr/",
+          "authority": "Ministry of Foreign Affairs of Türkiye",
+          "roles": [
+            "official_application"
+          ],
+          "covers": [
+            "evisa",
+            "application",
+            "eligibility_check",
+            "fees"
+          ]
         }
       ],
-      "notes": "The previously registered evisa.gov.tr URL redirected to a non-government commercial site on 2026-07-27 and was removed. Use the MFA rules page and locate any application route from a current official government page; do not trust the former domain."
+      "notes": "The MFA rules page currently links to the official HTTPS evisa.gov.tr application system, which was re-verified as reachable on 2026-09-22. Eligibility remains nationality-, passport-, purpose-, and supporting-document-specific and must be checked live before travel."
     },
     {
       "id": "ae",
@@ -3230,6 +3244,219 @@
         "label": "Visa service", "url": "https://mppre.gob.ve/index.php/detalles_servicio/1",
         "authority": "Ministry of People's Power for Foreign Affairs of Venezuela", "roles": ["authoritative_rules", "official_application"],
         "covers": ["visa_types", "application"]
+      }]
+    },
+    {
+      "id": "ag", "iso2": "AG", "name": "Antigua & Barbuda", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Visa application process", "url": "https://immigration.gov.ag/visa-services/visa-application-process/",
+        "authority": "Department of Immigration of Antigua and Barbuda", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "evisa", "visa_on_arrival", "transit", "application_requirements"]
+      }]
+    },
+    {
+      "id": "ai", "iso2": "AI", "name": "Anguilla", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Visas and travel", "url": "https://www.gov.ai/service/immigration-labour-visas-travel",
+        "authority": "Government of Anguilla", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "entry_clearance", "evisa", "fees", "processing_time"]
+      }]
+    },
+    {
+      "id": "as", "iso2": "AS", "name": "American Samoa", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Visitor permits", "url": "https://legalaffairs.as.gov/visitor-visa-home",
+        "authority": "American Samoa Department of Legal Affairs", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_permit", "eligibility_routes", "online_application", "stay_duration"]
+      }]
+    },
+    {
+      "id": "aw", "iso2": "AW", "name": "Aruba", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Short-stay Caribbean visa", "url": "https://www.netherlandsworldwide.nl/caribbean-visa/short-stay",
+        "authority": "Government of the Netherlands", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "short_stay_visa", "visa_exemptions", "application", "stay_duration"]
+      }]
+    },
+    {
+      "id": "bm", "iso2": "BM", "name": "Bermuda", "region": "North America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Bermuda entry visas", "url": "https://www.gov.bm/articles/bermuda-entry-visas",
+        "authority": "Government of Bermuda", "roles": ["authoritative_rules"],
+        "covers": ["entry_visa", "recognised_visas", "passport_validity", "visitor_entry"]
+      }]
+    },
+    {
+      "id": "bq", "iso2": "BQ", "name": "Caribbean Netherlands", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Short-stay Caribbean visa", "url": "https://www.netherlandsworldwide.nl/caribbean-visa/short-stay",
+        "authority": "Government of the Netherlands", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "short_stay_visa", "visa_exemptions", "application", "stay_duration"]
+      }]
+    },
+    {
+      "id": "cw", "iso2": "CW", "name": "Curaçao", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Short-stay Caribbean visa", "url": "https://www.netherlandsworldwide.nl/caribbean-visa/short-stay",
+        "authority": "Government of the Netherlands", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "short_stay_visa", "visa_exemptions", "application", "stay_duration"]
+      }, {
+        "label": "Border control", "url": "https://immigrationcur.org/en/dep/border-control/",
+        "authority": "Immigration Department of Curaçao", "roles": ["authoritative_rules"],
+        "covers": ["entry_conditions", "visa_requirement", "visa_validity", "digital_entry_card"]
+      }]
+    },
+    {
+      "id": "fk", "iso2": "FK", "name": "Falkland Islands (Islas Malvinas)", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Immigration permits", "url": "https://www.gov.fk/customs/permits/",
+        "authority": "Falkland Islands Government", "roles": ["authoritative_rules"],
+        "covers": ["visitor_permit", "visa_requirement", "work_permit", "dependent_permit"]
+      }]
+    },
+    {
+      "id": "fo", "iso2": "FO", "name": "Faroe Islands", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Entry to the Faroe Islands or Greenland", "url": "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa/Visa-to-the-Faroe-Island-or-Greenland",
+        "authority": "Danish Immigration Service", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "visa_exemptions", "entry_permit", "residence_permit_holders"]
+      }],
+      "notes": "The Danish Immigration Service announced on 2026-03-20 that third-country nationals holding a residence permit from Denmark or another Schengen country may enter on that residence permit; holders of only a non-Danish Schengen D visa still need the territory-specific visa."
+    },
+    {
+      "id": "gi", "iso2": "GI", "name": "Gibraltar", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "2026 visa arrangements", "url": "https://www.gibraltar.gov.gi/press-releases/technical-notice-reminder-concerning-visa-arrangements-5582026-12201",
+        "authority": "HM Government of Gibraltar", "roles": ["authoritative_rules"],
+        "covers": ["schengen_alignment", "visa_requirement", "visa_exemptions", "effective_date", "application_route"]
+      }, {
+        "label": "Visas and immigration", "url": "https://www.gibraltar.gov.gi/department-of-immigration-and-home-affairs/visas-and-immigration",
+        "authority": "HM Government of Gibraltar", "roles": ["authoritative_rules"],
+        "covers": ["visa_guidance", "immigration"]
+      }],
+      "notes": "From 2026-07-15 Gibraltar aligns its short-stay visa policy with Schengen: visa-required third-country nationals need the relevant Schengen short-stay visa, and the former UK Gibraltar visa application route ceased on 2026-07-08. Live itinerary and residence facts still determine the competent Schengen post."
+    },
+    {
+      "id": "gl", "iso2": "GL", "name": "Greenland", "region": "North America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Entry to the Faroe Islands or Greenland", "url": "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Short-stay-visa/Visa-to-the-Faroe-Island-or-Greenland",
+        "authority": "Danish Immigration Service", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "visa_exemptions", "entry_permit", "residence_permit_holders"]
+      }],
+      "notes": "The Danish Immigration Service announced on 2026-03-20 that third-country nationals holding a residence permit from Denmark or another Schengen country may enter on that residence permit; holders of only a non-Danish Schengen D visa still need the territory-specific visa."
+    },
+    {
+      "id": "gg", "iso2": "GG", "name": "Guernsey", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Immigration guidance", "url": "https://www.gov.gg/immigration",
+        "authority": "States of Guernsey", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "eta", "common_travel_area", "digital_permission", "effective_date"]
+      }, {
+        "label": "Visa application guidance", "url": "https://www.gov.gg/visaguidance",
+        "authority": "States of Guernsey", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_types", "application_route"]
+      }],
+      "notes": "Guernsey requires an ETA for covered non-visa nationals travelling directly from outside the UK and Islands from 2026-04-23. From 2026-07-01 newly granted entry clearance is issued as digital permission rather than a passport vignette; existing physical evidence remains subject to current guidance."
+    },
+    {
+      "id": "gq", "iso2": "GQ", "name": "Equatorial Guinea", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Presidential decree regulating stay visas", "url": "https://www.guineaecuatorialpress.com/noticias/decreto_presidencial_que_regula_el_visado_de_estancia_en_guinea_ecuatorial",
+        "authority": "Official Press Office of the Government of Equatorial Guinea", "roles": ["authoritative_rules"],
+        "covers": ["visa_types", "tourist_visa", "business_visa", "stay_duration"]
+      }],
+      "notes": "The official page reproduces Decree 49/2019. It is a legal starting source, not a current nationality-by-nationality verdict; confirm the present consular route before travel."
+    },
+    {
+      "id": "gu", "iso2": "GU", "name": "Guam", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Guam-CNMI Visa Waiver Program Form I-736", "url": "https://www.cbp.gov/newsroom/national-media-release/cbp-announces-electronic-version-form-i-736-guam-cnmi-visa-waiver",
+        "authority": "U.S. Customs and Border Protection", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_waiver_program", "form_i_736", "entry_process"]
+      }],
+      "notes": "The registered CBP page is a starting source for the Guam-CNMI waiver route. Because program eligibility and electronic authorisation rules can change independently, recheck current CBP and carrier requirements for the exact passport and destination island."
+    },
+    {
+      "id": "gw", "iso2": "GW", "name": "Guinea-Bissau", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Visa application", "url": "https://embaixadaguinebissau.pt/pedidos-consulares/pedido-de-visto/",
+        "authority": "Embassy of Guinea-Bissau in Portugal", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_application", "documents", "consular_route"]
+      }],
+      "notes": "This is an official embassy application page for applicants using the Portugal mission. Consular jurisdiction and any alternative application or arrival route must be verified for the applicant's actual residence and itinerary."
+    },
+    {
+      "id": "im", "iso2": "IM", "name": "Isle of Man", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Travel information", "url": "https://www.gov.im/categories/travel-traffic-and-motoring/immigration/travel-information/",
+        "authority": "Isle of Man Government", "roles": ["authoritative_rules"],
+        "covers": ["entry_conditions", "common_travel_area", "visitor_entry"]
+      }, {
+        "label": "Electronic Travel Authorisation launch", "url": "https://www.gov.im/news/2026/apr/02/isle-of-man-to-launch-electronic-travel-authorisation-eta-scheme/",
+        "authority": "Isle of Man Government", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["eta", "eligibility", "validity", "effective_date"]
+      }],
+      "notes": "The Isle of Man ETA became required for covered passengers on 2026-04-23. It is generally valid for two years or until passport expiry and is mutually recognised with UK, Jersey, and Guernsey ETAs; exemptions and CTA routing must be checked live."
+    },
+    {
+      "id": "je", "iso2": "JE", "name": "Jersey", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Apply for a visa", "url": "https://www.gov.je/Travel/InformationAdvice/Visitors/pages/applyvisa.aspx",
+        "authority": "Government of Jersey", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "application_route", "digital_permission", "processing_time"]
+      }, {
+        "label": "Electronic Travel Authorisation", "url": "https://www.gov.je/Travel/InformationAdvice/Visitors/pages/geteta.aspx",
+        "authority": "Government of Jersey", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["eta", "eligibility", "fees", "validity", "effective_date"]
+      }],
+      "notes": "Jersey requires an ETA for covered travellers from 2026-04-23; current guidance lists a GBP 20 fee and mutual recognition of UK, Guernsey, and Isle of Man ETAs. Visa applications granted from 2026-07-01 receive digital permission linked to the passport instead of a new vignette."
+    },
+    {
+      "id": "ky", "iso2": "KY", "name": "Cayman Islands", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Visas and extensions", "url": "https://gov.ky/web/cbc/travel/visas-extensions",
+        "authority": "Cayman Islands Customs and Border Control", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "transit_visa", "student_visa", "visitor_extension", "online_application"]
+      }]
+    },
+    {
+      "id": "lc", "iso2": "LC", "name": "St. Lucia", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Non-immigrant visa", "url": "https://www.govt.lc/services/apply-for-saint-lucia-non-immigrant-visa",
+        "authority": "Government of Saint Lucia", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["non_immigrant_visa", "application_requirements", "fees", "processing_time", "visa_on_arrival"]
+      }]
+    },
+    {
+      "id": "li", "iso2": "LI", "name": "Liechtenstein", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "sources": [{
+        "label": "Applying for a Schengen visa", "url": "https://home-affairs.ec.europa.eu/policies/schengen/visa-policy/applying-schengen-visa_en",
+        "authority": "European Commission Directorate-General for Migration and Home Affairs", "roles": ["authoritative_rules"],
+        "covers": ["schengen_visa", "visa_requirement", "application_timing", "documents", "fees"]
+      }, {
+        "label": "Visa Information System", "url": "https://www.llv.li/en/national-administration/migration-and-passport-office/schengen-dublin/visa-information-system-vis-",
+        "authority": "Liechtenstein Migration and Passport Office", "roles": ["official_status"],
+        "covers": ["vis", "biometrics", "schengen"]
       }]
     }
   ]

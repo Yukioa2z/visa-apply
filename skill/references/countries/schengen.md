@@ -2,7 +2,7 @@
 
 > Depth: rules + document-checklist. This adapter does NOT script per-field form entry: the actual
 > application portals (France-Visas, VIDEX, etc.) are login-walled and not publicly scrapable.
-> All rules below trace to official EU Commission sources opened live on 2026-07-20. Two figures
+> All rules below trace to official EU Commission sources opened live on 2026-09-22. Two figures
 > from the Visa Code (Regulation 810/2009) — the €30,000 insurance minimum and the 59-month
 > fingerprint-reuse window — could not be re-verified live (EUR-Lex was unreachable, HTTP 202
 > bot-challenge) and are marked **Pending official verification**.
@@ -10,7 +10,7 @@
 ## Metadata
 
 - **Country/area:** Schengen Area. 30 countries listed as accepting Schengen visa applications on the
-  EU Commission "Applying for a Schengen visa" page (verified 2026-07-20):
+  EU Commission "Applying for a Schengen visa" page (verified 2026-09-22):
   Austria, Belgium, Bulgaria, Croatia, Czechia, Denmark, Estonia, Finland, France, Germany, Greece,
   Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway,
   Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland — plus the applicant
@@ -25,7 +25,7 @@
     apply for a Type C visa; once ETIAS is operational they instead obtain an online ETIAS
     authorisation. Visa-*required* nationals still need a Type C visa and are out of ETIAS scope.
     ETIAS collects no biometrics, needs no consulate visit, and (per the ETIAS Regulation) is valid
-    3 years or until passport expiry, whichever is first. **Status on 2026-07-20: ETIAS is NOT in
+    3 years or until passport expiry, whichever is first. **Status on 2026-09-22: ETIAS is NOT in
     operation and no applications are being collected** (per the Commission ETIAS page dated
     2025-10-06). See Route Map note and Review Risks.
 - **Applicant assumptions:** Nationality- and residence-agnostic. This adapter applies to any non-EU
@@ -33,7 +33,7 @@
   the **main destination** (longest stay); if stays are of equal length across countries, the
   consulate of the **country of first entry**; as a general rule the applicant applies at the
   consulate with territorial responsibility for their country of legal residence.
-- **Last verified date:** 2026-07-20
+- **Last verified date:** 2026-09-22
 - **Official source IDs/URLs:** see `official-sources.json` block at end.
 - **Support level:** `full_adapter`
 
@@ -80,7 +80,7 @@ responsible-post logic. Field order approximates the harmonised form where known
 ## Documents
 
 Nothing below is labelled mandatory unless an official EU source states it. The Commission's
-"Applying for a Schengen visa" page (verified 2026-07-20) lists the required set; euro-denominated
+"Applying for a Schengen visa" page (verified 2026-09-22) lists the required set; euro-denominated
 insurance minimum is flagged Pending verification.
 
 ### Always required (per EU "Applying for a Schengen visa")
@@ -170,7 +170,7 @@ document-checklist depth for these.
   Resolve by the documented hierarchy: main destination (longest stay) → first entry (ties) → legal
   residence.
 - **ETIAS-vs-visa confusion:** ETIAS is **not** a visa and applies only to visa-*exempt* nationals; a
-  visa-required applicant cannot substitute ETIAS. As of 2026-07-20 ETIAS is **not operational**, so
+  visa-required applicant cannot substitute ETIAS. As of 2026-09-22 ETIAS is **not operational**, so
   visa-exempt travellers currently need neither — but this will change on launch. Do not tell a
   visa-required applicant to "just get ETIAS."
 - **Passport validity rule:** the 3-months-beyond-departure rule IS confirmed by the EU. The
