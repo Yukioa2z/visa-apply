@@ -1,6 +1,6 @@
 # Canada Adapter: Temporary Resident Visa (visitor visa) via IRCC
 
-Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure account is login-walled and not field-scriptable). Verified against public IRCC / canada.ca pages on 2026-07-27. Logged-out source checks cannot guarantee legal accuracy; re-check IRCC before filing or travel.
+Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure account is login-walled and not field-scriptable). The Ebola endpoint and Super Visa income calculation were rechecked against public IRCC pages on 2026-09-28; other cached guidance retains its earlier verification scope. Logged-out source checks cannot guarantee legal accuracy; re-check IRCC before filing or travel.
 
 ## Metadata
 
@@ -10,7 +10,7 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
   - **eTA (Electronic Travel Authorization)** — a *separate, simpler* route for visa-exempt foreign nationals arriving **by air**. Not a visa. Determines whether the visa workflow applies at all.
   - **Super Visa** — long-validity multiple-entry visa for parents/grandparents of Canadian citizens/PRs/registered Indians. A TRV variant with extra insurance + host-income requirements.
 - **Applicant assumptions:** Nationality- and residence-agnostic. The responsible visa office is the IRCC visa office / VAC network servicing the applicant's country of residence; country-specific instructions attach to the online personalized document checklist. Applicant is assumed to be **outside Canada** at time of application.
-- **Last verified date:** 2026-07-27
+- **Last verified date:** 2026-09-28 (Ebola measures and Super Visa income calculation)
 - **Official source IDs/URLs:** see `official-sources.json`.
 - **Support level:** `full_adapter`
 
@@ -40,16 +40,17 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 - **Policy freshness trigger:** Re-verify each cycle: fee schedule, biometrics fee/exemptions, medical designated-country list (last change 2025-11-03), and LICO income tables (annual).
 
 ### Temporary 2026 Ebola measures — all visitor routes
-- **Residence-based document suspension:** From 23:59:59 ET on **May 27, 2026** through 23:59:59 ET on **August 28, 2026**, Canada temporarily suspends immigration documents of foreign nationals who listed the Democratic Republic of the Congo, South Sudan, or Uganda as their last country of residence. This includes TRVs and eTAs; applications continue to be processed but are not finalized during the measure.
+- **Residence-based document suspension:** From 23:59:59 ET on **May 27, 2026** through the extended endpoint of 23:59:59 ET on **September 28, 2026**, Canada temporarily suspends immigration documents of foreign nationals who listed the Democratic Republic of the Congo, South Sudan, or Uganda as their last country of residence. This includes TRVs and eTAs; applications continue to be processed but are not finalized during the measure.
 - **Recent-travel restriction:** From **July 20, 2026**, foreign nationals who visited the Democratic Republic of the Congo in the previous 21 days cannot travel to Canada. Canadian citizens and permanent residents may return subject to medical screening and public-health measures.
 - **Scope and exemptions:** The residence rule is based on the last country of residence stated in the application, not citizenship. Case-by-case exemptions may be requested with evidence through IRCC's crisis web form.
-- **Freshness:** These are time-limited emergency measures. Re-check the official Ebola measures page before relying on the August 28 end date because the government may repeal, extend, or replace them.
+- **Freshness:** IRCC's [current notice](https://www.canada.ca/en/immigration-refugees-citizenship/services/special-measures/ebola-2026.html), checked on 2026-09-28, states the September 28 endpoint. Recheck immediately before travel, especially after that endpoint; do not infer an extension or continuing suspension from this cached reference.
 
 ### Branch C — Super Visa (parents & grandparents)
 - **Who:** Parents/grandparents (biological or adopted) of a child/grandchild who is a Canadian citizen, PR, or registered Indian, aged 18+ and living in Canada. Cannot include dependants.
 - **Duration:** Multiple entry, valid up to 10 years; each stay up to 5 years at a time.
 - **Fee:** From CAD $100 (+ biometrics).
-- **Extra requirements:** mandatory medical exam; **$100,000** minimum private medical insurance covering health care, hospitalization, and repatriation, valid ≥1 year from date of entry; host must meet or exceed **minimum necessary income (LICO)**; signed host letter of invitation.
+- **Extra requirements:** mandatory medical exam; **$100,000** minimum private medical insurance covering health care, hospitalization, and repatriation, valid ≥1 year from date of entry; satisfy the current **minimum necessary income (LICO)** calculation; signed host letter of invitation.
+- **Income calculation from March 31, 2026:** Under the [2026 Ministerial Instructions](https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/other-goals/super-visa-2026.html) and IRCC's Super Visa operational manual, the host and any eligible co-signer may meet the latest family-size LICO using either of the two taxation years immediately before filing. Alternatively, their income in the most recent taxation year or 12-month period must reach at least **75% of LICO**, and the applicant's documented income may meet the remainder, up to **25% of LICO**. These rules also apply to applications already in processing on March 31. Use the current table and evidence for the chosen option; the 75% threshold is not a standalone full-income exemption.
 
 ## Question Overlay
 (Fields BEYOND a universal core intake of name/DOB/nationality/passport/contact. IMM 5257 / Details of Visit order where known.)
@@ -71,7 +72,7 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 | 13 | Representative used | Yes/No + rep details | If using paid/unpaid rep | IMM 5476 |
 | 14 | Minor traveling | Custody, parental authorization letter | If applicant/accompanied child is a minor | Guide 5256 |
 | 15 | Biometrics given in last 10 years? | Yes/No + prior UCI/date | Determines whether biometrics repeat needed | Biometrics facts (reuse — pending exact-page reconfirm) |
-| 16 *(Super Visa)* | Host income (LICO) | Host income vs. LICO for family size | Super Visa only | Super Visa manual |
+| 16 *(Super Visa)* | Income option and family-size LICO | Either preceding tax year, or host/co-signer at least 75% plus documented applicant income for the remainder | Super Visa only | 2026 Ministerial Instructions; Super Visa manual |
 | 17 *(Super Visa)* | Medical insurance policy | Insurer, coverage amount, validity dates | Super Visa only | Super Visa manual ($100k / 1yr) |
 
 ## Documents
@@ -96,7 +97,7 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 
 ### Super Visa additional (mandatory for Branch C)
 - **Private medical insurance** — minimum **$100,000** emergency coverage; must cover health care, hospitalization and repatriation; valid for a minimum of 1 year from the date of entry and for each entry; from a Canadian insurer or an OSFI-listed/minister-approved foreign insurer; **quotes are not accepted.**
-- **Host letter of invitation + proof of host income at/above LICO** — LICO figures track Statistics Canada low-income cut-offs and change annually; pull the current table at application time.
+- **Host letter of invitation + income evidence for the selected LICO option** — use either of the two preceding taxation years, or the host/co-signer 75% plus applicant-income option described above. Pull the current family-size LICO table at application time and include evidence from each person whose income is relied on.
 - **Immigration medical exam** — mandatory for super visa.
 
 ### Generated after submission
@@ -126,6 +127,6 @@ Support level: `full_adapter` (rules + document-checklist depth; the IRCC secure
 4. **Refusal-history disclosure:** All prior refusals/removals from any country (notably the U.S.) must be disclosed. Non-disclosure risks misrepresentation findings (potential multi-year inadmissibility).
 5. **Dual intent:** Visiting while also pursuing PR is permissible, but the applicant must still satisfy the officer they will leave at the end of the visit. Ties evidence must be genuine and specific.
 6. **Minors / custody:** Minors traveling alone or with one parent need an authorization letter signed by both parents/legal guardians; custody/consent gaps trigger scrutiny.
-7. **Super Visa specifics:** Insurance must be a purchased policy of ≥$100,000 valid ≥1 year (quotes rejected); host income must meet current-year LICO; medical exam is mandatory. Any missing = refusal.
-8. **Temporary Ebola measures:** Screen the applicant's last country of residence and travel during the prior 21 days against the current IRCC emergency page. The present measures are scheduled through 2026-08-28 but may change.
+7. **Super Visa specifics:** Insurance must be a purchased policy of ≥$100,000 valid ≥1 year (quotes rejected); verify the current family-size LICO and evidence under the selected income option; medical exam is mandatory.
+8. **Temporary Ebola measures:** Screen the applicant's last country of residence and travel during the prior 21 days against the current IRCC emergency page. The endpoint published on 2026-09-28 is 23:59:59 Eastern Time that day; recheck for expiry, repeal, or further extension.
 9. **Freshness:** Medical designated-country list changed 2025-11-03; LICO and fees update periodically — re-verify at application time.

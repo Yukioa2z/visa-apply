@@ -2,15 +2,15 @@
 
 > Depth: rules + document-checklist. This adapter does NOT script per-field form entry: the actual
 > application portals (France-Visas, VIDEX, etc.) are login-walled and not publicly scrapable.
-> All rules below trace to official EU Commission sources opened live on 2026-09-22. Two figures
-> from the Visa Code (Regulation 810/2009) — the €30,000 insurance minimum and the 59-month
-> fingerprint-reuse window — could not be re-verified live (EUR-Lex was unreachable, HTTP 202
-> bot-challenge) and are marked **Pending official verification**.
+> Core rules below trace to official EU Commission sources. On 2026-09-28, the Finnish Ministry
+> for Foreign Affairs independently confirmed the €30,000 insurance minimum and fingerprint
+> reuse when the previous collection was less than 59 months ago. Remaining unresolved passport
+> details are still marked pending; confirm the responsible consulate's requirements before filing.
 
 ## Metadata
 
-- **Country/area:** Schengen Area. 30 countries listed as accepting Schengen visa applications on the
-  EU Commission "Applying for a Schengen visa" page (verified 2026-09-22):
+- **Country/area:** Schengen Area. 29 member states listed by the Finnish MFA's visa guidance,
+  checked on 2026-09-28:
   Austria, Belgium, Bulgaria, Croatia, Czechia, Denmark, Estonia, Finland, France, Germany, Greece,
   Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway,
   Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland — plus the applicant
@@ -25,7 +25,7 @@
     apply for a Type C visa; once ETIAS is operational they instead obtain an online ETIAS
     authorisation. Visa-*required* nationals still need a Type C visa and are out of ETIAS scope.
     ETIAS collects no biometrics, needs no consulate visit, and (per the ETIAS Regulation) is valid
-    3 years or until passport expiry, whichever is first. **Status on 2026-09-22: ETIAS is NOT in
+    3 years or until passport expiry, whichever is first. **Status on 2026-09-28: ETIAS is NOT in
     operation and no applications are being collected** (per the Commission ETIAS page dated
     2025-10-06). See Route Map note and Review Risks.
 - **Applicant assumptions:** Nationality- and residence-agnostic. This adapter applies to any non-EU
@@ -33,7 +33,7 @@
   the **main destination** (longest stay); if stays are of equal length across countries, the
   consulate of the **country of first entry**; as a general rule the applicant applies at the
   consulate with territorial responsibility for their country of legal residence.
-- **Last verified date:** 2026-09-22
+- **Last verified date:** 2026-09-28 (insurance, fingerprint reuse and ETIAS status)
 - **Official source IDs/URLs:** see `official-sources.json` block at end.
 - **Support level:** `full_adapter`
 
@@ -48,9 +48,9 @@
 | **Process** | Hybrid. Application is lodged at a consulate or an authorised visa service centre (which collects on behalf of consulates). May require a prior appointment. Fingerprints collected in person at submission. Some member states use an online form/portal for pre-fill, but the lodging step is in-person/consular. [EU: Applying for a Schengen visa] |
 | **Form / portal** | Harmonised Schengen application form (Visa Code Annex I). Per-country online front-ends differ (e.g. France-Visas, Germany VIDEX). See Portal Workflow. |
 | **Fee** | **€90 adults; €45 children aged 6–12; €35 for applicants from Armenia, Azerbaijan, and Belarus; €67.50 for applicants from Cabo Verde.** An additional service fee may apply at visa service centres. The visa fee **can be waived for specific categories of applicants**. Under the Free Movement Directive, family members of EU/EEA citizens get a **free and accelerated** procedure. [EU: Applying for a Schengen visa] |
-| **Biometrics** | Fingerprints are collected in person when the application is submitted (exemptions exist for specific categories — e.g. children below the Visa Code age threshold, certain officials). Data is stored in the **Visa Information System (VIS)**; VIS performs biometric matching, primarily fingerprints. VIS retention is **5 years**. Fingerprint **59-month reuse window** (previously enrolled prints may be copied from an earlier application): **Pending official verification** (Visa Code Art. 13; EUR-Lex unreachable on 2026-07-20). [EU: Applying for a Schengen visa; EU: VIS] |
+| **Biometrics** | Fingerprints are collected in person when the application is submitted (exemptions exist for specific categories — e.g. children below the Visa Code age threshold, certain officials). Data is stored in the **Visa Information System (VIS)**; VIS performs biometric matching, primarily fingerprints. VIS retention is **5 years**. The Finnish MFA states that fingerprints are not taken again if they were collected for a previous visa application **less than 59 months ago**. Confirm reuse eligibility and any collection request with the responsible consulate. [EU: Applying for a Schengen visa; EU: VIS; FI: A visa to visit Finland] |
 | **Appointment / interview** | An appointment may be required before lodging. Submit **at least 15 days before** the intended journey and **no earlier than 6 months** beforehand. [EU: Applying for a Schengen visa] |
-| **Travel medical insurance minimum** | Medical insurance covering **emergency medical care, hospitalisation, and repatriation (including in the event of death)** is required. Minimum coverage amount of **€30,000**: **Pending official verification** (Visa Code Art. 15; EUR-Lex unreachable on 2026-07-20 — the EU applying page states the coverage scope but not the euro figure). [EU: Applying for a Schengen visa] |
+| **Travel medical insurance minimum** | Medical insurance covering **emergency medical care, hospitalisation, and repatriation (including in the event of death)** is required. Minimum coverage amount of **€30,000**, valid throughout the Schengen area and for the relevant visa period, confirmed by the Finnish MFA on 2026-09-28. [EU: Applying for a Schengen visa; FI: A visa to visit Finland] |
 | **Processing time** | Normal **15 days**; may be extended to **up to 45 days** where a more detailed examination or additional documents are needed. [EU: Applying for a Schengen visa] |
 | **Policy freshness trigger** | Re-verify when: (a) the "Applying for a Schengen visa" page "last updated" date changes (was 2025-12-02); (b) ETIAS goes operational (changes the whole visa-exempt track); (c) the Entry/Exit System (EES) rollout alters biometric steps; (d) the €90 base fee is revised (Visa Code fee reviews occur periodically). |
 | **Timatic / carrier cross-check note** | A valid Type C visa is necessary but not sufficient for boarding: airlines check document validity against Timatic/IATA rules (passport validity, onward/return, insurance for some carriers). The visa does not guarantee entry — border guards make the final admission decision. Cross-check passport 3-months-beyond rule against carrier boarding rules before travel. |
@@ -72,29 +72,29 @@ responsible-post logic. Field order approximates the harmonised form where known
 | 7 | Sponsor / inviting person or company | Name, address, relationship; for company: reg. details | If purpose is family/friends visit or business, or if a host covers costs. | Invitation letter / employer letter |
 | 8 | Means of support (who pays) | Enum: self / sponsor + cover type (cash, traveller's cheques, credit card, prepaid accommodation/transport, other) | Always. Feeds proof-of-funds evidence. | Harmonised form field 33; bank statements |
 | 9 | Previous Schengen visas held | Yes/No + dates of last visa | Always. Multiple-entry / trusted-traveller assessment. | Prior passport/visa stickers |
-| 10 | Fingerprints previously collected | Yes/No + date (if within reuse window) | Always. Determines whether biometrics must be re-enrolled. | VIS record / prior application [reuse window Pending verification] |
+| 10 | Fingerprints previously collected | Yes/No + date (if within reuse window) | Always. Determines whether biometrics must be re-enrolled. | VIS record / prior application; Finnish MFA less-than-59-month guidance |
 | 11 | Prior fingerprinting for a Schengen visa — sticker no. of prior visa | Visa sticker number | If prints previously given. | Prior visa sticker |
 | 12 | Family member of an EU/EEA/CH citizen | Yes/No + relationship + citizen's details | If applicable → free & accelerated Free-Movement-Directive procedure. | Marriage/birth cert; citizen's ID [EU] |
 | 13 | Minor applicant — parental authority / guardian | Guardian name, address, nationality | If applicant is a minor. | Birth certificate; consent (see Documents) |
 
 ## Documents
 
-Nothing below is labelled mandatory unless an official EU source states it. The Commission's
-"Applying for a Schengen visa" page (verified 2026-09-22) lists the required set; euro-denominated
-insurance minimum is flagged Pending verification.
+The Commission's "Applying for a Schengen visa" page lists the core document set. The Finnish
+MFA's [visa guidance](https://um.fi/visa-to-visit-finland), checked on 2026-09-28, confirms the
+insurance minimum and fingerprint-reuse guidance. Verify mission-specific additions before filing.
 
 ### Always required (per EU "Applying for a Schengen visa")
 - **Valid passport.** Expiry date **at least 3 months after** the date of departure from the Schengen
   area (for multiple-entry visas, at least 3 months after departure from the last country visited).
   [EU]
-  - *Issued-within-last-10-years* and *at least 2 blank pages*: **Pending official verification** — these
-    are standard entry-condition rules (Schengen Borders Code) but were not stated on the EU applying
-    page and EUR-Lex was unreachable on 2026-07-20. Treat as strongly expected but verify per consulate.
+  - *Issued within the last 10 years*: confirmed by the Finnish MFA on 2026-09-28.
+  - *At least 2 blank pages*: **Pending official verification** in this adapter; confirm with the
+    responsible consulate before treating it as a verified requirement here.
 - **Completed visa application form** (harmonised Schengen form). [EU]
 - **Photo compliant with ICAO standards.** [EU]
 - **Travel medical insurance** covering emergency medical care, hospitalisation, and repatriation
-  (including in the event of death). Minimum **€30,000** coverage: **Pending official verification**
-  (scope confirmed by EU; euro figure from Visa Code Art. 15, EUR-Lex unreachable). [EU]
+  (including in the event of death). Minimum **€30,000** coverage, throughout the Schengen area
+  and for the relevant visa period, confirmed by the Finnish MFA on 2026-09-28. [EU; FI]
 - **Supporting documents on purpose of stay.** [EU]
 - **Evidence of financial means (proof of funds).** [EU]
 - **Evidence of accommodation during the stay.** [EU]
@@ -143,7 +143,7 @@ login-walled is marked.
 4. Book an appointment (consulate or authorised visa service centre) where required. — *Booking
    systems typically login-walled.*
 5. **VIS biometrics step:** attend in person; fingerprints + photo captured at lodging (unless a valid
-   prior enrolment can be reused — reuse window Pending verification). [EU: VIS]
+   prior enrolment can be reused; Finnish MFA guidance specifies less than 59 months). [EU: VIS; FI]
 6. Upload / submit supporting documents (portal upload or in-person handover). — *Uploads
    login-walled.*
 7. Pay the visa fee (+ any service-centre fee). — *Payment login-walled.*
@@ -160,8 +160,8 @@ document-checklist depth for these.
   **€20** (raised from the €7 in the 2018 ETIAS Regulation / 2018 Q&A memo). The €20 figure is
   current but "enters into effect as soon as ETIAS is operational" and was still in a Council/Parliament
   review window. Do not present €7 as current.
-- **Insurance / coverage edge cases:** the **€30,000 minimum is Pending official verification** here —
-  confirm against Visa Code Art. 15 or the responsible consulate before asserting the number. Coverage
+- **Insurance / coverage edge cases:** the **€30,000 minimum** is confirmed by the Finnish MFA;
+  confirm the policy's acceptance with the responsible consulate. Coverage
   must be valid across all Schengen states and for the full stay; single-country-only or
   under-threshold policies are a common refusal cause. Multiple-entry applicants need policy validity
   matching each trip.
@@ -170,14 +170,17 @@ document-checklist depth for these.
   Resolve by the documented hierarchy: main destination (longest stay) → first entry (ties) → legal
   residence.
 - **ETIAS-vs-visa confusion:** ETIAS is **not** a visa and applies only to visa-*exempt* nationals; a
-  visa-required applicant cannot substitute ETIAS. As of 2026-09-22 ETIAS is **not operational**, so
+  visa-required applicant cannot substitute ETIAS. As of 2026-09-28 ETIAS is **not operational**, so
   visa-exempt travellers currently need neither — but this will change on launch. Do not tell a
   visa-required applicant to "just get ETIAS."
 - **Passport validity rule:** the 3-months-beyond-departure rule IS confirmed by the EU. The
-  issued-within-10-years and 2-blank-pages rules are **Pending verification** here (standard Schengen
-  Borders Code entry conditions, but not stated on the applying page and EUR-Lex was unreachable) —
-  verify before treating as hard requirements.
+  issued-within-10-years rule is also confirmed by the Finnish MFA. The 2-blank-pages rule remains
+  **Pending verification** in this adapter; check the responsible consulate's current guidance.
 - **Minors:** parental/guardian consent requirements and forms vary by consulate; missing notarised
   consent for a child travelling without a parent is a frequent rejection. Birth certificate expected.
 - **Free Movement Directive path:** family members of EU/EEA/CH citizens are entitled to a free,
   accelerated procedure — misclassifying them into the standard paid track is a rights/process error.
+
+## Additional verified source
+
+- [Finnish MFA: A visa to visit Finland](https://um.fi/visa-to-visit-finland), checked on 2026-09-28. Confirms the insurance minimum, insurance scope, passport issuance window, and fingerprint-reuse guidance cited above.
