@@ -1,40 +1,10 @@
 {
-  "updated_at": "2026-09-24T07:41:01Z",
+  "updated_at": "2026-09-30T08:44:02Z",
   "github": {
     "window_days": 14,
-    "clone_events": 148,
-    "unique_cloners": 64,
+    "clone_events": 135,
+    "unique_cloners": 60,
     "daily": [
-      {
-        "timestamp": "2026-09-10T00:00:00Z",
-        "count": 6,
-        "uniques": 4
-      },
-      {
-        "timestamp": "2026-09-11T00:00:00Z",
-        "count": 6,
-        "uniques": 5
-      },
-      {
-        "timestamp": "2026-09-12T00:00:00Z",
-        "count": 14,
-        "uniques": 8
-      },
-      {
-        "timestamp": "2026-09-13T00:00:00Z",
-        "count": 6,
-        "uniques": 4
-      },
-      {
-        "timestamp": "2026-09-14T00:00:00Z",
-        "count": 25,
-        "uniques": 14
-      },
-      {
-        "timestamp": "2026-09-15T00:00:00Z",
-        "count": 8,
-        "uniques": 6
-      },
       {
         "timestamp": "2026-09-16T00:00:00Z",
         "count": 12,
@@ -74,6 +44,36 @@
         "timestamp": "2026-09-23T00:00:00Z",
         "count": 2,
         "uniques": 2
+      },
+      {
+        "timestamp": "2026-09-24T00:00:00Z",
+        "count": 5,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-09-25T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-09-26T00:00:00Z",
+        "count": 4,
+        "uniques": 4
+      },
+      {
+        "timestamp": "2026-09-27T00:00:00Z",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-09-28T00:00:00Z",
+        "count": 22,
+        "uniques": 10
+      },
+      {
+        "timestamp": "2026-09-29T00:00:00Z",
+        "count": 19,
+        "uniques": 12
       }
     ]
   },
@@ -369,7 +369,31 @@
     {
       "timestamp": "2026-09-23T00:00:00Z",
       "count": 2
+    },
+    {
+      "timestamp": "2026-09-24T00:00:00Z",
+      "count": 5
+    },
+    {
+      "timestamp": "2026-09-25T00:00:00Z",
+      "count": 0
+    },
+    {
+      "timestamp": "2026-09-26T00:00:00Z",
+      "count": 4
+    },
+    {
+      "timestamp": "2026-09-27T00:00:00Z",
+      "count": 2
+    },
+    {
+      "timestamp": "2026-09-28T00:00:00Z",
+      "count": 22
+    },
+    {
+      "timestamp": "2026-09-29T00:00:00Z",
+      "count": 19
     }
   ],
-  "cumulative_clone_events": 813
+  "cumulative_clone_events": 865
 }
