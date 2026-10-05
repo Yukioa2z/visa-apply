@@ -2,7 +2,7 @@
 
 > Depth: rules + document-checklist. This adapter does NOT script per-field form entry: the actual
 > application portals (France-Visas, VIDEX, etc.) are login-walled and not publicly scrapable.
-> Core rules below trace to official EU Commission sources. On 2026-09-28, the Finnish Ministry
+> Core rules below trace to official EU Commission sources. On 2026-10-05, the Finnish Ministry
 > for Foreign Affairs independently confirmed the €30,000 insurance minimum and fingerprint
 > reuse when the previous collection was less than 59 months ago. Remaining unresolved passport
 > details are still marked pending; confirm the responsible consulate's requirements before filing.
@@ -10,7 +10,7 @@
 ## Metadata
 
 - **Country/area:** Schengen Area. 29 member states listed by the Finnish MFA's visa guidance,
-  checked on 2026-09-28:
+  checked on 2026-10-05:
   Austria, Belgium, Bulgaria, Croatia, Czechia, Denmark, Estonia, Finland, France, Germany, Greece,
   Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway,
   Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland — plus the applicant
@@ -25,15 +25,20 @@
     apply for a Type C visa; once ETIAS is operational they instead obtain an online ETIAS
     authorisation. Visa-*required* nationals still need a Type C visa and are out of ETIAS scope.
     ETIAS collects no biometrics, needs no consulate visit, and (per the ETIAS Regulation) is valid
-    3 years or until passport expiry, whichever is first. **Status on 2026-09-28: ETIAS is NOT in
+    3 years or until passport expiry, whichever is first. **Status on 2026-10-05: ETIAS is NOT in
     operation and no applications are being collected** (per the Commission ETIAS page dated
     2025-10-06). See Route Map note and Review Risks.
+  - **Entry/Exit System (EES, not a visa):** EES applies at external border crossings to covered
+    non-EU nationals making short stays, whether they hold a short-stay visa or are visa-exempt.
+    It has been fully operational since **2026-04-10** and records travel-document data, entry and
+    exit dates, refusals, and route-specific biometrics. Manual passport stamping ended when the
+    phased rollout finished. EES does not change the 90-days-in-180 rule.
 - **Applicant assumptions:** Nationality- and residence-agnostic. This adapter applies to any non-EU
   national who is **visa-required** for the Schengen area. Responsible consulate = the consulate of
   the **main destination** (longest stay); if stays are of equal length across countries, the
   consulate of the **country of first entry**; as a general rule the applicant applies at the
   consulate with territorial responsibility for their country of legal residence.
-- **Last verified date:** 2026-09-28 (insurance, fingerprint reuse and ETIAS status)
+- **Last verified date:** 2026-10-05 (core visa rules, EES status and ETIAS status)
 - **Official source IDs/URLs:** see `official-sources.json` block at end.
 - **Support level:** `full_adapter`
 
@@ -48,11 +53,11 @@
 | **Process** | Hybrid. Application is lodged at a consulate or an authorised visa service centre (which collects on behalf of consulates). May require a prior appointment. Fingerprints collected in person at submission. Some member states use an online form/portal for pre-fill, but the lodging step is in-person/consular. [EU: Applying for a Schengen visa] |
 | **Form / portal** | Harmonised Schengen application form (Visa Code Annex I). Per-country online front-ends differ (e.g. France-Visas, Germany VIDEX). See Portal Workflow. |
 | **Fee** | **€90 adults; €45 children aged 6–12; €35 for applicants from Armenia, Azerbaijan, and Belarus; €67.50 for applicants from Cabo Verde.** An additional service fee may apply at visa service centres. The visa fee **can be waived for specific categories of applicants**. Under the Free Movement Directive, family members of EU/EEA citizens get a **free and accelerated** procedure. [EU: Applying for a Schengen visa] |
-| **Biometrics** | Fingerprints are collected in person when the application is submitted (exemptions exist for specific categories — e.g. children below the Visa Code age threshold, certain officials). Data is stored in the **Visa Information System (VIS)**; VIS performs biometric matching, primarily fingerprints. VIS retention is **5 years**. The Finnish MFA states that fingerprints are not taken again if they were collected for a previous visa application **less than 59 months ago**. Confirm reuse eligibility and any collection request with the responsible consulate. [EU: Applying for a Schengen visa; EU: VIS; FI: A visa to visit Finland] |
+| **Biometrics** | Fingerprints are collected in person when the application is submitted (exemptions exist for specific categories, such as children below the Visa Code age threshold and certain officials). Data is stored in the **Visa Information System (VIS)**; VIS performs biometric matching, primarily of fingerprints, and retains data for **5 years**. The Finnish MFA states that fingerprints are not taken again if they were collected for a previous visa application **less than 59 months ago**. At the border, EES separately stores only a facial image for short-stay visa holders because their fingerprints are already in VIS; visa-exempt travellers follow the EES biometric collection rules. Confirm any collection request with the responsible authority. [EU: Applying for a Schengen visa; EU: VIS; EU: EES FAQ; FI: A visa to visit Finland] |
 | **Appointment / interview** | An appointment may be required before lodging. Submit **at least 15 days before** the intended journey and **no earlier than 6 months** beforehand. [EU: Applying for a Schengen visa] |
-| **Travel medical insurance minimum** | Medical insurance covering **emergency medical care, hospitalisation, and repatriation (including in the event of death)** is required. Minimum coverage amount of **€30,000**, valid throughout the Schengen area and for the relevant visa period, confirmed by the Finnish MFA on 2026-09-28. [EU: Applying for a Schengen visa; FI: A visa to visit Finland] |
+| **Travel medical insurance minimum** | Medical insurance covering **emergency medical care, hospitalisation, and repatriation (including in the event of death)** is required. Minimum coverage amount of **€30,000**, valid throughout the Schengen area and for the relevant visa period, confirmed by the Finnish MFA on 2026-10-05. [EU: Applying for a Schengen visa; FI: A visa to visit Finland] |
 | **Processing time** | Normal **15 days**; may be extended to **up to 45 days** where a more detailed examination or additional documents are needed. [EU: Applying for a Schengen visa] |
-| **Policy freshness trigger** | Re-verify when: (a) the "Applying for a Schengen visa" page "last updated" date changes (was 2025-12-02); (b) ETIAS goes operational (changes the whole visa-exempt track); (c) the Entry/Exit System (EES) rollout alters biometric steps; (d) the €90 base fee is revised (Visa Code fee reviews occur periodically). |
+| **Policy freshness trigger** | Re-verify when the "Applying for a Schengen visa" page changes, ETIAS goes operational, EES collection or exemption rules change, or the €90 base fee is revised. |
 | **Timatic / carrier cross-check note** | A valid Type C visa is necessary but not sufficient for boarding: airlines check document validity against Timatic/IATA rules (passport validity, onward/return, insurance for some carriers). The visa does not guarantee entry — border guards make the final admission decision. Cross-check passport 3-months-beyond rule against carrier boarding rules before travel. |
 
 ## Question Overlay
@@ -160,6 +165,10 @@ document-checklist depth for these.
   **€20** (raised from the €7 in the 2018 ETIAS Regulation / 2018 Q&A memo). The €20 figure is
   current but "enters into effect as soon as ETIAS is operational" and was still in a Council/Parliament
   review window. Do not present €7 as current.
+- **EES and VIS are separate:** VIS holds visa-application data. EES records covered external-border
+  crossings. Since 2026-04-10, EES is fully operational and manual passport stamping has ended for
+  covered travellers. A short-stay visa holder normally has a facial image stored in EES because
+  fingerprints were already collected for the visa. Do not describe EES as a visa or ETIAS.
 - **Insurance / coverage edge cases:** the **€30,000 minimum** is confirmed by the Finnish MFA;
   confirm the policy's acceptance with the responsible consulate. Coverage
   must be valid across all Schengen states and for the full stay; single-country-only or
@@ -170,7 +179,7 @@ document-checklist depth for these.
   Resolve by the documented hierarchy: main destination (longest stay) → first entry (ties) → legal
   residence.
 - **ETIAS-vs-visa confusion:** ETIAS is **not** a visa and applies only to visa-*exempt* nationals; a
-  visa-required applicant cannot substitute ETIAS. As of 2026-09-28 ETIAS is **not operational**, so
+  visa-required applicant cannot substitute ETIAS. As of 2026-10-05 ETIAS is **not operational**, so
   visa-exempt travellers currently need neither — but this will change on launch. Do not tell a
   visa-required applicant to "just get ETIAS."
 - **Passport validity rule:** the 3-months-beyond-departure rule IS confirmed by the EU. The
@@ -183,4 +192,5 @@ document-checklist depth for these.
 
 ## Additional verified source
 
-- [Finnish MFA: A visa to visit Finland](https://um.fi/visa-to-visit-finland), checked on 2026-09-28. Confirms the insurance minimum, insurance scope, passport issuance window, and fingerprint-reuse guidance cited above.
+- [EU Travel Europe: EES FAQ](https://travel-europe.europa.eu/en/ees/faq), checked on 2026-10-05. Confirms full operation from 2026-04-10, covered travellers, border biometrics, electronic registration and the end of manual passport stamping.
+- [Finnish MFA: A visa to visit Finland](https://um.fi/visa-to-visit-finland), checked on 2026-10-05. Confirms the insurance minimum, insurance scope, passport issuance window, and fingerprint-reuse guidance cited above.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-09-28",
+  "last_verified": "2026-10-05",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -423,7 +423,7 @@
         "uniform short-stay visa"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-09-28",
+      "last_verified": "2026-10-05",
       "sources": [
         {
           "label": "EU Commission — Applying for a Schengen visa (updated 2025-12-02)",
@@ -459,6 +459,22 @@
           ]
         },
         {
+          "label": "EU Travel Europe — Entry/Exit System (EES) FAQ",
+          "authority": "European Union",
+          "url": "https://travel-europe.europa.eu/en/ees/faq",
+          "roles": [
+            "authoritative_rules",
+            "official_status"
+          ],
+          "covers": [
+            "ees_fully_operational_2026-04-10",
+            "border_biometrics",
+            "electronic_entry_exit_registration",
+            "short_stay_scope",
+            "passport_stamping_ended"
+          ]
+        },
+        {
           "label": "EU Commission — ETIAS (updated 2025-10-06)",
           "authority": "EU Commission (DG Migration and Home Affairs)",
           "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en",
@@ -467,7 +483,7 @@
           ],
           "covers": [
             "etias_not_a_visa",
-            "not_operational_2026-09-28",
+            "not_operational_2026-10-05",
             "fee_20eur",
             "reg_2018_1240"
           ]
@@ -499,7 +515,7 @@
           ]
         }
       ],
-      "notes": "Uniform short-stay (Type C) visa, 90/180 rule, 29 participating countries. Core rules (fee EUR 90/45/35/67.50, responsible-post logic, 15-day/6-month timing, 15-45 day processing, ICAO photo, passport 3-months-beyond, fingerprints at submission) verified live against EU Commission pages 2026-09-22. The EUR 30000 travel-insurance minimum and the less-than-59-month fingerprint-reuse guidance were confirmed on Finland MFA guidance on 2026-09-28; the adapter cites that source. ETIAS is a separate NON-visa track for visa-exempt travellers and is NOT operational as of 2026-09-28; current ETIAS fee EUR 20. Per-country portals login-walled; rules+document-checklist depth.",
+      "notes": "Uniform short-stay (Type C) visa, 90/180 rule, 29 participating countries. Core rules (fee EUR 90/45/35/67.50, responsible-post logic, 15-day/6-month timing, 15-45 day processing, ICAO photo, passport 3-months-beyond, fingerprints at submission) were rechecked against current EU pages on 2026-10-05. The EUR 30000 travel-insurance minimum and the less-than-59-month fingerprint-reuse guidance remain supported by Finland MFA guidance. EES is fully operational at external border crossing points from 2026-04-10; it electronically registers covered non-EU short-stay travellers and replaces manual passport stamping. ETIAS is a separate NON-visa track for visa-exempt travellers and is NOT operational as of 2026-10-05; the published future fee is EUR 20. Per-country portals may have separate access limits.",
       "adapter": "countries/schengen.md"
     },
     {
@@ -566,7 +582,7 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-10-05",
       "sources": [
         {
           "label": "Entry visa",
@@ -729,7 +745,7 @@
         "australia"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-07-20",
+      "last_verified": "2026-10-05",
       "sources": [
         {
           "label": "Home Affairs — Electronic Travel Authority (subclass 601)",
@@ -895,7 +911,7 @@
       "region": "Oceania",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-08-03",
+      "last_verified": "2026-10-05",
       "sources": [
         {
           "label": "Find and choose a visa",
@@ -1368,11 +1384,11 @@
         "uae"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-27",
+      "last_verified": "2026-10-05",
       "sources": [
         {
-          "label": "Visit visas",
-          "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/visit-visas",
+          "label": "Types of visas",
+          "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas",
           "authority": "Official Platform of the UAE Government",
           "roles": [
             "authoritative_rules"
@@ -1380,10 +1396,25 @@
           "covers": [
             "visit",
             "tourism",
-            "business",
-            "medical",
+            "work",
+            "residence",
             "study",
-            "transit"
+            "transit",
+            "medical"
+          ]
+        },
+        {
+          "label": "Check whether an entry permit or visa is required",
+          "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Visa-information/do-you-need-an-entry-permit-or-a-visa-to-enter-the-uae",
+          "authority": "Official Platform of the UAE Government",
+          "roles": [
+            "authoritative_rules"
+          ],
+          "covers": [
+            "visa_on_arrival",
+            "entry_permit",
+            "passport_validity",
+            "official_application_links"
           ]
         },
         {
@@ -1412,7 +1443,7 @@
         "ksa"
       ],
       "support_level": "source_seeded",
-      "last_verified": "2026-07-17",
+      "last_verified": "2026-10-05",
       "sources": [
         {
           "label": "KSA Visa",
@@ -2698,7 +2729,7 @@
       "region": "Europe",
       "aliases": [],
       "support_level": "source_seeded",
-      "last_verified": "2026-08-24",
+      "last_verified": "2026-10-05",
       "sources": [{
         "label": "Apply for a Schengen visa",
         "url": "https://www.migrationsverket.se/en/you-want-to-apply/visiting-sweden/visiting-sweden-for-up-to-90-days-entry-visa.html",
@@ -3043,7 +3074,7 @@
     },
     {
       "id": "at", "iso2": "AT", "name": "Austria", "region": "Europe", "aliases": [],
-      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
       "sources": [{
         "label": "Entrance and residence visa guidance", "url": "https://www.bmeia.gv.at/en/travel-stay/entrance-and-residence-in-austria/visa",
         "authority": "Federal Ministry for European and International Affairs of Austria", "roles": ["authoritative_rules"],
@@ -3213,7 +3244,7 @@
     },
     {
       "id": "gh", "iso2": "GH", "name": "Ghana", "region": "Africa", "aliases": [],
-      "support_level": "source_seeded", "last_verified": "2026-09-14",
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
       "sources": [{
         "label": "Ghana visa regime", "url": "https://gis.gov.gh/visas/",
         "authority": "Ghana Immigration Service", "roles": ["authoritative_rules"],
@@ -4085,6 +4116,207 @@
         }
       ],
       "notes": "The embassy differentiates nationality, residence, purpose and duration. Its US-national guidance must not be applied to other passports; follow the linked nationality requirements and competent mission."
+    },
+    {
+      "id": "bl", "iso2": "BL", "name": "St. Barthélemy", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Saint-Barthélemy. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "cc", "iso2": "CC", "name": "Cocos (Keeling) Islands", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Cocos (Keeling) Islands travel information", "url": "https://www.infrastructure.gov.au/territories-regions-cities/territories/indian-ocean-territories/cocos-keeling-islands/travel-information", "authority": "Australian Government Department of Infrastructure, Transport, Regional Development, Communications and the Arts", "roles": ["authoritative_rules"], "covers": ["domestic_arrival", "overseas_arrival", "australian_immigration_rules", "identification"]}
+      ],
+      "notes": "No passport or visa is required when arriving from the Australian mainland, but normal Australian immigration procedures apply when entering from outside Australia and a visa may be required. Resolve the Australian visa route before overseas arrival."
+    },
+    {
+      "id": "cx", "iso2": "CX", "name": "Christmas Island", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Christmas Island travel information", "url": "https://www.infrastructure.gov.au/territories-regions/territories/indian-ocean-territories-christmas-island-and-cocos-keeling-islands/christmas-island/christmas-island-travel-information", "authority": "Australian Government Department of Infrastructure, Transport, Regional Development, Communications and the Arts", "roles": ["authoritative_rules"], "covers": ["domestic_arrival", "overseas_arrival", "australian_immigration_rules", "identification"]}
+      ],
+      "notes": "No passport or visa is required when arriving from the Australian mainland, but normal Australian immigration procedures apply when entering from outside Australia and a visa may be required. Resolve the Australian visa route before overseas arrival."
+    },
+    {
+      "id": "gf", "iso2": "GF", "name": "French Guiana", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes French Guiana. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "gp", "iso2": "GP", "name": "Guadeloupe", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Guadeloupe. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "gs", "iso2": "GS", "name": "South Georgia & South Sandwich Islands", "region": "South Atlantic", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Entry Control Ordinance permit application", "url": "https://gov.gs/entry-control-order-permit-application/", "authority": "Government of South Georgia and the South Sandwich Islands", "roles": ["authoritative_rules", "official_application"], "covers": ["entry_permit", "visitor_permit", "work_permit", "fees", "timing", "passport", "insurance"]}
+      ],
+      "notes": "From 2025-08-01, covered visitors and workers require an entry permit. Current guidance lists a GBP 250 visitor permit valid for 40 days, recommends receipt at least 8 days before arrival, and will not approve applications made 3 or fewer days before arrival."
+    },
+    {
+      "id": "hm", "iso2": "HM", "name": "Heard & McDonald Islands", "region": "Antarctic", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Heard Island and McDonald Islands permits", "url": "https://www.antarctica.gov.au/antarctic-operations/stations-and-field-locations/heard-island/protection-and-management/permits/", "authority": "Australian Antarctic Division", "roles": ["authoritative_rules", "official_application"], "covers": ["entry_permit", "environmental_approval", "application_timing", "restricted_activities"]}
+      ],
+      "notes": "Entry is allowed only under a permit or a stated emergency or official-duty exception. Permit applications normally require environmental assessment and should be filed at least 5 months, or up to 7 months for complex activities, before departure."
+    },
+    {
+      "id": "io", "iso2": "IO", "name": "British Indian Ocean Territory", "region": "Indian Ocean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "BIOT visa and prior-approval requirements", "url": "https://www.biot.gov.io/visiting/visa-requirements/", "authority": "British Indian Ocean Territory Administration", "roles": ["authoritative_rules", "official_status"], "covers": ["no_visa_route", "prior_approval", "permit_pause", "yacht_permit"]},
+        {"label": "Visiting BIOT", "url": "https://www.biot.gov.io/visiting/", "authority": "British Indian Ocean Territory Administration", "roles": ["official_status"], "covers": ["restricted_access", "permit_pause", "diego_garcia_restriction"]}
+      ],
+      "notes": "BIOT has no visa requirement but requires prior approval. The Administration states that it paused substantive consideration of most new entry-permit applications from 2026-03-31, except exceptional circumstances; its notice was last updated 2026-04-24. BIOT is not a tourist destination."
+    },
+    {
+      "id": "mc", "iso2": "MC", "name": "Monaco", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Entry and residence formalities for Monaco", "url": "https://ambassade-en-france.gouv.mc/en/information-and-services/visiting-monaco", "authority": "Embassy of Monaco in France / Government of Monaco", "roles": ["authoritative_rules"], "covers": ["short_stay", "schengen_visa", "visa_exemptions", "passport"]},
+        {"label": "France-Visas Monaco long-stay route", "url": "https://france-visas.gouv.fr/en/monaco", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["long_stay", "application_route", "documents"]}
+      ],
+      "notes": "Monaco's official guidance routes short stays through French and Schengen entry rules. Non-EEA travellers may need a Schengen visa; long-stay applications use the France-Visas Monaco route."
+    },
+    {
+      "id": "mf", "iso2": "MF", "name": "St. Martin", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "This seed covers the French collectivity of Saint Martin, not Dutch Sint Maarten. France-Visas states that a Schengen visa alone does not permit entry to non-European French territories; resolve the exact territory and visa label in the live wizard."
+    },
+    {
+      "id": "mp", "iso2": "MP", "name": "Northern Mariana Islands", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Official Guam-CNMI ETA application", "url": "https://g-cnmi-eta.cbp.dhs.gov/", "authority": "U.S. Customs and Border Protection", "roles": ["authoritative_rules", "official_application"], "covers": ["g_cnmi_eta", "visa_waiver", "eligibility", "application", "stay_duration"]},
+        {"label": "Guam-CNMI Visa Waiver Program", "url": "https://www.dhs.gov/guam-cnmi-visa-waiver-program", "authority": "U.S. Department of Homeland Security", "roles": ["authoritative_rules"], "covers": ["visa_waiver", "45_day_limit", "passport", "onward_travel"]}
+      ],
+      "notes": "The official G-CNMI ETA route applies only to eligible visa-waiver travellers visiting Guam or the CNMI for 45 days or less; the portal separately identifies a 14-day CNMI route for eligible PRC citizens. Recheck the live eligible-country list and itinerary."
+    },
+    {
+      "id": "mq", "iso2": "MQ", "name": "Martinique", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Martinique. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "nc", "iso2": "NC", "name": "New Caledonia", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes New Caledonia. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "nf", "iso2": "NF", "name": "Norfolk Island", "region": "Oceania", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Norfolk Island travel information", "url": "https://www.infrastructure.gov.au/territories-regions-cities/territories/norfolk-island/travel-information", "authority": "Australian Government Department of Infrastructure, Transport, Regional Development, Communications and the Arts", "roles": ["authoritative_rules"], "covers": ["domestic_arrival", "identification", "australian_border_force"]}
+      ],
+      "notes": "No passport or visa is required when travelling from the Australian mainland, but identification is required for Australian Border Force clearance. Travellers first entering Australia from overseas must resolve the Australian visa route separately."
+    },
+    {
+      "id": "pf", "iso2": "PF", "name": "French Polynesia", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes French Polynesia. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "pm", "iso2": "PM", "name": "St. Pierre & Miquelon", "region": "North America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Saint Pierre and Miquelon. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "pn", "iso2": "PN", "name": "Pitcairn Islands", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Applying for a visa for Pitcairn", "url": "https://www.pitcairn-island.pn/government/applying-for-a-visa", "authority": "Government of the Pitcairn Islands", "roles": ["authoritative_rules", "official_application"], "covers": ["entry_clearance", "visitor_stay", "work_permission", "settlement", "application_timing"]}
+      ],
+      "notes": "Visits of 14 days or less arriving and departing on the same vessel can receive leave to enter on arrival if the other conditions are met. Visits longer than 14 days and under 6 months require advance entry clearance; the government recommends applying at least 3 months ahead."
+    },
+    {
+      "id": "pr", "iso2": "PR", "name": "Puerto Rico", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "Puerto Rico guidance for foreign visitors", "url": "https://www.statedepartment.pr.gov/information-foreigners", "authority": "Puerto Rico Department of State", "roles": ["authoritative_rules"], "covers": ["federal_us_immigration_rules", "domestic_travel", "visa_requirement"]},
+        {"label": "U.S. CBP information for international visitors", "url": "https://www.cbp.gov/travel/international-visitors", "authority": "U.S. Customs and Border Protection", "roles": ["authoritative_rules", "official_application"], "covers": ["inspection", "visa_waiver_program", "esta", "admissibility"]}
+      ],
+      "notes": "Puerto Rico applies the same federal immigration and visa rules as other U.S. destinations. Direct domestic travel from a U.S. state to Puerto Rico is not a departure from the United States; international arrivals must resolve the applicable U.S. visa or Visa Waiver Program route."
+    },
+    {
+      "id": "re", "iso2": "RE", "name": "Réunion", "region": "Indian Ocean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Réunion. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "sh", "iso2": "SH", "name": "St. Helena", "region": "South Atlantic", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "St Helena eVisa eligibility", "url": "https://evisa.sainthelena.gov.sh/do-i-need-e-visa/", "authority": "St Helena Immigration Service", "roles": ["authoritative_rules", "official_application"], "covers": ["evisa", "passport_eligibility", "stay_duration", "application"]},
+        {"label": "St Helena eVisa FAQ", "url": "https://evisa.sainthelena.gov.sh/faq", "authority": "St Helena Immigration Service", "roles": ["authoritative_rules"], "covers": ["visa_required_passports", "no_visa_on_arrival", "passport_validity", "insurance", "documents"]}
+      ],
+      "notes": "The eVisa route covers trips of up to 183 days. When a visa is required there is no visa-on-arrival facility at St Helena Airport; passport type, criminal history, six-month validity and medical-evacuation insurance can affect the route."
+    },
+    {
+      "id": "tf", "iso2": "TF", "name": "French Southern Territories", "region": "Antarctic", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas expressly includes the French Southern and Antarctic Lands in its overseas-territory form and states that a Schengen visa alone is insufficient for non-European French territories. Separate territorial access authorisation may also be required and remains a live-check item."
+    },
+    {
+      "id": "vi", "iso2": "VI", "name": "U.S. Virgin Islands", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "U.S. CBP information for international visitors", "url": "https://www.cbp.gov/travel/international-visitors", "authority": "U.S. Customs and Border Protection", "roles": ["authoritative_rules", "official_application"], "covers": ["inspection", "visa_waiver_program", "esta", "admissibility"]},
+        {"label": "Travel FAQ", "url": "https://www.viport.com/general-9", "authority": "Virgin Islands Port Authority", "roles": ["official_status"], "covers": ["domestic_identification", "international_arrivals", "yacht_clearance", "federal_rules"]}
+      ],
+      "notes": "Non-U.S. citizens follow U.S. federal travel rules. The Port Authority directs international travellers to federal visa and CBP sources and notes separate CBP clearance requirements for private yachts; resolve the exact arrival mode."
+    },
+    {
+      "id": "wf", "iso2": "WF", "name": "Wallis & Futuna", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "sources": [
+        {"label": "France-Visas short-stay visas for non-European French territories", "url": "https://www.france-visas.gouv.fr/en/short-stay-visa", "authority": "Government of France / France-Visas", "roles": ["authoritative_rules", "official_application"], "covers": ["overseas_territory_visa", "visa_exemptions", "schengen_visa_not_sufficient", "visa_wizard"]},
+        {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
+      ],
+      "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Wallis and Futuna. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
     }
   ]
 }

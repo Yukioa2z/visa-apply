@@ -1,6 +1,6 @@
 # Australia Adapter: Visitor entry (601 ETA / 651 eVisitor / 600 Visitor visa)
 
-Support level: `full_adapter` (rules + document-checklist depth; ImmiAccount is login-walled and not field-scriptable). Rules, fees, and document requirements verified live against immi.homeaffairs.gov.au on 2026-07-20. The 601 page's last-updated stamp is 12/08/2025.
+Support level: `full_adapter` (rules + document-checklist depth; ImmiAccount is login-walled and not field-scriptable). Rules, fees, and document requirements were rechecked against immi.homeaffairs.gov.au on 2026-10-05. The 601 page's last-updated stamp is 12/08/2025.
 
 ## Metadata
 
@@ -10,7 +10,7 @@ Support level: `full_adapter` (rules + document-checklist depth; ImmiAccount is 
   - **Subclass 651 — eVisitor** — same activities, applied via ImmiAccount, free.
   - **Subclass 600 — Visitor visa** — full visitor visa with streams: **Tourist (apply outside Australia)**, **Tourist (apply in Australia / onshore)**, **Business Visitor**, **Sponsored Family**, **Approved Destination Status (ADS)**, **Frequent Traveller**.
 - **Applicant assumptions:** Nationality/passport determines route eligibility. Applicant is outside Australia for 601, 651, Tourist-overseas, Business, Sponsored Family, ADS, Frequent Traveller; onshore only for the Tourist (apply in Australia) stream. Not an Australian citizen. Purpose is a genuine short-term visit, not paid work or study >3 months.
-- **Last verified date:** 2026-07-20
+- **Last verified date:** 2026-10-05
 - **Official source IDs/URLs:** see `official-sources.json`.
 - **Support level:** `full_adapter`
 
