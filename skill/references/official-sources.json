@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-10-05",
+  "last_verified": "2026-10-12",
   "source_policy": {
     "rules_must_come_from": [
       "authoritative_rules"
@@ -77,7 +77,7 @@
         "canada"
       ],
       "support_level": "full_adapter",
-      "last_verified": "2026-09-28",
+      "last_verified": "2026-10-12",
       "sources": [
         {
           "label": "IRCC — eTA facts (eTA vs visitor visa)",
@@ -148,7 +148,8 @@
           "covers": [
             "medical_triggers",
             "designated_country_list_2025-11-03",
-            "super_visa_exam"
+            "super_visa_exam",
+            "in_canada_ime_exemption_2029_10_05"
           ]
         },
         {
@@ -261,7 +262,7 @@
         }
       ],
       "adapter": "countries/ca.md",
-      "notes": "Temporary Resident Visa (visitor) via IRCC at rules+checklist depth; IRCC secure account login-walled. eTA-vs-TRV split load-bearing: visa-exempt fliers need an eTA (not TRV); visa-exempt land/sea entrants need neither; US citizens/green-card holders are eTA-exempt. TRV fees CAD 100 individual / 500 family(5+), biometrics 85 / 170 family cap. Super Visa requires 100000 medical insurance (health/hospitalization/repatriation, valid 1yr) + the current Super Visa income calculation; mandatory medical exam. IRCC extended temporary Ebola measures to 23:59:59 Eastern Time on 2026-09-28; recheck that scheduled endpoint before travel. From 2026-03-31 the Super Visa income test accepts either of the two preceding taxation years, or at least 75% of the latest LICO from the host/co-signer supplemented by applicant income to meet the remainder. Recheck the current LICO family-size table and income evidence. Biometrics reuse wording, visa photo dimensions, and the current LICO table remain application-time checks."
+      "notes": "Temporary Resident Visa (visitor) via IRCC at rules+checklist depth; IRCC secure account login-walled. eTA-vs-TRV split load-bearing: visa-exempt fliers need an eTA (not TRV); visa-exempt land/sea entrants need neither; US citizens/green-card holders are eTA-exempt. TRV fees CAD 100 individual / 500 family(5+), biometrics 85 / 170 family cap. Super Visa requires 100000 medical insurance (health/hospitalization/repatriation, valid 1yr) + the current Super Visa income calculation; mandatory medical exam. IRCC's current Ebola notice extends the specified temporary measures through 23:59:59 Eastern Time on 2026-11-27; recheck that scheduled endpoint before travel. From 2026-03-31 the Super Visa income test accepts either of the two preceding taxation years, or at least 75% of the latest LICO from the host/co-signer supplemented by applicant income to meet the remainder. IRCC's current medical-exam page says the temporary public policy for certain foreign nationals already living in Canada is extended through 2029-10-05: an applicant may avoid another IME if the prior IME was within five years and indicated low or no public-health or public-safety risk. All listed conditions must be met. Recheck the current LICO family-size table and income evidence. Biometrics reuse wording, visa photo dimensions, and the current LICO table remain application-time checks."
     },
     {
       "id": "uk",
@@ -3156,12 +3157,17 @@
     },
     {
       "id": "ug", "iso2": "UG", "name": "Uganda", "region": "Africa", "aliases": [],
-      "support_level": "source_seeded", "last_verified": "2026-09-07",
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
       "sources": [{
         "label": "Visas and passes", "url": "https://www.immigration.go.ug/services/visa-passes",
         "authority": "Directorate of Citizenship and Immigration Control of Uganda", "roles": ["authoritative_rules"],
         "covers": ["visa_types", "tourist_visa", "visa_exemptions", "application"]
-      }]
+      }, {
+        "label": "Yellow Fever certificate entry notice", "url": "https://www.immigration.go.ug/node/254",
+        "authority": "Directorate of Citizenship and Immigration Control of Uganda", "roles": ["authoritative_rules", "official_status"],
+        "covers": ["yellow_fever_certificate", "entry_conditions", "effective_date"]
+      }],
+      "notes": "The immigration authority's notice dated 2026-10-02 states that a Yellow Fever vaccination certificate is no longer mandatory for entry into Uganda and is no longer listed on the e-visa portal. Recheck health and carrier requirements before travel because public-health rules can change separately from visa rules."
     },
     {
       "id": "zm", "iso2": "ZM", "name": "Zambia", "region": "Africa", "aliases": [],
@@ -3244,16 +3250,25 @@
     },
     {
       "id": "gh", "iso2": "GH", "name": "Ghana", "region": "Africa", "aliases": [],
-      "support_level": "source_seeded", "last_verified": "2026-10-05",
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
       "sources": [{
         "label": "Ghana visa regime", "url": "https://gis.gov.gh/visas/",
         "authority": "Ghana Immigration Service", "roles": ["authoritative_rules"],
         "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "transit"]
       }, {
-        "label": "Ghana eVisa requirements", "url": "https://evisa.immigration.gov.gh/visa-requirements",
+        "label": "Ghana eVisa information", "url": "https://evisa.immigration.gov.gh/visa-information",
         "authority": "Ghana Immigration Service and Ministry of Foreign Affairs", "roles": ["authoritative_rules", "official_application"],
-        "covers": ["evisa", "application_requirements", "documents", "validity"]
-      }]
+        "covers": ["eligibility_checker", "evisa", "eta", "fees", "processing_time"]
+      }, {
+        "label": "Ghana eVisa applicant guide", "url": "https://evisa.immigration.gov.gh/applicant-guide.html",
+        "authority": "Ghana Immigration Service and Ministry of Foreign Affairs", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "application_requirements", "documents", "fees", "validity", "stay_duration"]
+      }, {
+        "label": "Ghana ETA applicant guide", "url": "https://evisa.immigration.gov.gh/eta-applicant-guide.html",
+        "authority": "Ghana Immigration Service and Ministry of Foreign Affairs", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["eta", "eligibility", "application_requirements", "validity", "stay_duration"]
+      }],
+      "notes": "The official checker separates Visa-Free, ETA Required and eVisa Required results by nationality, passport type and current policy. The current ETA guide says the ETA is free, applies to AU and ECOWAS nationals and current bilateral-waiver countries when the checker returns ETA Required, and permits up to 90 days from entry. The current eVisa guide lists single-entry eVisas valid for entry within 90 days, with the border officer setting a stay of up to 60 days; published processing tiers are USD 260/96 hours, USD 338/48 hours and USD 442/5 hours. Use the live checker because the portal gives no effective date for this routing and eligibility may change."
     },
     {
       "id": "na", "iso2": "NA", "name": "Namibia", "region": "Africa", "aliases": [],
@@ -3481,17 +3496,17 @@
     },
     {
       "id": "im", "iso2": "IM", "name": "Isle of Man", "region": "Europe", "aliases": [],
-      "support_level": "source_seeded", "last_verified": "2026-09-22",
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
       "sources": [{
         "label": "Travel information", "url": "https://www.gov.im/categories/travel-traffic-and-motoring/immigration/travel-information/",
         "authority": "Isle of Man Government", "roles": ["authoritative_rules"],
-        "covers": ["entry_conditions", "common_travel_area", "visitor_entry"]
+        "covers": ["entry_conditions", "common_travel_area", "visitor_entry", "digital_permission"]
       }, {
         "label": "Electronic Travel Authorisation launch", "url": "https://www.gov.im/news/2026/apr/02/isle-of-man-to-launch-electronic-travel-authorisation-eta-scheme/",
         "authority": "Isle of Man Government", "roles": ["authoritative_rules", "official_application"],
         "covers": ["eta", "eligibility", "validity", "effective_date"]
       }],
-      "notes": "The Isle of Man ETA became required for covered passengers on 2026-04-23. It is generally valid for two years or until passport expiry and is mutually recognised with UK, Jersey, and Guernsey ETAs; exemptions and CTA routing must be checked live."
+      "notes": "The Isle of Man ETA became required for covered passengers on 2026-04-23. It is generally valid for two years or until passport expiry and is mutually recognised with UK, Jersey, and Guernsey ETAs. For entry-clearance grants from 2026-07-01, permission is recorded digitally instead of being issued as a passport vignette; applicants receive a confirmation letter and carriers can verify the digital status. Exemptions and CTA routing must be checked live."
     },
     {
       "id": "je", "iso2": "JE", "name": "Jersey", "region": "Europe", "aliases": [],
@@ -4317,6 +4332,218 @@
         {"label": "French overseas territories visa application form", "url": "https://france-visas.gouv.fr/documents/d/france-visas/cerfa_15934-01_court_sejour_drom_ctom_en", "authority": "Government of France / France-Visas", "roles": ["official_application"], "covers": ["territory_specific_form", "destination_list", "form_fields"]}
       ],
       "notes": "France-Visas states that a Schengen visa alone does not permit entry to non-European French territories. Its official form expressly includes Wallis and Futuna. Resolve nationality, residence status, destination and the exact visa label in the live wizard."
+    },
+    {
+      "id": "ad", "iso2": "AD", "name": "Andorra", "region": "Europe", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Travel to Andorra", "url": "https://www.govern.ad/en/ministries-and-secretaries-of-state/ministry-of-foreign-affairs/travel-to-andorra",
+        "authority": "Government of Andorra, Ministry of Foreign Affairs", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "schengen_transit", "passport", "minors"]
+      }],
+      "notes": "Andorra does not require its own visa, but it is outside Schengen and can be reached through France or Spain. A traveller who needs a Schengen visa must hold enough entries to leave Schengen for Andorra and re-enter; confirm the French or Spanish route and transit conditions."
+    },
+    {
+      "id": "bf", "iso2": "BF", "name": "Burkina Faso", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Burkina Faso eVisa portal", "url": "https://applicant.visaburkina.bf/",
+        "authority": "Ministry of Security of Burkina Faso", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "tourism", "family_visit", "application"]
+      }],
+      "notes": "The Ministry of Security portal describes the eVisa as an entry requirement for tourism or family visits. Use the live portal to confirm eligibility, documents, fees and the responsible route before filing."
+    },
+    {
+      "id": "bi", "iso2": "BI", "name": "Burundi", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Visa application forms", "url": "https://www.mae.gov.bi/en/visa-application-forms/",
+        "authority": "Ministry of Foreign Affairs of Burundi", "roles": ["official_application"],
+        "covers": ["visa_application", "appointment", "visa_type"]
+      }, {
+        "label": "Visa exemption agreements", "url": "https://www.mae.gov.bi/2024/09/27/les-pays-signes-avec-le-burundi-les-accords-dexemption-des-visas-2/",
+        "authority": "Ministry of Foreign Affairs of Burundi", "roles": ["authoritative_rules"],
+        "covers": ["visa_exemptions", "passport_type", "suspended_agreement"]
+      }],
+      "notes": "The current MFA list names ordinary-passport exemptions for Maldives and Singapore and marks Serbia's ordinary-passport exemption as suspended. The forms page provides the official application entry point but not one consolidated visitor checklist; confirm the responsible mission, arrival route, fees and processing before travel."
+    },
+    {
+      "id": "bo", "iso2": "BO", "name": "Bolivia", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Bolivian consular visa procedures", "url": "https://consulados.cancilleria.gob.bo/tramites/",
+        "authority": "Ministry of Foreign Affairs of Bolivia", "roles": ["authoritative_rules"],
+        "covers": ["visa_groups", "tourist_visa", "documents", "application"]
+      }, {
+        "label": "Visa application system", "url": "https://visas.cancilleria.gob.bo/",
+        "authority": "Ministry of Foreign Affairs of Bolivia", "roles": ["official_application"],
+        "covers": ["online_application", "account"]
+      }, {
+        "label": "2025 visa-exemption announcement", "url": "https://cancilleria.gob.bo/mre/2025/12/01/23577/",
+        "authority": "Ministry of Foreign Affairs of Bolivia", "roles": ["authoritative_rules", "official_status"],
+        "covers": ["visa_exemptions", "effective_date", "nationalities"]
+      }],
+      "notes": "Bolivia classifies nationalities into Groups I, II and III. The MFA announced that South Korea, South Africa, Bulgaria, Malta, Romania, the United Arab Emirates, Israel and the United States moved to visa-exempt Group I on 2025-12-01. Use the current group list because Group II and III procedures differ."
+    },
+    {
+      "id": "bt", "iso2": "BT", "name": "Bhutan", "region": "Asia", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Tourist visa and permit requirements", "url": "https://www.doi.gov.bt/?lang=en&page_id=1334",
+        "authority": "Department of Immigration, Ministry of Home Affairs of Bhutan", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["tourist_visa", "entry_permit", "passport_validity", "documents", "application"]
+      }, {
+        "label": "Bhutan tourism visa guidance", "url": "https://bhutan.travel/visa",
+        "authority": "Department of Tourism of Bhutan", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "india_permit", "bangladesh_maldives_route", "fees", "processing_time"]
+      }],
+      "notes": "Tourists apply online and need a passport valid for at least six months from the intended departure from Bhutan. Indian nationals use an entry-permit route. Bangladeshi and Maldivian visitors still require a visa but follow the separate process described with the regional routes. Recheck the Sustainable Development Fee and visa charge before filing."
+    },
+    {
+      "id": "cd", "iso2": "CD", "name": "Democratic Republic of the Congo", "region": "Africa", "aliases": ["dr congo", "drc"],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "One-month single-entry visa", "url": "https://servicepublic.gouv.cd/service/13",
+        "authority": "Government of the Democratic Republic of the Congo public-service catalogue", "roles": ["authoritative_rules"],
+        "covers": ["visitor_visa", "single_entry", "stay_duration", "consular_application", "fees"]
+      }, {
+        "label": "DRC eVisa FAQ", "url": "https://evisa.gouv.cd/helps/faqs",
+        "authority": "Directorate General of Migration of the Democratic Republic of the Congo", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "visa_aeroportuaire", "eligibility", "validity", "fees", "processing_time"]
+      }],
+      "notes": "The government catalogue describes a 30-day single-entry consular visa, while the DGM eVisa FAQ describes electronic pre-approval followed by a seven-day airport/border visa and separate charges. Resolve the correct route, total fees, extension and entry point live rather than combining the two products."
+    },
+    {
+      "id": "ci", "iso2": "CI", "name": "Cote d'Ivoire", "region": "Africa", "aliases": ["côte d'ivoire", "ivory coast"],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Entry and visa advice", "url": "https://www.diplomatie.gouv.ci/informations-utiles/conseils-aux-voyageurs",
+        "authority": "Ministry of Foreign Affairs of Cote d'Ivoire", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "passport_validity", "evisa_route", "visa_on_arrival", "yellow_fever"]
+      }, {
+        "label": "SNEDAI eVisa", "url": "https://snedai.com/e-visa/",
+        "authority": "SNEDAI, linked by the Ministry of Foreign Affairs of Cote d'Ivoire", "roles": ["delegated_application"],
+        "covers": ["evisa", "application", "documents", "fees"]
+      }],
+      "notes": "The MFA page requires a passport valid for more than six months and a visa, links the SNEDAI eVisa route, and notes an airport-visa route under conditions. It also states that Yellow Fever vaccination is mandatory. Verify nationality exemptions and the exact airport or consular route before filing."
+    },
+    {
+      "id": "cm", "iso2": "CM", "name": "Cameroon", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Cameroon eVisa guidance", "url": "https://www.diplocam.cm/e-visa/",
+        "authority": "Ministry of External Relations of Cameroon", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "visa_types", "validity", "fees", "documents"]
+      }, {
+        "label": "Cameroon entry formalities", "url": "https://mintoul.gov.cm/venir-au-cameroun/formalites-dentree-au-cameroun/",
+        "authority": "Ministry of Tourism and Leisure of Cameroon", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["entry_formalities", "official_evisa_link"]
+      }],
+      "notes": "The official pages direct visa applications to evisacam.cm. The MFA page lists multiple-entry short-stay visas valid up to six months and long-stay visas up to twelve months, with separate ordinary and express fees; confirm the current category, permitted stay and collection procedure live."
+    },
+    {
+      "id": "cu", "iso2": "CU", "name": "Cuba", "region": "Caribbean", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Cuba entry regulations", "url": "https://www.cuba.travel/en/useful-information/regulations-and-formalities",
+        "authority": "Cuba Travel, official tourism portal of Cuba", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "passport_validity", "stay_duration", "insurance", "digital_entry_form", "visa_exemption"]
+      }, {
+        "label": "Cuba eVisa", "url": "https://evisacuba.cu/",
+        "authority": "Government of Cuba, linked by the official tourism portal", "roles": ["official_application"],
+        "covers": ["tourist_evisa", "application"]
+      }],
+      "notes": "The current official tourism page requires a valid passport, tourist visa unless exempt, travel medical insurance, return travel and the D'Viajeros QR form. It lists a 90-day tourist stay extendable by another 90 days and currently states that Chinese ordinary-passport holders are visa-exempt. Confirm the nationality result and eVisa route before travel."
+    },
+    {
+      "id": "dz", "iso2": "DZ", "name": "Algeria", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Entry visa to Algeria", "url": "https://www.mfa.gov.dz/en/services-for-foreigners/entry-visa-to-algeria",
+        "authority": "Ministry of Foreign Affairs of Algeria", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "visa_types", "documents", "application_location", "validity", "stay_duration", "transit"]
+      }],
+      "notes": "Unless exempt, travellers apply at the Algerian embassy or consulate responsible for their usual residence. The MFA lists visa types, six-month passport validity, travel insurance and purpose-specific evidence; fees vary by nationality and reciprocity."
+    },
+    {
+      "id": "ga", "iso2": "GA", "name": "Gabon", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Gabon visa rules", "url": "https://www.affaires-etrangeres.gouv.ga/4-services-aux-usagers/244-visa/",
+        "authority": "Ministry of Foreign Affairs of Gabon", "roles": ["authoritative_rules"],
+        "covers": ["entry_conditions", "passport_validity", "purpose", "funds", "visa_validity"]
+      }, {
+        "label": "Gabon government eVisa notice", "url": "https://gouvernement.ga/2025/08/18/evisa/",
+        "authority": "Government of Gabon", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "air_entry", "entry_point", "official_portal"]
+      }],
+      "notes": "The government eVisa notice currently limits the eVisa route to air arrival through Libreville's Leon Mba International Airport. The MFA page lists general entry conditions. Verify nationality exemptions, purpose, entry point and the current DGDI portal before filing."
+    },
+    {
+      "id": "gm", "iso2": "GM", "name": "Gambia", "region": "Africa", "aliases": ["the gambia"],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Gambia immigration and visa information", "url": "https://gambia.gov.gm/immigration-and-visas/",
+        "authority": "Government of The Gambia", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "visa_exemptions", "visa_on_arrival", "stay_duration", "entry_conditions"]
+      }, {
+        "label": "Gambia entry requirements", "url": "https://gid.gov.gm/entry-requirements/",
+        "authority": "Gambia Immigration Department", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["entry_requirements", "visa_on_arrival", "visa_exemption", "entry_clearance"]
+      }],
+      "notes": "The Immigration Department states that visas may be issued by missions or at gazetted ports of entry and that ECOWAS citizens do not need a visa. The page also contains legacy public-health text, so verify current health, entry-clearance and airport-fee requirements independently before travel."
+    },
+    {
+      "id": "gn", "iso2": "GN", "name": "Guinea", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Guinea visa public service", "url": "https://service-public.gov.gn/ova_sev/demande-de-visa/",
+        "authority": "Government of Guinea public-service portal", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["evisa", "application", "approval_letter", "arrival_biometrics"]
+      }, {
+        "label": "Guinea eVisa", "url": "https://www.paf.gov.gn/visa",
+        "authority": "Central Directorate of Border Police of Guinea", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visa_requirement", "visa_exemptions", "evisa", "documents", "yellow_fever"]
+      }],
+      "notes": "The government portal directs applications to the Border Police eVisa service. The current eVisa page requires the live nationality result, passport validity of at least six months, return travel and a Yellow Fever certificate; approval does not itself guarantee issuance or admission."
+    },
+    {
+      "id": "gy", "iso2": "GY", "name": "Guyana", "region": "South America", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Guyana visa information", "url": "https://www.minfor.gov.gy/index.php/visa-information",
+        "authority": "Ministry of Foreign Affairs of Guyana", "roles": ["authoritative_rules"],
+        "covers": ["visa_exemptions", "passport_type", "stay_duration", "fees"]
+      }, {
+        "label": "Guyana visitor visa service", "url": "https://portal.gov.gy/services/SVC-A59EC2",
+        "authority": "Government of Guyana service portal and Central Immigration and Passport Office", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["visitor_visa", "visa_on_arrival", "documents", "online_application"]
+      }],
+      "notes": "Use the MFA list to determine visa exemption and the government service catalogue for the visitor-visa or visa-on-arrival workflow. The sponsor-supported online route has mandatory uploads; confirm current fees and the applicant's exact nationality result."
+    },
+    {
+      "id": "ki", "iso2": "KI", "name": "Kiribati", "region": "Pacific", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Kiribati visas and entry", "url": "https://immigration.mfai.gov.ki/visas-entry/",
+        "authority": "Kiribati Immigration Division, Ministry of Foreign Affairs and Immigration", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["entry_requirements", "visa_exemptions", "visitor_visa", "fees", "application"]
+      }, {
+        "label": "Kiribati visa law and forms", "url": "https://www.mfa.gov.ki/visa/",
+        "authority": "Ministry of Foreign Affairs and Immigration of Kiribati", "roles": ["authoritative_rules", "official_application"],
+        "covers": ["immigration_law", "visa_forms", "visa_types"]
+      }],
+      "notes": "The Immigration Entry and Visa Exemption Order 2023 took effect on 2023-09-01. Current guidance requires six-month passport validity beyond intended departure, onward travel and sufficient funds; exempt visitors may stay up to 90 days in a 12-month period, while non-exempt visitors must apply in advance."
+    },
+    {
+      "id": "km", "iso2": "KM", "name": "Comoros", "region": "Africa", "aliases": [],
+      "support_level": "source_seeded", "last_verified": "2026-10-12",
+      "sources": [{
+        "label": "Law on entry and stay of foreigners", "url": "https://justice.gouv.km/texte/loi-n88-025-relative-aux-conditions-de-sejour-des-etrangers-aux-comores/",
+        "authority": "Ministry of Justice of the Comoros", "roles": ["authoritative_rules"],
+        "covers": ["visa_requirement", "transit_visa", "tourist_visa", "stay_duration", "issuing_authority"]
+      }],
+      "notes": "The published law requires a valid passport or travel document and a Comorian visa, including transit visas up to five days and tourist visas up to 45 days, subject to treaties and later rules. Because a current consolidated nationality and arrival procedure was not found on the same authority page, verify the airport, port or mission route and current fee before travel."
     }
   ]
 }
